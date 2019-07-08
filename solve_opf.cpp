@@ -70,52 +70,70 @@ int main(){
     }
 
     // Make neighbor matrix
-    int c = 2;
+    int c;
+    neighbor_matrix[0][0] = -1; // tree root
     for (int i = 0;  i < NUM_BUSES; i++){
-        neighbor_matrix[i][0] = -1; // tree root
-        neighbor_matrix[i][1] = 1; // self
-        for (int j = 0; j < MAX_NUMBER_NEIGHBORS; j++){
+        c = 2;
             for (int k = 0;  k < NUM_BUSES; k++){ 
                 //search for parent
-                if (adj_matrix[i][k] == 1){
+                if (adj_matrix[i][k] > 0){
                     neighbor_matrix[i][0] = k;
                 }
                 //search for children
-                if (adj_matrix[i][k] == -1){
+                if (adj_matrix[i][k] < 0){
                     neighbor_matrix[i][c] = k;
-                    c += 1;
+                    c = c + 1;
                 }
             }
+        neighbor_matrix[i][1] = i; // self
+    }
+
+    if (DEBUG){
+        printf("\nNeighbors matrix:\n"); 
+        for (int i = 0;  i < NUM_BUSES; i++){
+            printf("Node %d: [%d,%d,%d,%d,%d]\n",i,neighbor_matrix[i][0],neighbor_matrix[i][1],neighbor_matrix[i][2],neighbor_matrix[i][3],neighbor_matrix[i][4]); 
         }
     }
 
     // Init state values
-    for (int i = 0; i < NUM_BUSES; i++){
+
+    // Parent
+    x[0][0] = v_bus[0];
+    x[0][1] = p_inj[0];
+    x[0][2] = q_inj[0];
+    x[0][3] = 0;
+    x[0][4] = 0;
+    x[0][5] = 0;
+    
+    // Non-parent nodes
+    for (int i = 1; i < NUM_BUSES; i++){
         //[vi_x,pi_x,qi_x,Pi_x,Qi_x,li_x]
         x[i][0] = v_bus[i];
         x[i][1] = p_inj[i];
         x[i][2] = q_inj[i];
-        x[i][3] = P_line[i];
-        x[i][4] = Q_line[i];
-        x[i][5] = l_line[i];
+        x[i][3] = P_line[i-1];
+        x[i][4] = Q_line[i-1];
+        x[i][5] = l_line[i-1];
     }
     
     // Init 5
+    int neighbor;
     for (int i = 0;  i < NUM_BUSES; i++){
         for (int m = 0; m < 6; m++){
             for (int j = 0; j < MAX_NUMBER_NEIGHBORS; j++){
-                y[i][m][j] = 0;
-
-                if (neighbor_matrix[i][j] == 1){ // parent
-                    y[i][0][j]=x[j][0]; // yij = vi_x
+                y[i][m][j] = 0; // init observation matrix as zeros
+                neighbor = neighbor_matrix[i][j];
+                if (j < 1) {
+                    y[i][0][j]=x[neighbor][0]; // yij = vi_x
                 }
-
-                if (neighbor_matrix[i][j] == -1){ // children
-                    y[i][3][j]=x[j][3]; // yij_3 = Pi_x
-                    y[i][4][j]=x[j][4]; // yij_4 = Qi_x
-                    y[i][5][j]=x[j][5]; // yij_5 = li_x
+    
+                if (j > 1 & i != j){ // children
+                    y[i][3][j]=x[neighbor][3]; // yij_3 = Pi_x
+                    y[i][4][j]=x[neighbor][4]; // yij_4 = Qi_x
+                    y[i][5][j]=x[neighbor][5]; // yij_5 = li_x
                 }
-                if (i == j){ // self
+    
+                if (j == 1){ // self
                     y[i][0][j]=x[j][0]; // yij_0 = vi_x
                     y[i][1][j]=x[j][1]; // yij_1 = pi_x
                     y[i][2][j]=x[j][2]; // yij_2 = qi_x
@@ -133,9 +151,18 @@ int main(){
     }
 
     if (DEBUG){
+        printf("\nState matrix:\n"); 
+        for (int i = 0;  i < NUM_BUSES; i++){
+            printf("Node %d: [v = %f,p = %f,q = %f,P = %f,Q = %f,l = %f]\n",i,x[i][0],x[i][1],x[i][2],x[i][3],x[i][4],x[i][5]); 
+            
+        }
+    }
+
+    if (DEBUG){
+        printf("\nObservation matrix:\n"); 
         for (int i = 0;  i < NUM_BUSES; i++){
             for (int j = 0; j < MAX_NUMBER_NEIGHBORS; j++){
-                printf("Node %d - Neighbor %d: [%f,%f,%f,%f,%f,%f]\n",i,j,y[i][0][j],y[i][1][j],y[i][2][j],y[i][3][j],y[i][4][j],y[i][5][j]); 
+                printf("Node %d - Neighbor %d: [v = %f,p = %f,q = %f,P = %f,Q = %f,l = %f]\n",i,j,y[i][0][j],y[i][1][j],y[i][2][j],y[i][3][j],y[i][4][j],y[i][5][j]); 
             }
         }
     }
