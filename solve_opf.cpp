@@ -9,13 +9,17 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <vector>
+#include <iostream>
+
+
 
 int adj_matrix[NUM_BUSES][NUM_BUSES] = {{0,-1,0,0},{1,0,-1,-1},{0,1,0,0},{0,1,0,0}};
 int neighbor_matrix[NUM_BUSES][MAX_NUMBER_NEIGHBORS];
 
 float v_bus[NUM_BUSES] = {1.,1.,1.,1.};
 float p_inj[NUM_BUSES] = {2.34,3.12,2.2,1.};
-float q_inj[NUM_BUSES] = {.32,.13,.23,.32};
+float q_inj[NUM_BUSES] = {.32,.13,.23,.35};
 
 float P_line[NUM_LINES];
 float Q_line[NUM_LINES];
@@ -35,6 +39,20 @@ struct state{
 
 float x[NUM_BUSES][6]; // xi = [vi_x,pi_x,qi_x,Pi_x,Qi_x,li_x]
 float y[NUM_BUSES][6][MAX_NUMBER_NEIGHBORS]; // yij = [vij_y,pij_y,qij_y,Pij_y,Qij_y,lij_y] \ TRIDIMENSIONAL ARRAY: NODE * VARIABLE * NEIGHBOR.
+
+// Create observation vectors containing floats
+
+struct observation22{
+    std::vector<int> y;
+    int bus_number;
+};
+
+void print(std::vector <int> const &a) {
+   std::cout << "The vector elements are : ";
+   
+   for(int i=0; i < a.size(); i++)
+      std::cout << a.at(i) << ' ';
+}
 
 int main(){
     /* inicializacion */
@@ -97,7 +115,7 @@ int main(){
 
     // Init state values
 
-    // Parent
+    // Root node
     x[0][0] = v_bus[0];
     x[0][1] = p_inj[0];
     x[0][2] = q_inj[0];
@@ -105,7 +123,7 @@ int main(){
     x[0][4] = 0;
     x[0][5] = 0;
     
-    // Non-parent nodes
+    // Non-root nodes
     for (int i = 1; i < NUM_BUSES; i++){
         //[vi_x,pi_x,qi_x,Pi_x,Qi_x,li_x]
         x[i][0] = v_bus[i];
@@ -127,19 +145,19 @@ int main(){
                     y[i][0][j]=x[neighbor][0]; // yij = vi_x
                 }
     
-                if (j > 1 & i != j){ // children
+                if (j > 1){ // children
                     y[i][3][j]=x[neighbor][3]; // yij_3 = Pi_x
                     y[i][4][j]=x[neighbor][4]; // yij_4 = Qi_x
                     y[i][5][j]=x[neighbor][5]; // yij_5 = li_x
                 }
     
                 if (j == 1){ // self
-                    y[i][0][j]=x[j][0]; // yij_0 = vi_x
-                    y[i][1][j]=x[j][1]; // yij_1 = pi_x
-                    y[i][2][j]=x[j][2]; // yij_2 = qi_x
-                    y[i][3][j]=x[j][3]; // yij_3 = Pi_x
-                    y[i][4][j]=x[j][4]; // yij_4 = Qi_x
-                    y[i][5][j]=x[j][5]; // yij_5 = li_x
+                    y[i][0][j]=x[neighbor][0]; // yij_0 = vi_x
+                    y[i][1][j]=x[neighbor][1]; // yij_1 = pi_x
+                    y[i][2][j]=x[neighbor][2]; // yij_2 = qi_x
+                    y[i][3][j]=x[neighbor][3]; // yij_3 = Pi_x
+                    y[i][4][j]=x[neighbor][4]; // yij_4 = Qi_x
+                    y[i][5][j]=x[neighbor][5]; // yij_5 = li_x
                 }
             }   
         }
@@ -165,6 +183,16 @@ int main(){
                 printf("Node %d - Neighbor %d: [v = %f,p = %f,q = %f,P = %f,Q = %f,l = %f]\n",i,j,y[i][0][j],y[i][1][j],y[i][2][j],y[i][3][j],y[i][4][j],y[i][5][j]); 
             }
         }
+    }
+
+
+    observation22 observations[NUM_BUSES];
+
+
+    for(int i=0; i < NUM_BUSES;i++){
+        observations[i].y = {i};
+        observations[i].bus_number = i;
+        print(observations[i].y);
     }
 
 
