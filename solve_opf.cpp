@@ -2,7 +2,7 @@
 #define SIZE 4
 #define NUM_BUSES SIZE
 #define NUM_LINES SIZE - 1
-#define MAX_NUMBER_CHILDREN 3
+#define MAX_NUMBER_CHILDREN 2
 #define MAX_NUMBER_NEIGHBORS MAX_NUMBER_CHILDREN + 2
 
 #define DEBUG 1
@@ -12,6 +12,7 @@
 #include <vector>
 #include <iostream>
 
+using namespace std; 
 
 
 int adj_matrix[NUM_BUSES][NUM_BUSES] = {{0,-1,0,0},{1,0,-1,-1},{0,1,0,0},{0,1,0,0}};
@@ -37,22 +38,60 @@ struct state{
     float Q_line;
 };
 
-float x[NUM_BUSES][6]; // xi = [vi_x,pi_x,qi_x,Pi_x,Qi_x,li_x]
+float x[NUM_BUSES][6+1+4*MAX_NUMBER_CHILDREN]; // xi = [vi_x,pi_x,qi_x,Pi_x,Qi_x,li_x]
 float y[NUM_BUSES][6][MAX_NUMBER_NEIGHBORS]; // yij = [vij_y,pij_y,qij_y,Pij_y,Qij_y,lij_y] \ TRIDIMENSIONAL ARRAY: NODE * VARIABLE * NEIGHBOR.
 
 // Create observation vectors containing floats
 
 struct observation22{
-    std::vector<int> y;
+    vector<int> y;
     int bus_number;
 };
 
-void print(std::vector <int> const &a) {
-   std::cout << "The vector elements are : ";
+void print(vector <int> const &a) {
+   cout << "The vector elements are : ";
    
    for(int i=0; i < a.size(); i++)
-      std::cout << a.at(i) << ' ';
+      cout << a.at(i) << ' ';
 }
+
+/*
+class Node
+{
+    public:
+        Node(int n_childs, string type);
+        string type;
+        int node_ID;
+        int n_childs;
+        float voltage;
+        float current;
+        float active_power;
+        float reactive_power;
+        
+        void set_type(string type){
+            this-> type = type;
+        }
+
+        void update_state(){
+        }
+
+        void update_observation(){
+
+        }
+
+        void update_multipliers(){
+
+        }
+
+
+};
+
+Node::Node(int n_childs, string type){
+    // Constructor code
+    this-> n_childs = n_childs;
+    this-> type = type;
+}
+*/
 
 int main(){
     /* inicializacion */
@@ -132,6 +171,11 @@ int main(){
         x[i][3] = P_line[i-1];
         x[i][4] = Q_line[i-1];
         x[i][5] = l_line[i-1];
+        x[i][6] = P_line[i-1];
+        x[i][7] = Q_line[i-1];
+        x[i][8] = l_line[i-1];
+        x[i][9] = l_line[i-1];
+
     }
     
     // Init 5
@@ -180,7 +224,8 @@ int main(){
         printf("\nObservation matrix:\n"); 
         for (int i = 0;  i < NUM_BUSES; i++){
             for (int j = 0; j < MAX_NUMBER_NEIGHBORS; j++){
-                printf("Node %d - Neighbor %d: [v = %f,p = %f,q = %f,P = %f,Q = %f,l = %f]\n",i,j,y[i][0][j],y[i][1][j],y[i][2][j],y[i][3][j],y[i][4][j],y[i][5][j]); 
+                //printf("Node %d - Neighbor %d: [v = %f,p = %f,q = %f,P = %f,Q = %f,l = %f]\n",i,j,y[i][0][j],y[i][1][j],y[i][2][j],y[i][3][j],y[i][4][j],y[i][5][j]); 
+                printf("y%d%d=[%f,%f,%f,%f,%f,%f]\n",i,j,y[i][0][j],y[i][1][j],y[i][2][j],y[i][3][j],y[i][4][j],y[i][5][j]); 
             }
         }
     }
