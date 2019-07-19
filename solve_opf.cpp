@@ -11,6 +11,8 @@
 #include <math.h>
 #include <vector>
 #include <iostream>
+#include <string.h>
+#include <cmath>
 
 using namespace std; 
 
@@ -27,8 +29,8 @@ float Q_line[NUM_LINES];
 
 float l_line[NUM_LINES];
 
-float R_line[NUM_LINES];
-float X_line[NUM_LINES];
+float R_line[NUM_LINES]= {.11111,.22222,.33333};
+float X_line[NUM_LINES]= {.12121,.21212,.31313};
  
 struct state{
     float voltage;
@@ -55,19 +57,44 @@ void print(vector <int> const &a) {
       cout << a.at(i) << ' ';
 }
 
-/*
+
+struct child_var{
+    int node_ID;
+    string type;
+    float active_power_gen;
+    float reactive_power_gen;
+    float active_power;
+    float reactive_power;
+    float current;
+};
+
+struct node_var{
+    float voltage_ancestor;
+    float voltage;
+    float active_power_gen;
+    float reactive_power_gen;
+    float active_power;
+    float reactive_power;
+    float current;
+};
+
+
 class Node
 {
     public:
-        Node(int n_childs, string type);
+        Node(int n_childs,int ancestor_ID,vector<int> childrens_ID, float R, float X, string type);
         string type;
+        float R;
+        float X;
         int node_ID;
         int n_childs;
-        float voltage;
-        float current;
-        float active_power;
-        float reactive_power;
-        
+        int ancestor_ID;
+        vector<int> childrens_ID;
+        vector<child_var> children_measures;
+        node_var node_measures;
+        vector<float> state_vector;
+        vector<vector<float>> matrix;
+
         void set_type(string type){
             this-> type = type;
         }
@@ -83,15 +110,122 @@ class Node
 
         }
 
+        vector<float> generate_state_vector(){
+            
+            vector<float> state_vector;
+            
+            state_vector.push_back(this->node_measures.voltage_ancestor);
+            state_vector.push_back(this->node_measures.voltage);
+            state_vector.push_back(this->node_measures.active_power_gen);
+            state_vector.push_back(this->node_measures.reactive_power_gen);
+            state_vector.push_back(this->node_measures.active_power);
+            state_vector.push_back(this->node_measures.reactive_power);
+            state_vector.push_back(this->node_measures.current);
+            
+            for(int i=0;i<this->n_childs;i++){
+                state_vector.push_back(this->children_measures[i].active_power);
+                state_vector.push_back(this->children_measures[i].reactive_power);
+                state_vector.push_back(this->children_measures[i].active_power_gen);
+                state_vector.push_back(this->children_measures[i].reactive_power_gen);
+                state_vector.push_back(this->children_measures[i].current);
+            }
+
+            return state_vector;
+        }
 
 };
 
-Node::Node(int n_childs, string type){
+
+Node::Node(int n_childs,int ancestor_ID,vector<int> childrens_ID, float R, float X, string type){
     // Constructor code
+
+    // generate state vector
+    this-> R = R;
+    this-> X = X;
     this-> n_childs = n_childs;
+    this-> ancestor_ID = ancestor_ID;
+    this-> childrens_ID = childrens_ID;
+    this-> node_measures.voltage_ancestor=1.; 
     this-> type = type;
+    for(int i=0;i<n_childs;i++){
+        child_var child_var_init;
+        this->children_measures.push_back(child_var_init);
+    }
+
+    // generate A Matrix
+    int CC = 7+5*n_childs;
+    int RR = 3;
+    vector<vector<float>> matrix;
+
+    //cin>>CC; cin>>RR; already done
+    for(int i = 0; i<RR; i++)
+    {
+        vector<float> myvector;
+        for(int j = 0; j<CC; j++)
+        {
+            float tempVal = 0.;
+            if (i==0 && j==0){
+                tempVal = 1.; //A11
+            }
+            if (i==0 && j==1){
+                tempVal = -1.; //A12
+            }
+            if (i==1 && j==2){
+                tempVal = 1.; // A23
+            }
+            if (i==2 && j==3){
+                tempVal = -1.; // A34
+            }
+            if (i==1 && j==4){
+                tempVal = -1.; // A25
+            }
+            if (i==2 && j==5){
+                tempVal = -1.; // A36
+            }
+            if (i==0 && j==4){
+                tempVal = 2*R; // A15
+            }
+            if (i==0 && j==5){
+                tempVal = 2*X; // A16
+            }
+            if (i==0 && j==6){
+                tempVal = -(pow(X,2)+pow(R,2)) ; // A17
+            }
+            if (i==0 && j==6){
+                tempVal = -(pow(X,2)+pow(R,2)) ; // A17
+            }
+            int child;
+            if (j>6){
+                for(int c=0;c<=n_childs;c++){
+                    child = abs(j-7) % 5; 
+                    if(i==1 && j==7+c*5){
+                        tempVal  =  1.; 
+                    }
+                    if(i==1 && j==9+c*5){
+                        tempVal  =  -R_line[childrens_ID[c]-1]; 
+                    }
+                    if(i==1 && j==10+c*5){
+                        tempVal  =  1; 
+                    }
+                    if(i==2 && j==8+c*5){
+                        tempVal  =  1.; 
+                    }
+                    if(i==2 && j==9+c*5){
+                        tempVal  =  -X_line[childrens_ID[c]-1]; 
+                    }
+                    if(i==2 && j==11+c*5){
+                        tempVal  =  1.; 
+                    }
+                }
+            }
+
+            myvector.push_back(tempVal);
+        }
+        matrix.push_back(myvector);
+    }
+    this-> matrix = matrix;
 }
-*/
+
 
 int main(){
     /* inicializacion */
@@ -240,6 +374,40 @@ int main(){
         print(observations[i].y);
     }
 
+    vector<int> childrens_ID = { 4, 2, 3 ,3,1,4 };
+    string type = "interior";
+    Node nodo_test = Node(6,1,childrens_ID,.1,.01,type);
+    vector<float> node_test_state = nodo_test.generate_state_vector();
 
-   return 0;
+    vector<Node> nodos;
+
+    for (int i=0; i<SIZE; ++i){
+        string type = "interior";
+        Node newNode = Node (2,i,{ 2, 3},.1,.01,type);
+        cout << "Node " << i << endl;
+        int j = 1;
+
+        for (int x : newNode.generate_state_vector()){
+            cout << "Medida " << j << ": "  << x << " \n";
+            j+=1;
+        }
+
+        int columna = 0;
+        int fila = 0;
+        for (vector<float> vector_temp : newNode.matrix){
+            columna = 0;
+            for (float x : vector_temp){
+                cout << "Matriz " <<  fila << columna << ": " << x << " \n";
+                columna+=1;
+            }
+            fila+=1;
+        }
+
+        
+        nodos.push_back(newNode);
+    }
+
+    return 0;
+
+
 }
