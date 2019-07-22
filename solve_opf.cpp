@@ -13,6 +13,7 @@
 #include <iostream>
 #include <string.h>
 #include <cmath>
+#include <fstream>
 
 using namespace std; 
 
@@ -78,12 +79,54 @@ struct node_var{
     float current;
 };
 
+class Operation{
 
-class Node
+    public:
+        vector<float> substract(vector<float> a,vector<float> b ){
+            vector<float> result;
+
+            if (a.size() == b.size()){
+                for(int i=0;i<a.size();i++){
+                    result.push_back(a[i]-b[i]);
+                }
+
+            }
+
+            return result;
+        }
+
+        vector<float> add(vector<float> a,vector<float> b ){
+            vector<float> result;
+
+            if (a.size() == b.size()){
+                for(int i=0;i<a.size();i++){
+                    result.push_back(a[i]+b[i]);
+                }
+
+            }
+
+            return result;
+        }
+
+        vector<float> multiply_scalar(vector<float> a, float multiplier ){
+            vector<float> result;
+
+            for(int i=0;i<a.size();i++){
+                result.push_back(multiplier*a[i]);
+            }
+
+            return result;
+        }
+};
+
+
+
+class Node: public Operation
 {
     public:
         Node(int n_childs,int ancestor_ID,vector<int> childrens_ID, float R, float X, string type);
         string type;
+        float rho;
         float R;
         float X;
         int node_ID;
@@ -93,6 +136,8 @@ class Node
         vector<child_var> children_measures;
         node_var node_measures;
         vector<float> state_vector;
+        vector<float> observation_vector;
+        vector<float> multipliers_vector;
         vector<vector<float>> matrix;
 
         void set_type(string type){
@@ -100,14 +145,64 @@ class Node
         }
 
         void update_state(){
+            system("sh m/update_x.sh");
+
         }
 
         void update_observation(){
+            system("sh m/update_y.sh");
+        }
+        void write_state_vector(){
+            ofstream out("x.csv");
+            int counter;
+            for (float x : this->state_vector){
+                out << x << endl; ;    
+            }
+	        out.close();
+        }
 
+        void write_observation_vector(){
+            ofstream out("y.csv");
+            int counter;
+            for (float x : this->observation_vector){
+                out << x << endl ;    
+            }
+	        out.close();
+        }
+        void write_multipliers_vector(){
+            ofstream out("mu.csv");
+            int counter;
+            for (float x : this->multipliers_vector){
+                if (counter<7+3*this->n_childs){
+                    out << x << "," ;    
+                } else {
+                    out << x << endl; 
+                }
+                counter+=1;
+            }
+	        out.close();
+        }
+        void write_matrix(){
+            ofstream out("A.csv");
+            int CC = 7+3*n_childs;
+            int RR = 3;
+            int counter;
+            for (vector<float> vector_temp : this->matrix){
+                counter = 1;
+                for (float x : vector_temp){
+                    if (counter<7+3*this->n_childs){
+                        out << x << "," ;    
+                    } else {
+                        out << x << endl; 
+                    }
+                    counter+=1;
+                }
+            }
+	        out.close();
         }
 
         void update_multipliers(){
-
+            this->multipliers_vector = add(this->multipliers_vector,multiply_scalar(substract(this->state_vector,this->observation_vector),this->rho)) ;
         }
 
         vector<float> generate_state_vector(){
@@ -125,13 +220,26 @@ class Node
             for(int i=0;i<this->n_childs;i++){
                 state_vector.push_back(this->children_measures[i].active_power);
                 state_vector.push_back(this->children_measures[i].reactive_power);
-                state_vector.push_back(this->children_measures[i].active_power_gen);
-                state_vector.push_back(this->children_measures[i].reactive_power_gen);
                 state_vector.push_back(this->children_measures[i].current);
             }
 
             return state_vector;
         }
+
+        vector<float> generate_observation_vector(){
+            
+            vector<float> observation_vector = this->state_vector;
+        
+            return observation_vector;
+        }
+
+        vector<float> generate_multipliers_vector(){
+            
+            vector<float> multipliers_vector = substract(this->state_vector,this->observation_vector);
+        
+            return multipliers_vector;
+        }
+
 
 };
 
@@ -140,12 +248,16 @@ Node::Node(int n_childs,int ancestor_ID,vector<int> childrens_ID, float R, float
     // Constructor code
 
     // generate state vector
+    this-> rho = .1;
     this-> R = R;
     this-> X = X;
     this-> n_childs = n_childs;
     this-> ancestor_ID = ancestor_ID;
     this-> childrens_ID = childrens_ID;
     this-> node_measures.voltage_ancestor=1.; 
+    this-> node_measures.voltage = 1.02;
+    this-> node_measures.active_power = 100;
+    this-> node_measures.active_power_gen = 100;
     this-> type = type;
     for(int i=0;i<n_childs;i++){
         child_var child_var_init;
@@ -153,7 +265,7 @@ Node::Node(int n_childs,int ancestor_ID,vector<int> childrens_ID, float R, float
     }
 
     // generate A Matrix
-    int CC = 7+5*n_childs;
+    int CC = 7+3*n_childs;
     int RR = 3;
     vector<vector<float>> matrix;
 
@@ -174,7 +286,7 @@ Node::Node(int n_childs,int ancestor_ID,vector<int> childrens_ID, float R, float
                 tempVal = 1.; // A23
             }
             if (i==2 && j==3){
-                tempVal = -1.; // A34
+                tempVal = 1.; // A34
             }
             if (i==1 && j==4){
                 tempVal = -1.; // A25
@@ -191,31 +303,25 @@ Node::Node(int n_childs,int ancestor_ID,vector<int> childrens_ID, float R, float
             if (i==0 && j==6){
                 tempVal = -(pow(X,2)+pow(R,2)) ; // A17
             }
-            if (i==0 && j==6){
-                tempVal = -(pow(X,2)+pow(R,2)) ; // A17
-            }
+
             int child;
             if (j>6){
                 for(int c=0;c<=n_childs;c++){
-                    child = abs(j-7) % 5; 
-                    if(i==1 && j==7+c*5){
+                    child = abs(j-7) % 3; 
+                    if(i==1 && j==7+c*3){
                         tempVal  =  1.; 
                     }
-                    if(i==1 && j==9+c*5){
+                    if(i==1 && j==9+c*3){
                         tempVal  =  -R_line[childrens_ID[c]-1]; 
                     }
-                    if(i==1 && j==10+c*5){
-                        tempVal  =  1; 
-                    }
-                    if(i==2 && j==8+c*5){
+
+                    if(i==2 && j==8+c*3){
                         tempVal  =  1.; 
                     }
-                    if(i==2 && j==9+c*5){
+                    if(i==2 && j==9+c*3){
                         tempVal  =  -X_line[childrens_ID[c]-1]; 
                     }
-                    if(i==2 && j==11+c*5){
-                        tempVal  =  1.; 
-                    }
+
                 }
             }
 
@@ -224,6 +330,12 @@ Node::Node(int n_childs,int ancestor_ID,vector<int> childrens_ID, float R, float
         matrix.push_back(myvector);
     }
     this-> matrix = matrix;
+
+    // generate state vector
+    this-> state_vector = generate_state_vector();
+    this-> observation_vector = generate_observation_vector();
+    this-> multipliers_vector = generate_multipliers_vector();
+
 }
 
 
@@ -384,6 +496,11 @@ int main(){
     for (int i=0; i<SIZE; ++i){
         string type = "interior";
         Node newNode = Node (2,i,{ 2, 3},.1,.01,type);
+        newNode.write_matrix();
+        newNode.write_state_vector();
+        newNode.write_observation_vector();
+        newNode.write_multipliers_vector();
+
         cout << "Node " << i << endl;
         int j = 1;
 
@@ -406,6 +523,18 @@ int main(){
         
         nodos.push_back(newNode);
     }
+
+    int iters = 0;
+    while(iters<10){       
+        std::cout << "Iteracion: " << iters << std::endl;
+        std::cout << "x-update... " << iters << std::endl;
+        nodos[0].update_state();
+        std::cout << "y-update... " << iters << std::endl;
+        nodos[0].update_observation();
+        nodos[0].update_multipliers();
+        iters+=1;
+    }
+    
 
     return 0;
 

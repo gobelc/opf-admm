@@ -16,9 +16,9 @@ mu = rand(n)
 c = ones(n);
 c(3)=1;
 %cost = mu'*y ;
-rho=1;
+rho=.01;
 y = ones(n)
-n_iter = 10;
+n_iter = 20;
 y_vector = zeros(13,n_iter);
 x_vector = zeros(13,n_iter);
 residual=zeros(n_iter,1);
@@ -30,7 +30,7 @@ for k=1:n_iter
     cvx_begin
         variable x(n)
         minimize(c'*x + mu'*x + .5*rho*sum_square(x-y));
-        x(3)>=200;
+        x(7)==200;
     cvx_end
     fprintf(1,'Done! \n');
 
@@ -59,8 +59,8 @@ for k=1:n_iter
      disp('------------------------------------------------------------------------');
      disp('The computed optimal solution is: ');
      disp(y)
-     fprintf('Q gen = %d VA\n' , y(4))
-     fprintf('P gen = %d W\n' , y(3))
+     fprintf('Q gen = %d kVA\n' , y(4))
+     fprintf('P gen = %d kW\n' , y(3))
 end
 
 disp('------------------------------------------------------------------------');
