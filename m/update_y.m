@@ -1,7 +1,7 @@
-A = csvread("/home/olaznog/workspace/opf-admm/A.csv");
-x = csvread("/home/olaznog/workspace/opf-admm/x.csv");
-y = csvread("/home/olaznog/workspace/opf-admm/y.csv");
-mu = csvread("/home/olaznog/workspace/opf-admm/mu.csv");
+A = csvread("/home/gonzalo/workspace/opf-admm/A.csv");
+x = csvread("/home/gonzalo/workspace/opf-admm/x.csv");
+y = csvread("/home/gonzalo/workspace/opf-admm/y.csv");
+mu = csvread("/home/gonzalo/workspace/opf-admm/mu.csv");
 
 
 %%% Init variables OPF
@@ -10,9 +10,9 @@ rho=.1;
 
 % Problem OPF: 
 cvx_begin
-    variable y(n)
+    variable y(n,1)
     minimize(-mu'*y  + .5*rho*sum_square(x-y));
     A*y == 0;
 cvx_end
 
-csvwrite('/home/olaznog/workspace/opf-admm/y.csv',y)
+csvwrite('/home/gonzalo/workspace/opf-admm/y.csv',y)
