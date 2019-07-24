@@ -12,7 +12,7 @@ c(3)=1;
 
 cp = zeros(n);
 cp(5)=200;
-rho=.1;
+rho=0.25;
 
 n_childs = floor((n-7)/3);
 B = zeros(3,n);
@@ -30,14 +30,13 @@ E(7,1) = 1;
 % Problem OPF: 
 cvx_begin
     variable x(n,1)
-    disp(size(x))
     minimize(square(c'*x) + mu'*x + .5*rho*sum_square(x-y));
     x(1)==1.;
     x(3)<=200;
     x(3)>=100
     x(2)<=1.1;
     x(2)>=.9;
-    norm(B*x,2) <= x(1) + x(7)
+    norm(B*x,2) <= x(1) + x(7);
 cvx_end
-disp(norm(x-y,2))
+fprintf("Residuo: %f",norm(x-y,2))
 csvwrite('/home/gonzalo/workspace/opf-admm/x.csv',x)

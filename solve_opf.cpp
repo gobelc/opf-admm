@@ -14,6 +14,7 @@
 #include <string.h>
 #include <cmath>
 #include <fstream>
+#include <stdlib.h>
 
 using namespace std; 
 
@@ -146,15 +147,32 @@ class Node: public Operation
 
         void update_state(){
             system("sh m/update_x.sh");
-
+            std::ifstream ifs ("x.csv", std::ifstream::in);
+            char c = ifs.get();
+            int counter = 0;
+            while (ifs.good()) {
+                this->state_vector[counter] = std::atof(&c);
+                c = ifs.get();
+                counter+=1;
+            }
+            ifs.close();
         }
 
         void update_observation(){
             system("sh m/update_y.sh");
+            std::ifstream ifs ("y.csv", std::ifstream::in);
+            char c = ifs.get();
+            int counter = 0;
+            while (ifs.good()) {
+                this->observation_vector[counter] = std::atof(&c);
+                c = ifs.get();
+                counter+=1;
+            }
+            ifs.close();
         }
+
         void write_state_vector(){
             ofstream out("x.csv");
-            int counter;
             for (float x : this->state_vector){
                 out << x << endl; ;    
             }
@@ -163,7 +181,6 @@ class Node: public Operation
 
         void write_observation_vector(){
             ofstream out("y.csv");
-            int counter;
             for (float x : this->observation_vector){
                 out << x << endl ;    
             }
@@ -171,14 +188,8 @@ class Node: public Operation
         }
         void write_multipliers_vector(){
             ofstream out("mu.csv");
-            int counter;
             for (float x : this->multipliers_vector){
-                if (counter<7+3*this->n_childs){
-                    out << x << "," ;    
-                } else {
-                    out << x << endl; 
-                }
-                counter+=1;
+                    out << x << endl ;    
             }
 	        out.close();
         }
@@ -202,7 +213,15 @@ class Node: public Operation
         }
 
         void update_multipliers(){
-            this->multipliers_vector = add(this->multipliers_vector,multiply_scalar(substract(this->state_vector,this->observation_vector),this->rho)) ;
+            std::ifstream ifs ("mu.csv", std::ifstream::in);
+            char c = ifs.get();
+            int counter = 0;
+            while (ifs.good()) {
+                this->multipliers_vector[counter] = std::atof(&c);
+                c = ifs.get();
+                counter+=1;
+            }
+            ifs.close();
         }
 
         vector<float> generate_state_vector(){
@@ -235,7 +254,8 @@ class Node: public Operation
 
         vector<float> generate_multipliers_vector(){
             
-            vector<float> multipliers_vector = substract(this->state_vector,this->observation_vector);
+            //vector<float> multipliers_vector = substract(this->state_vector,this->observation_vector);
+            vector<float> multipliers_vector(7+3*this->n_childs,.005);
         
             return multipliers_vector;
         }
@@ -341,142 +361,6 @@ Node::Node(int n_childs,int ancestor_ID,vector<int> childrens_ID, float R, float
 
 int main(){
     /* inicializacion */
-
-    // Init 1
-    for (int i = 0; i < NUM_BUSES; i++){
-        v_bus[i] = 1.0;
-    }
-
-    // Init 2
-    for (int i = 0; i < NUM_LINES; i++){
-        P_line[i] = p_inj[i+1];
-        Q_line[i] = q_inj[i+1];
-    }
-
-    // Init 3
-    for (int i = 1; i < NUM_BUSES; i++){
-        for (int j = 1; j < NUM_BUSES; j++){
-            if (adj_matrix[i][j] == -1 ){
-                float a  = P_line[i-1];
-                P_line[i-1] += P_line[j - 1];
-                if (DEBUG){
-                    printf("i = %d, j = %d, P_line[i] = %f, P_line[j-1] = %f, P_line_new[i] = %f\n", i,j,a,P_line[j-1],P_line[i-1]) ;
-                }
-                Q_line[i-1] += Q_line[j - 1];
-            }
-        }
-    }
-
-    // Init 4
-    for (int i = 0; i < NUM_LINES; i++){
-        l_line[i] = (P_line[i]* P_line[i] + Q_line[i]*Q_line[i])/v_bus[i];
-    }
-
-    // Make neighbor matrix
-    int c;
-    neighbor_matrix[0][0] = -1; // tree root
-    for (int i = 0;  i < NUM_BUSES; i++){
-        c = 2;
-            for (int k = 0;  k < NUM_BUSES; k++){ 
-                //search for parent
-                if (adj_matrix[i][k] > 0){
-                    neighbor_matrix[i][0] = k;
-                }
-                //search for children
-                if (adj_matrix[i][k] < 0){
-                    neighbor_matrix[i][c] = k;
-                    c = c + 1;
-                }
-            }
-        neighbor_matrix[i][1] = i; // self
-    }
-
-    if (DEBUG){
-        printf("\nNeighbors matrix:\n"); 
-        for (int i = 0;  i < NUM_BUSES; i++){
-            printf("Node %d: [%d,%d,%d,%d,%d]\n",i,neighbor_matrix[i][0],neighbor_matrix[i][1],neighbor_matrix[i][2],neighbor_matrix[i][3],neighbor_matrix[i][4]); 
-        }
-    }
-
-    // Init state values
-
-    // Root node
-    x[0][0] = v_bus[0];
-    x[0][1] = p_inj[0];
-    x[0][2] = q_inj[0];
-    x[0][3] = 0;
-    x[0][4] = 0;
-    x[0][5] = 0;
-    
-    // Non-root nodes
-    for (int i = 1; i < NUM_BUSES; i++){
-        //[vi_x,pi_x,qi_x,Pi_x,Qi_x,li_x]
-        x[i][0] = v_bus[i];
-        x[i][1] = p_inj[i];
-        x[i][2] = q_inj[i];
-        x[i][3] = P_line[i-1];
-        x[i][4] = Q_line[i-1];
-        x[i][5] = l_line[i-1];
-        x[i][6] = P_line[i-1];
-        x[i][7] = Q_line[i-1];
-        x[i][8] = l_line[i-1];
-        x[i][9] = l_line[i-1];
-
-    }
-    
-    // Init 5
-    int neighbor;
-    for (int i = 0;  i < NUM_BUSES; i++){
-        for (int m = 0; m < 6; m++){
-            for (int j = 0; j < MAX_NUMBER_NEIGHBORS; j++){
-                y[i][m][j] = 0; // init observation matrix as zeros
-                neighbor = neighbor_matrix[i][j];
-                if (j < 1) {
-                    y[i][0][j]=x[neighbor][0]; // yij = vi_x
-                }
-    
-                if (j > 1){ // children
-                    y[i][3][j]=x[neighbor][3]; // yij_3 = Pi_x
-                    y[i][4][j]=x[neighbor][4]; // yij_4 = Qi_x
-                    y[i][5][j]=x[neighbor][5]; // yij_5 = li_x
-                }
-    
-                if (j == 1){ // self
-                    y[i][0][j]=x[neighbor][0]; // yij_0 = vi_x
-                    y[i][1][j]=x[neighbor][1]; // yij_1 = pi_x
-                    y[i][2][j]=x[neighbor][2]; // yij_2 = qi_x
-                    y[i][3][j]=x[neighbor][3]; // yij_3 = Pi_x
-                    y[i][4][j]=x[neighbor][4]; // yij_4 = Qi_x
-                    y[i][5][j]=x[neighbor][5]; // yij_5 = li_x
-                }
-            }   
-        }
-    }
-
-
-    for (int i = 0; i<NUM_LINES; i++){
-        printf("Linea %d | P = %f , Q = %f, l = %f \n", i + 1, P_line[i],Q_line[i],l_line[i]);
-    }
-
-    if (DEBUG){
-        printf("\nState matrix:\n"); 
-        for (int i = 0;  i < NUM_BUSES; i++){
-            printf("Node %d: [v = %f,p = %f,q = %f,P = %f,Q = %f,l = %f]\n",i,x[i][0],x[i][1],x[i][2],x[i][3],x[i][4],x[i][5]); 
-            
-        }
-    }
-
-    if (DEBUG){
-        printf("\nObservation matrix:\n"); 
-        for (int i = 0;  i < NUM_BUSES; i++){
-            for (int j = 0; j < MAX_NUMBER_NEIGHBORS; j++){
-                //printf("Node %d - Neighbor %d: [v = %f,p = %f,q = %f,P = %f,Q = %f,l = %f]\n",i,j,y[i][0][j],y[i][1][j],y[i][2][j],y[i][3][j],y[i][4][j],y[i][5][j]); 
-                printf("y%d%d=[%f,%f,%f,%f,%f,%f]\n",i,j,y[i][0][j],y[i][1][j],y[i][2][j],y[i][3][j],y[i][4][j],y[i][5][j]); 
-            }
-        }
-    }
-
-
     observation22 observations[NUM_BUSES];
 
 
@@ -524,13 +408,76 @@ int main(){
         nodos.push_back(newNode);
     }
 
+    // Init 1
+    for (int i = 0; i < NUM_BUSES; i++){
+        nodos[i].node_measures.voltage = 1.0;
+    }
+
+    // Init 2
+    for (int i = 0; i < NUM_LINES; i++){
+        nodos[i].node_measures.active_power = nodos[i].node_measures.active_power_gen;
+        nodos[i].node_measures.reactive_power = nodos[i].node_measures.reactive_power_gen;
+    }
+
+    // Init 3
+    for (int i = 1; i < NUM_BUSES; i++){
+        for (int j = 1; j < NUM_BUSES; j++){
+            if (adj_matrix[i][j] == -1 ){
+                float a  = P_line[i-1];
+                nodos[i].node_measures.active_power += nodos[j].node_measures.active_power;
+                if (DEBUG){
+                    printf("i = %d, j = %d, P_line[i] = %f, P_line[j-1] = %f, P_line_new[i] = %f\n", i,j,a,nodos[j].node_measures.active_power,nodos[i].node_measures.active_power) ;
+                }
+                nodos[i].node_measures.reactive_power += nodos[j].node_measures.reactive_power;
+            }
+        }
+    }
+
+    // Init 4
+    for (int i = 0; i < NUM_LINES; i++){
+        nodos[i].node_measures.current = (nodos[i].node_measures.active_power* nodos[i].node_measures.active_power + nodos[i].node_measures.reactive_power*nodos[i].node_measures.reactive_power) / nodos[i].node_measures.voltage;
+    }
+
+    // Make neighbor matrix
+    int c;
+    neighbor_matrix[0][0] = -1; // tree root
+    for (int i = 0;  i < NUM_BUSES; i++){
+        c = 2;
+            for (int k = 0;  k < NUM_BUSES; k++){ 
+                //search for parent
+                if (adj_matrix[i][k] > 0){
+                    neighbor_matrix[i][0] = k;
+                }
+                //search for children
+                if (adj_matrix[i][k] < 0){
+                    neighbor_matrix[i][c] = k;
+                    c = c + 1;
+                }
+            }
+        neighbor_matrix[i][1] = i; // self
+    }
+
+    if (DEBUG){
+        printf("\nNeighbors matrix:\n"); 
+        for (int i = 0;  i < NUM_BUSES; i++){
+            printf("Node %d: [%d,%d,%d,%d,%d]\n",i,neighbor_matrix[i][0],neighbor_matrix[i][1],neighbor_matrix[i][2],neighbor_matrix[i][3],neighbor_matrix[i][4]); 
+        }
+    }
+
+
+    for (int i = 0; i<NUM_LINES; i++){
+        printf("Linea %d | P = %f , Q = %f, l = %f \n", i + 1, nodos[i].node_measures.active_power,nodos[i].node_measures.reactive_power,nodos[i].node_measures.current);
+    }
+    
+
     int iters = 0;
-    while(iters<10){       
-        std::cout << "Iteracion: " << iters << std::endl;
-        std::cout << "x-update... " << iters << std::endl;
+    while(iters<50){       
+        std::cout << "\nIteracion: " << iters << std::endl;
+        std::cout << "\nx-update... " << iters << std::endl;
         nodos[0].update_state();
-        std::cout << "y-update... " << iters << std::endl;
+        std::cout << "\ny-update... " << iters << std::endl;
         nodos[0].update_observation();
+        std::cout << "\nmultipliers-update... " << iters << std::endl;
         nodos[0].update_multipliers();
         iters+=1;
     }

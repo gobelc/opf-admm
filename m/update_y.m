@@ -6,7 +6,7 @@ mu = csvread("/home/gonzalo/workspace/opf-admm/mu.csv");
 
 %%% Init variables OPF
 n = size(y);
-rho=.1;
+rho=0.25;
 
 % Problem OPF: 
 cvx_begin
@@ -15,4 +15,7 @@ cvx_begin
     A*y == 0;
 cvx_end
 
+mu = mu + rho*(x - y);
 csvwrite('/home/gonzalo/workspace/opf-admm/y.csv',y)
+csvwrite('/home/gonzalo/workspace/opf-admm/mu.csv',mu)
+
