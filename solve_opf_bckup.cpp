@@ -7,7 +7,6 @@
 
 #define DEBUG 1
 
-#include "mpi.h"
 #include <stdio.h>
 #include <math.h>
 #include <vector>
@@ -360,20 +359,7 @@ Node::Node(int n_childs,int ancestor_ID,vector<int> childrens_ID, float R, float
 }
 
 
-int main(int argc,char *argv[]){
-
-
-    /*
-    MPI init
-    */
-    clock_t begin = clock();
-    int numtasks, rank, sendcount, recvcount, source;
-    MPI_Init(&argc,&argv);
-    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-    MPI_Comm_size(MPI_COMM_WORLD, &numtasks);
-
-    MPI_Finalize();
-
+int main(){
     /* inicializacion */
     observation22 observations[NUM_BUSES];
 
