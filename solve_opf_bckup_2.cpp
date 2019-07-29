@@ -6,7 +6,7 @@
 #define MAX_NUMBER_NEIGHBORS MAX_NUMBER_CHILDREN + 2
 
 #define DEBUG 1
-#include <unistd.h>
+
 #include <mpi.h>
 #include <stdio.h>
 #include <math.h>
@@ -32,8 +32,8 @@ float Q_line[NUM_LINES];
 
 float l_line[NUM_LINES];
 
-float R_line[NUM_BUSES]= {100000.,.11111,.22222,.33333};
-float X_line[NUM_BUSES]= {100000.,.12121,.21212,.31313};
+float R_line[NUM_LINES]= {.11111,.22222,.33333};
+float X_line[NUM_LINES]= {.12121,.21212,.31313};
  
 struct state{
     float voltage;
@@ -150,13 +150,12 @@ class Node: public Operation
         void update_state(){
             string str = "sh m/update_x.sh ";
             system((str + to_string(this->node_ID)).c_str());
-            std::ifstream ifs (to_string(this->node_ID)+"/x.csv", std::ifstream::in);
-            char c[10];
-            ifs.getline(c,10);
+            std::ifstream ifs (to_string(this->node_ID)+"/.csv", std::ifstream::in);
+            char c = ifs.get();
             int counter = 0;
             while (ifs.good()) {
-                this->state_vector[counter] = std::atof(c);
-                ifs.getline(c,10);
+                this->state_vector[counter] = std::atof(&c);
+                c = ifs.get();
                 counter+=1;
             }
             ifs.close();
@@ -166,12 +165,11 @@ class Node: public Operation
             string str = "sh m/update_y.sh ";
             system((str + to_string(this->node_ID)).c_str());
             std::ifstream ifs (to_string(this->node_ID)+"/y.csv", std::ifstream::in);
-            char c[10];
-            ifs.getline(c,10);
+            char c = ifs.get();
             int counter = 0;
             while (ifs.good()) {
-                this->observation_vector[counter] = std::atof(c);
-                ifs.getline(c,10);
+                this->observation_vector[counter] = std::atof(&c);
+                c = ifs.get();
                 counter+=1;
             }
             ifs.close();
@@ -220,14 +218,11 @@ class Node: public Operation
 
         void update_multipliers(){
             std::ifstream ifs (to_string(this-> node_ID)+"/mu.csv", std::ifstream::in);
-            char c[10];
-            ifs.getline(c,10);
+            char c = ifs.get();
             int counter = 0;
-            cout << "paso por aca 3.. " << endl;
             while (ifs.good()) {
-                cout << std::atof(c) << endl;
-                this->observation_vector[counter] = std::atof(c);
-                ifs.getline(c,10);
+                this->multipliers_vector[counter] = std::atof(&c);
+                c = ifs.get();
                 counter+=1;
             }
             ifs.close();
@@ -273,7 +268,7 @@ class Node: public Operation
 };
 
 
-Node::Node(int node_rank, int node_ID, int n_childs,int ancestor_ID,vector<int> childrens_ID, float R, float X, string type){
+Node::Node(int node_rank, int node_ID int n_childs,int ancestor_ID,vector<int> childrens_ID, float R, float X, string type){
     // Constructor code
 
     // generate state vector
@@ -401,159 +396,122 @@ int main(int argc,char *argv[]){
         print(observations[i].y);
     }
 
-    
+    vector<int> childrens_ID = { 4, 2, 3 ,3,1,4 };
+    string type = "interior";
+    Node nodo_test = Node(rank,1,6,1,childrens_ID,.1,.01,type);
+    vector<float> node_test_state = nodo_test.generate_state_vector();
+
+
+    /*
+    vector<Node> nodos;
+
+
+
+    for (int i=0; i<SIZE; ++i){
+        string type = "interior";
+        Node newNode = Node (rank,i,2,i,{ 2, 3},.1,.01,type);
+        newNode.write_matrix();
+        newNode.write_state_vector();
+        newNode.write_observation_vector();
+        newNode.write_multipliers_vector();
+
+        cout << "Node " << i << endl;
+        int j = 1;
+
+        for (int x : newNode.generate_state_vector()){
+            cout << "Medida " << j << ": "  << x << " \n";
+            j+=1;
+        }
+
+        int columna = 0;
+        int fila = 0;
+        for (vector<float> vector_temp : newNode.matrix){
+            columna = 0;
+            for (float x : vector_temp){
+                cout << "Matriz " <<  fila << columna << ": " << x << " \n";
+                columna+=1;
+            }
+            fila+=1;
+        }
+
+        
+        nodos.push_back(newNode);
+    }
+    */
+    // Init 1
+    for (int i = 0; i < NUM_BUSES; i++){
+        nodos[i].node_measures.voltage = 1.0;
+    }
+
+    // Init 2
+    for (int i = 0; i < NUM_LINES; i++){
+        nodos[i].node_measures.active_power = nodos[i].node_measures.active_power_gen;
+        nodos[i].node_measures.reactive_power = nodos[i].node_measures.reactive_power_gen;
+    }
+
+    // Init 3
+    for (int i = 1; i < NUM_BUSES; i++){
+        for (int j = 1; j < NUM_BUSES; j++){
+            if (adj_matrix[i][j] == -1 ){
+                float a  = P_line[i-1];
+                nodos[i].node_measures.active_power += nodos[j].node_measures.active_power;
+                if (DEBUG){
+                    printf("i = %d, j = %d, P_line[i] = %f, P_line[j-1] = %f, P_line_new[i] = %f\n", i,j,a,nodos[j].node_measures.active_power,nodos[i].node_measures.active_power) ;
+                }
+                nodos[i].node_measures.reactive_power += nodos[j].node_measures.reactive_power;
+            }
+        }
+    }
+
+    // Init 4
+    for (int i = 0; i < NUM_LINES; i++){
+        nodos[i].node_measures.current = (nodos[i].node_measures.active_power* nodos[i].node_measures.active_power + nodos[i].node_measures.reactive_power*nodos[i].node_measures.reactive_power) / nodos[i].node_measures.voltage;
+    }
+
     // Make neighbor matrix
     int c;
     neighbor_matrix[0][0] = -1; // tree root
-    //for (int i = 0;  i < NUM_BUSES; i++){
-    c = 2;
-    for (int k = 0;  k < NUM_BUSES; k++){ 
-        //search for parent
-        if (adj_matrix[rank][k] > 0){
-            neighbor_matrix[rank][0] = k;
-        }
-        //search for children
-        if (adj_matrix[rank][k] < 0){
-            neighbor_matrix[rank][c] = k;
-            c = c + 1;
-        }
+    for (int i = 0;  i < NUM_BUSES; i++){
+        c = 2;
+            for (int k = 0;  k < NUM_BUSES; k++){ 
+                //search for parent
+                if (adj_matrix[i][k] > 0){
+                    neighbor_matrix[i][0] = k;
+                }
+                //search for children
+                if (adj_matrix[i][k] < 0){
+                    neighbor_matrix[i][c] = k;
+                    c = c + 1;
+                }
+            }
+        neighbor_matrix[i][1] = i; // self
     }
-    neighbor_matrix[rank][1] = rank; // self
-
-    // Node creation
-    string type = "interior";
-    int i = rank;
-
-    int n_childs = 0;
-    vector<int> childrens_ID;
-    for(int i=2;i<MAX_NUMBER_NEIGHBORS;i++){
-        if (neighbor_matrix[rank][i] > 0){
-            n_childs +=1;
-            childrens_ID.push_back(neighbor_matrix[rank][i]);
-        }
-    }
-
-    Node nodo = Node(rank,rank,n_childs,neighbor_matrix[rank][0],childrens_ID,R_line[i],X_line[i],type);;
-
-    nodo.write_matrix();
-    nodo.write_state_vector();
-    nodo.write_observation_vector();
-    nodo.write_multipliers_vector();
-
-    cout << "Node " << i << endl;
-    int j = 1;
-
-    for (int x : nodo.generate_state_vector()){
-        cout << "Medida " << j << ": "  << x << " \n";
-        j+=1;
-    }
-
-    int columna = 0;
-    int fila = 0;
-    for (vector<float> vector_temp : nodo.matrix){
-        columna = 0;
-        for (float x : vector_temp){
-            cout << "Matriz " <<  fila << columna << ": " << x << " \n";
-            columna+=1;
-        }
-        fila+=1;
-    }
-
-    nodo.node_measures.voltage = 1.0;
-    nodo.node_measures.active_power = nodo.node_measures.active_power_gen;
-    nodo.node_measures.reactive_power = nodo.node_measures.reactive_power_gen;
-    nodo.node_measures.current = (nodo.node_measures.active_power*nodo.node_measures.active_power + nodo.node_measures.reactive_power*nodo.node_measures.reactive_power) / nodo.node_measures.voltage;
-
 
     if (DEBUG){
         printf("\nNeighbors matrix:\n"); 
-        printf("Node %d: [%d,%d,%d,%d,%d]\n",rank,neighbor_matrix[rank][0],neighbor_matrix[rank][1],neighbor_matrix[rank][2],neighbor_matrix[rank][3],neighbor_matrix[rank][4]); 
+        for (int i = 0;  i < NUM_BUSES; i++){
+            printf("Node %d: [%d,%d,%d,%d,%d]\n",i,neighbor_matrix[i][0],neighbor_matrix[i][1],neighbor_matrix[i][2],neighbor_matrix[i][3],neighbor_matrix[i][4]); 
+        }
     }
 
-    printf("Linea %d | P = %f , Q = %f, l = %f \n", rank + 1, nodo.node_measures.active_power,nodo.node_measures.reactive_power,nodo.node_measures.current);
+
+    for (int i = 0; i<NUM_LINES; i++){
+        printf("Linea %d | P = %f , Q = %f, l = %f \n", i + 1, nodos[i].node_measures.active_power,nodos[i].node_measures.reactive_power,nodos[i].node_measures.current);
+    }
     
+
     int iters = 0;
-    //if (rank==1){
-    while(iters<500){       
+    while(iters<20){       
         std::cout << "\nIteracion: " << iters << " | Nodo: " << rank << std::endl;
         std::cout << "\nx-update... " << iters << " | Nodo: " << rank << std::endl;
-        nodo.update_state();
+        nodos[rank].update_state();
         std::cout << "\ny-update... " << iters << " | Nodo: " << rank << std::endl;
-        nodo.update_observation();       
+        nodos[rank].update_observation();
         std::cout << "\nmultipliers-update... " << iters << " | Nodo: " << rank << std::endl;
-        nodo.update_multipliers();
-
-        // MESSAGE PASSING
-        struct children_observations{
-            int nodeID;
-            float current_obs;
-            float active_power_obs;
-            float reactive_power_obs;
-        };
-
-
-        float voltage_obs = nodo.node_measures.voltage;
-        float current_obs = nodo.node_measures.current;
-        float active_power_obs = nodo.node_measures.active_power;
-        float reactive_power_obs = nodo.node_measures.reactive_power;
-        
-        //Send measures to children
-        for(int i=0; i<n_childs;i++){
-            MPI_Send(&voltage_obs, 1, MPI_FLOAT, nodo.childrens_ID[i], 0, MPI_COMM_WORLD);
-            cout << "sending voltage to children..." << endl;
-        }
-
-        // Send measures to ancestor
-        if (rank>0){
-            MPI_Send(&current_obs, 1, MPI_FLOAT, nodo.ancestor_ID, 0, MPI_COMM_WORLD);
-            MPI_Send(&active_power_obs, 1, MPI_FLOAT, nodo.ancestor_ID, 0, MPI_COMM_WORLD);
-            MPI_Send(&reactive_power_obs, 1, MPI_FLOAT, nodo.ancestor_ID, 0, MPI_COMM_WORLD);
-            cout << "sending measures to ancestor..." << endl;
-        }
-        //Receive voltage from ancestor
-        float voltage_ancestor_obs;
-        if (rank>0){
-            MPI_Recv(&voltage_ancestor_obs, 1, MPI_FLOAT, nodo.ancestor_ID, 0, MPI_COMM_WORLD,
-                    MPI_STATUS_IGNORE);
-            nodo.node_measures.voltage_ancestor = voltage_ancestor_obs;
-        }
-
-        //Receive measures from children
-        float current_rec_1, current_rec_2;
-        float active_power_rec_1, active_power_rec_2;
-        float reactive_power_rec_1,reactive_power_rec_2;
-
-        if (n_childs > 0){
-            MPI_Recv(&current_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], 0, MPI_COMM_WORLD,
-                    MPI_STATUS_IGNORE);
-            MPI_Recv(&active_power_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], 0, MPI_COMM_WORLD,
-                    MPI_STATUS_IGNORE);
-            MPI_Recv(&reactive_power_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], 0, MPI_COMM_WORLD,
-                    MPI_STATUS_IGNORE);
-            nodo.children_measures[0].current = current_rec_1;
-            nodo.children_measures[0].active_power = active_power_rec_1;
-            nodo.children_measures[0].reactive_power = reactive_power_rec_1;
-
-        }
-
-        if (n_childs > 1){
-            MPI_Recv(&current_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], 0, MPI_COMM_WORLD,
-                    MPI_STATUS_IGNORE);
-            MPI_Recv(&active_power_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], 0, MPI_COMM_WORLD,
-                    MPI_STATUS_IGNORE);
-            MPI_Recv(&reactive_power_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], 0, MPI_COMM_WORLD,
-                    MPI_STATUS_IGNORE);
-            nodo.children_measures[1].current = current_rec_1;
-            nodo.children_measures[1].active_power = active_power_rec_2;
-            nodo.children_measures[1].reactive_power = reactive_power_rec_2;
-        }
-        
-        nodo.generate_state_vector();
-        nodo.update_state();
-
+        nodos[rank].update_multipliers();
         iters+=1;
     }
-
+    
     MPI_Finalize();
 
     return 0;

@@ -1,9 +1,10 @@
-clear all
+function [] = update_x(arg1)
 
-A = csvread("/home/gonzalo/workspace/opf-admm/A.csv");
-x_old = csvread("/home/gonzalo/workspace/opf-admm/x.csv");
-y = csvread("/home/gonzalo/workspace/opf-admm/y.csv");
-mu = csvread("/home/gonzalo/workspace/opf-admm/mu.csv");
+fprintf(strcat(arg1,"A.csv"))
+A = csvread(strcat(arg1,"A.csv"));
+x_old = csvread(strcat(arg1,"x.csv"));
+y = csvread(strcat(arg1,"y.csv"));
+mu = csvread(strcat(arg1,"mu.csv"));
 
 %%% Init variables OPF
 n = size(y,1);
@@ -12,7 +13,7 @@ c(3)=1;
 
 cp = zeros(n);
 cp(5)=200;
-rho=0.25;
+rho=.1;
 
 n_childs = floor((n-7)/3);
 B = zeros(3,n);
@@ -31,12 +32,12 @@ E(7,1) = 1;
 cvx_begin
     variable x(n,1)
     minimize(square(c'*x) + mu'*x + .5*rho*sum_square(x-y));
-    x(1)==1.;
     x(3)<=200;
-    x(3)>=100
+    x(3)>=10;
     x(2)<=1.1;
     x(2)>=.9;
     norm(B*x,2) <= x(1) + x(7);
 cvx_end
+csvwrite(strcat(arg1,"x.csv"),x)
 fprintf("Residuo: %f",norm(x-y,2))
-csvwrite('/home/gonzalo/workspace/opf-admm/x.csv',x)
+end

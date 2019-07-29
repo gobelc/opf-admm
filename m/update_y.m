@@ -1,12 +1,16 @@
-A = csvread("/home/gonzalo/workspace/opf-admm/A.csv");
-x = csvread("/home/gonzalo/workspace/opf-admm/x.csv");
-y = csvread("/home/gonzalo/workspace/opf-admm/y.csv");
-mu = csvread("/home/gonzalo/workspace/opf-admm/mu.csv");
+function [] = update_y(arg1)
+
+fprintf(strcat(arg1,"A.csv"))
+
+A = csvread(strcat(arg1,"A.csv"));
+x = csvread(strcat(arg1,"x.csv"));
+y = csvread(strcat(arg1,"y.csv"));
+mu = csvread(strcat(arg1,"mu.csv"));
 
 
 %%% Init variables OPF
 n = size(y);
-rho=0.25;
+rho=.1;
 
 % Problem OPF: 
 cvx_begin
@@ -16,6 +20,7 @@ cvx_begin
 cvx_end
 
 mu = mu + rho*(x - y);
-csvwrite('/home/gonzalo/workspace/opf-admm/y.csv',y)
-csvwrite('/home/gonzalo/workspace/opf-admm/mu.csv',mu)
+csvwrite(strcat(arg1,"y.csv"),y)
+csvwrite(strcat(arg1,"mu.csv"),mu)
 
+end
