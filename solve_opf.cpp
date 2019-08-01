@@ -71,6 +71,16 @@ struct child_var{
     float current;
 };
 
+struct observation_var{
+    float voltage_ancestor;
+    float voltage;
+    float active_power_gen;
+    float reactive_power_gen;
+    float active_power;
+    float reactive_power;
+    float current;
+};
+
 struct node_var{
     float voltage_ancestor;
     float voltage;
@@ -138,6 +148,8 @@ class Node: public Operation
         vector<int> childrens_ID;
         vector<child_var> children_measures;
         node_var node_measures;
+        observation_var node_observations;
+
         vector<float> state_vector;
         vector<float> observation_vector;
         vector<float> multipliers_vector;
@@ -226,7 +238,7 @@ class Node: public Operation
             cout << "paso por aca 3.. " << endl;
             while (ifs.good()) {
                 cout << std::atof(c) << endl;
-                this->observation_vector[counter] = std::atof(c);
+                this->multipliers_vector[counter] = std::atof(c);
                 ifs.getline(c,10);
                 counter+=1;
             }
@@ -257,7 +269,21 @@ class Node: public Operation
         vector<float> generate_observation_vector(){
             
             vector<float> observation_vector = this->state_vector;
-        
+
+            observation_vector.push_back(this->node_observations.voltage_ancestor);
+            observation_vector.push_back(this->node_observations.voltage);
+            observation_vector.push_back(this->node_observations.active_power_gen);
+            observation_vector.push_back(this->node_observations.reactive_power_gen);
+            observation_vector.push_back(this->node_observations.active_power);
+            observation_vector.push_back(this->node_observations.reactive_power);
+            observation_vector.push_back(this->node_observations.current);
+            
+            for(int i=0;i<this->n_childs;i++){
+                observation_vector.push_back(this->children_measures[i].active_power);
+                observation_vector.push_back(this->children_measures[i].reactive_power);
+                observation_vector.push_back(this->children_measures[i].current);
+            }    
+
             return observation_vector;
         }
 
@@ -371,8 +397,6 @@ Node::Node(int node_rank, int node_ID, int n_childs,int ancestor_ID,vector<int> 
 
 
 int main(int argc,char *argv[]){
-
-
     /*
     MPI init
     */
@@ -479,7 +503,9 @@ int main(int argc,char *argv[]){
         std::cout << "\nx-update... " << iters << " | Nodo: " << rank << std::endl;
         nodo.update_state();
         std::cout << "\ny-update... " << iters << " | Nodo: " << rank << std::endl;
-        nodo.update_observation();       
+        nodo.update_observation();
+        //nodo.generate_observation_vector();
+        nodo.write_observation_vector();     
         std::cout << "\nmultipliers-update... " << iters << " | Nodo: " << rank << std::endl;
         nodo.update_multipliers();
 
@@ -513,9 +539,12 @@ int main(int argc,char *argv[]){
         //Receive voltage from ancestor
         float voltage_ancestor_obs;
         if (rank>0){
+            cout << "Node " << nodo.node_ID << " is receiving voltage from ancestor " <<  nodo.ancestor_ID << endl;
             MPI_Recv(&voltage_ancestor_obs, 1, MPI_FLOAT, nodo.ancestor_ID, 0, MPI_COMM_WORLD,
                     MPI_STATUS_IGNORE);
             nodo.node_measures.voltage_ancestor = voltage_ancestor_obs;
+            cout << "Node " << nodo.node_ID << " received voltage from ancestor " << nodo.ancestor_ID << endl;
+
         }
 
         //Receive measures from children
@@ -549,7 +578,8 @@ int main(int argc,char *argv[]){
         }
         
         nodo.generate_state_vector();
-        nodo.update_state();
+        nodo.write_state_vector();
+
 
         iters+=1;
     }
