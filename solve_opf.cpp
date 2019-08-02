@@ -456,8 +456,8 @@ int main(int argc,char *argv[]){
             childrens_ID.push_back(neighbor_matrix[rank][i]);
         }
     }
-
-    Node nodo = Node(rank,rank,n_childs,neighbor_matrix[rank][0],childrens_ID,R_line[i],X_line[i],type);;
+    int ancestor_ID = neighbor_matrix[rank][0];
+    Node nodo = Node(rank,rank,n_childs,ancestor_ID,childrens_ID,R_line[i],X_line[i],type);;
 
     nodo.write_matrix();
     nodo.write_state_vector();
