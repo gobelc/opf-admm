@@ -174,6 +174,7 @@ class Node: public Operation
                 counter+=1;
             }
             ifs.close();
+            this->write_state_vector();
         }
 
         void update_observation(){
@@ -189,6 +190,7 @@ class Node: public Operation
                 counter+=1;
             }
             ifs.close();
+            this->write_observation_vector();
         }
 
         void write_state_vector(){
@@ -516,11 +518,11 @@ int main(int argc,char *argv[]){
         std::cout << "\nIteracion: " << iters << " | Nodo: " << rank << std::endl;
         std::cout << "\nx-update... " << iters << " | Nodo: " << rank << std::endl;
         nodo.update_state();
-        nodo.write_state_vector();     
+        //nodo.write_state_vector();     
         nodo.update_observation();
         std::cout << "\ny-update... " << iters << " | Nodo: " << rank << std::endl;
         nodo.generate_observation_vector();
-        nodo.write_observation_vector();     
+        //nodo.write_observation_vector();     
         std::cout << "\nmultipliers-update... " << iters << " | Nodo: " << rank << std::endl;
         nodo.update_multipliers();
 
@@ -599,8 +601,8 @@ int main(int argc,char *argv[]){
         //nodo.generate_state_vector();
         nodo.state_vector = nodo.generate_state_vector();
         nodo.observation_vector = nodo.generate_observation_vector();
-        nodo.write_state_vector();
-        nodo.write_observation_vector();
+        //nodo.write_state_vector();
+        //nodo.write_observation_vector();
 
         iters+=1;
     }
