@@ -16,6 +16,8 @@
 #include <cmath>
 #include <fstream>
 #include <stdlib.h>
+#include <iomanip>
+
 
 using namespace std; 
 
@@ -266,9 +268,17 @@ class Node: public Operation
             return state_vector;
         }
 
-        vector<float> generate_observation_vector(){
+
+        vector<float> init_observation_vector(){
             
             vector<float> observation_vector = this->state_vector;
+
+            return observation_vector;
+        }
+
+        vector<float> generate_observation_vector(){
+            
+            vector<float> observation_vector;
 
             observation_vector.push_back(this->node_observations.voltage_ancestor);
             observation_vector.push_back(this->node_observations.voltage);
@@ -293,6 +303,10 @@ class Node: public Operation
             vector<float> multipliers_vector(7+3*this->n_childs,.005);
         
             return multipliers_vector;
+        }
+
+        void log_screen(std::string message){
+            std::cout << "\nNodo " << this-> node_rank << "> " << message <<  std::endl;
         }
 
 
@@ -390,7 +404,7 @@ Node::Node(int node_rank, int node_ID, int n_childs,int ancestor_ID,vector<int> 
 
     // generate state vector
     this-> state_vector = generate_state_vector();
-    this-> observation_vector = generate_observation_vector();
+    this-> observation_vector = init_observation_vector();
     this-> multipliers_vector = generate_multipliers_vector();
 
 }
@@ -502,9 +516,10 @@ int main(int argc,char *argv[]){
         std::cout << "\nIteracion: " << iters << " | Nodo: " << rank << std::endl;
         std::cout << "\nx-update... " << iters << " | Nodo: " << rank << std::endl;
         nodo.update_state();
-        std::cout << "\ny-update... " << iters << " | Nodo: " << rank << std::endl;
+        nodo.write_state_vector();     
         nodo.update_observation();
-        //nodo.generate_observation_vector();
+        std::cout << "\ny-update... " << iters << " | Nodo: " << rank << std::endl;
+        nodo.generate_observation_vector();
         nodo.write_observation_vector();     
         std::cout << "\nmultipliers-update... " << iters << " | Nodo: " << rank << std::endl;
         nodo.update_multipliers();
@@ -526,6 +541,7 @@ int main(int argc,char *argv[]){
         //Send measures to children
         for(int i=0; i<n_childs;i++){
             MPI_Send(&voltage_obs, 1, MPI_FLOAT, nodo.childrens_ID[i], 0, MPI_COMM_WORLD);
+            //MPI_Send(&voltage_obs, 1, MPI_FLOAT, nodo.childrens_ID[i], 0, MPI_COMM_WORLD);
             cout << "sending voltage to children..." << endl;
         }
 
@@ -536,14 +552,17 @@ int main(int argc,char *argv[]){
             MPI_Send(&reactive_power_obs, 1, MPI_FLOAT, nodo.ancestor_ID, 0, MPI_COMM_WORLD);
             cout << "sending measures to ancestor..." << endl;
         }
+        
         //Receive voltage from ancestor
         float voltage_ancestor_obs;
         if (rank>0){
-            cout << "Node " << nodo.node_ID << " is receiving voltage from ancestor " <<  nodo.ancestor_ID << endl;
+            cout << "Node " << nodo.node_ID << " is receiving voltage from ancestor " <<  nodo.ancestor_ID  << endl;
             MPI_Recv(&voltage_ancestor_obs, 1, MPI_FLOAT, nodo.ancestor_ID, 0, MPI_COMM_WORLD,
                     MPI_STATUS_IGNORE);
             nodo.node_measures.voltage_ancestor = voltage_ancestor_obs;
-            cout << "Node " << nodo.node_ID << " received voltage from ancestor " << nodo.ancestor_ID << endl;
+            nodo.node_observations.voltage_ancestor  = voltage_ancestor_obs;
+
+            cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " received voltage from ancestor " << nodo.ancestor_ID << ". Measure: " << voltage_ancestor_obs << endl;
 
         }
 
@@ -577,9 +596,11 @@ int main(int argc,char *argv[]){
             nodo.children_measures[1].reactive_power = reactive_power_rec_2;
         }
         
-        nodo.generate_state_vector();
+        //nodo.generate_state_vector();
+        nodo.state_vector = nodo.generate_state_vector();
+        nodo.observation_vector = nodo.generate_observation_vector();
         nodo.write_state_vector();
-
+        nodo.write_observation_vector();
 
         iters+=1;
     }
