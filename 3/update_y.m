@@ -15,7 +15,7 @@ rho=0.1;
 % Problem OPF: 
 cvx_begin quiet
     variable y(n,1)
-    minimize(-mu'*y  + .5*rho*sum_square(x-y));
+    minimize(-mu'*y  + .5*rho*power(2,norm(x-y,2)));
     A*y == 0;
 cvx_end
 

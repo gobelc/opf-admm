@@ -14,7 +14,8 @@ solve_opf : solve_opf.cpp
 # Clean target
 .PHONY : clean
 clean :
-	rm solve_opf.o solve_opf 
+	rm solve_opf.o solve_opf ./0/*.dat ./1/*.dat ./2/*.dat ./3/*.dat
+
 
 .PHONY : run
 run :

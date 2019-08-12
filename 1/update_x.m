@@ -1,4 +1,4 @@
-function [] = update_x(arg1)
+function [] = update_x(arg1,arg2)
 
 %fprintf(strcat(arg1,"A.csv"))
 A = csvread(strcat(arg1,"A.csv"));
@@ -10,7 +10,7 @@ mu = csvread(strcat(arg1,"mu.csv"));
 n = size(y,1);
 c = zeros(n,1);
 c(3)=5;
-rho=0.1;
+rho=arg2;
 
 n_childs = floor((n-7)/3);
 B = zeros(3,n);
@@ -28,7 +28,7 @@ E(7,1) = 1;
 % Problem OPF: 
 cvx_begin quiet
     variable x(n,1)
-    minimize(square(c'*x) + mu'*x + .5*rho*sum_square(x-y));
+    minimize(square(c'*x) + mu'*x + .5*rho*power(2,norm(x-y,2)));
     x(2)<=1.1;
     x(2)>=.9;
     x(3)<=10;
@@ -36,8 +36,8 @@ cvx_begin quiet
     norm(B*x,2) <= x(1) + x(7);
 cvx_end
 csvwrite(strcat(arg1,"x.csv"),x)
-residuo = norm(x-y,2)
-fprintf("Residuo: %f",residuo)
+residuo = norm(x-y,2);
 dlmwrite('estado.dat',x','-append');
 dlmwrite('residuo.dat',residuo,'-append');
+dlmwrite('costo.dat',c'*x,'-append');
 end

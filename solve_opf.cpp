@@ -1,11 +1,3 @@
-
-#define SIZE 4
-#define NUM_BUSES SIZE
-#define NUM_LINES SIZE - 1
-#define MAX_NUMBER_CHILDREN 2
-#define MAX_NUMBER_NEIGHBORS MAX_NUMBER_CHILDREN + 2
-
-#define DEBUG 1
 #include <unistd.h>
 #include <mpi.h>
 #include <stdio.h>
@@ -19,7 +11,23 @@
 #include <iomanip>
 
 
-using namespace std; 
+#define DEBUG 1
+
+/// ADMM Parameters
+#define RHO .1
+
+
+/// NETWORK
+#define SIZE 4
+
+#define NUM_BUSES SIZE
+#define NUM_LINES SIZE - 1
+#define MAX_NUMBER_CHILDREN 2
+#define MAX_NUMBER_NEIGHBORS MAX_NUMBER_CHILDREN + 2
+
+using namespace std;
+
+std::string path = "/home/gonzalo/workspace/opf-admm";
 
 int adj_matrix[NUM_BUSES][NUM_BUSES] = {{0,-1,0,0},{1,0,-1,-1},{0,1,0,0},{0,1,0,0}};
 int neighbor_matrix[NUM_BUSES][MAX_NUMBER_NEIGHBORS];
@@ -162,7 +170,7 @@ class Node: public Operation
 
         void update_state(){
             string str = "sh m/update_x.sh ";
-            system((str + to_string(this->node_ID)).c_str());
+            system((str + to_string(this->node_ID) + " " + to_string(RHO) + " " + path).c_str());
             std::ifstream ifs (to_string(this->node_ID)+"/x.csv", std::ifstream::in);
             char c[10];
             ifs.getline(c,10);
@@ -192,7 +200,7 @@ class Node: public Operation
 
         void update_observation(){
             string str = "sh m/update_y.sh ";
-            system((str + to_string(this->node_ID)).c_str());
+            system((str + to_string(this->node_ID) + " " + path).c_str());
             std::ifstream ifs (to_string(this->node_ID)+"/y.csv", std::ifstream::in);
             char c[10];
             ifs.getline(c,10);
@@ -223,10 +231,8 @@ class Node: public Operation
         }
 
         void write_state_vector(){
-            cout << "\n Writing State vector:\n" <<endl;
             ofstream out(to_string(this->node_ID)+"/x.csv");
             for (float x : this->state_vector){
-                cout << x << endl;
                 out << x << endl;    
             }
 	        out.close();
@@ -234,16 +240,13 @@ class Node: public Operation
 
         void write_observation_vector(){
             ofstream out(to_string(this-> node_ID)+"/y.csv");
-            this->log_screen("Writing observation vector");
             for (float x : this->observation_vector){
-                cout <<  x << endl;
                 out <<  x << endl;    
             }
 	        out.close();
         }
         void write_multipliers_vector(){
             ofstream out(to_string(this-> node_ID)+"/mu.csv");
-            this->log_screen("Writing observation vector");
             for (float x : this->multipliers_vector){
                     out << fixed << setprecision(5) << x << endl ;    
             }
@@ -417,26 +420,21 @@ Node::Node(int node_rank, int node_ID, int n_childs,int ancestor_ID,vector<int> 
                 tempVal = -(pow(X,2)+pow(R,2)) ; // A17
             }
 
-            int child;
             if (j>6){
-                for(int c=0;c<=n_childs;c++){
-                    float tempVal = 0.;
+                int c = abs(j-7) / 3 + 1; 
+                cout << "Nodo: " << this->node_ID <<"Hijo: " <<  c << ", i= " << i << ", j= " << j <<endl;
+                if(i==1 && j==4+c*3){
+                    tempVal  =  1.; 
+                }
+                if(i==1 && j==6+c*3){
+                    tempVal  =  -R_line[childrens_ID[c-1]]; 
+                }
 
-                    child = abs(j-7) % 3; 
-                    if(i==1 && j==7+c*3){
-                        tempVal  =  1.; 
-                    }
-                    if(i==1 && j==9+c*3){
-                        tempVal  =  -R_line[childrens_ID[c]-1]; 
-                    }
-
-                    if(i==2 && j==8+c*3){
-                        tempVal  =  1.; 
-                    }
-                    if(i==2 && j==9+c*3){
-                        tempVal  =  -X_line[childrens_ID[c]-1]; 
-                    }
-
+                if(i==2 && j==5+c*3){
+                    tempVal  =  1.; 
+                }
+                if(i==2 && j==6+c*3){
+                    tempVal  = -X_line[childrens_ID[c-1]]; 
                 }
             }
 
@@ -555,17 +553,8 @@ int main(int argc,char *argv[]){
     printf("Linea %d | P = %f , Q = %f, l = %f \n", rank + 1, nodo.node_measures.active_power,nodo.node_measures.reactive_power,nodo.node_measures.current);
     
     int iters = 0;
-    //if (rank==1){
-    while(iters<200){       
-        std::cout << "\nIteracion: " << iters << " | Nodo: " << rank << std::endl;
-        std::cout << "\nx-update... " << iters << " | Nodo: " << rank << std::endl;
-        nodo.update_state();
-        std::cout << "\ny-update... " << iters << " | Nodo: " << rank << std::endl;
-        nodo.update_observation();
-        //nodo.generate_observation_vector();
-        //nodo.write_observation_vector();     
-        //std::cout << "\nmultipliers-update... " << iters << " | Nodo: " << rank << std::endl;
-        //nodo.update_multipliers();
+
+    while(iters<200){
 
         // MESSAGE PASSING
         struct children_observations{
@@ -580,38 +569,36 @@ int main(int argc,char *argv[]){
         float current_obs = nodo.node_observations.current;
         float active_power_obs = nodo.node_observations.active_power;
         float reactive_power_obs = nodo.node_observations.reactive_power;
-        
+
+        nodo.update_state();
+        nodo.update_observation();
+
         //Send measures to children
         for(int i=0; i<n_childs;i++){
-            cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending voltage to children " << nodo.childrens_ID[i]  << ". Measure: " << voltage_obs << endl;
+            //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending voltage to children " << nodo.childrens_ID[i]  << ". Measure: " << voltage_obs << endl;
             MPI_Send(&voltage_obs, 1, MPI_FLOAT, nodo.childrens_ID[i], 0, MPI_COMM_WORLD);
-            //MPI_Send(&voltage_obs, 1, MPI_FLOAT, nodo.childrens_ID[i], 0, MPI_COMM_WORLD);
-            //cout << "sending voltage to children..." << endl;
+
         }
 
         // Send measures to ancestor
         if (rank>0){
-            cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending current to ancestor " <<  nodo.ancestor_ID  << ". Measure: " << current_obs << endl;
-            cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending active_power to ancestor " <<  nodo.ancestor_ID  << ". Measure: " << active_power_obs << endl;
-            cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending reactive_power to ancestor " <<  nodo.ancestor_ID  << ". Measure: " << reactive_power_obs << endl;
-
+            //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending current to ancestor " <<  nodo.ancestor_ID  << ". Measure: " << current_obs << endl;
+            //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending active_power to ancestor " <<  nodo.ancestor_ID  << ". Measure: " << active_power_obs << endl;
+            //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending reactive_power to ancestor " <<  nodo.ancestor_ID  << ". Measure: " << reactive_power_obs << endl;
             MPI_Send(&current_obs, 1, MPI_FLOAT, nodo.ancestor_ID, 0, MPI_COMM_WORLD);
             MPI_Send(&active_power_obs, 1, MPI_FLOAT, nodo.ancestor_ID, 0, MPI_COMM_WORLD);
             MPI_Send(&reactive_power_obs, 1, MPI_FLOAT, nodo.ancestor_ID, 0, MPI_COMM_WORLD);
-            //cout << "sending measures to ancestor..." << endl;
         }
         
         //Receive voltage from ancestor
         float voltage_ancestor_obs;
         if (rank>0){
-            cout << "Node " << nodo.node_ID << " is receiving voltage from ancestor " <<  nodo.ancestor_ID  << endl;
+            //cout << "Node " << nodo.node_ID << " is receiving voltage from ancestor " <<  nodo.ancestor_ID  << endl;
             MPI_Recv(&voltage_ancestor_obs, 1, MPI_FLOAT, nodo.ancestor_ID, 0, MPI_COMM_WORLD,
                     MPI_STATUS_IGNORE);
             nodo.node_measures.voltage_ancestor = voltage_ancestor_obs;
             nodo.node_observations.voltage_ancestor  = voltage_ancestor_obs;
-
-            cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " received voltage from ancestor " << nodo.ancestor_ID << ". Measure: " << voltage_ancestor_obs << endl;
-
+            //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " received voltage from ancestor " << nodo.ancestor_ID << ". Measure: " << voltage_ancestor_obs << endl;
         }
 
         //Receive measures from children
@@ -626,10 +613,10 @@ int main(int argc,char *argv[]){
                     MPI_STATUS_IGNORE);
             MPI_Recv(&reactive_power_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], 0, MPI_COMM_WORLD,
                     MPI_STATUS_IGNORE);
+            
             nodo.children_measures[0].current = current_rec_1;
             nodo.children_measures[0].active_power = active_power_rec_1;
             nodo.children_measures[0].reactive_power = reactive_power_rec_1;
-
         }
 
         if (n_childs > 1){
@@ -639,6 +626,7 @@ int main(int argc,char *argv[]){
                     MPI_STATUS_IGNORE);
             MPI_Recv(&reactive_power_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], 0, MPI_COMM_WORLD,
                     MPI_STATUS_IGNORE);
+
             nodo.children_measures[1].current = current_rec_2;
             nodo.children_measures[1].active_power = active_power_rec_2;
             nodo.children_measures[1].reactive_power = reactive_power_rec_2;
@@ -646,10 +634,13 @@ int main(int argc,char *argv[]){
         
         nodo.state_vector = nodo.generate_state_vector();
         nodo.observation_vector = nodo.generate_observation_vector();
-        //nodo.write_state_vector();
         nodo.write_observation_vector();
 
         iters+=1;
+
+        char buffer [15];
+        sprintf(buffer, "Iteracion: %d", iters);
+        nodo.log_screen(buffer);
     }
 
     MPI_Finalize();

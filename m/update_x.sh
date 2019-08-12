@@ -1,4 +1,4 @@
 #/bin/sh
 
-cd /home/olaznog/workspace/opf-admm/$1/
-/usr/local/MATLAB/R2017a/bin/matlab -nodisplay -nojvm -nosplash -r "update_x('/home/olaznog/workspace/opf-admm/$1/');quit"
+cd $3/$1/
+/usr/local/MATLAB/R2017a/bin/matlab -nodisplay -nojvm -nosplash -r "update_x('/home/gonzalo/workspace/opf-admm/$1/',$2);quit"
