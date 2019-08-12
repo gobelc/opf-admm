@@ -1,6 +1,6 @@
 function [] = update_x(arg1)
 
-fprintf(strcat(arg1,"A.csv"))
+%fprintf(strcat(arg1,"A.csv"))
 A = csvread(strcat(arg1,"A.csv"));
 x_old = csvread(strcat(arg1,"x.csv"));
 y = csvread(strcat(arg1,"y.csv"));
@@ -13,7 +13,7 @@ c(3)=1;
 
 cp = zeros(n);
 cp(5)=200;
-rho=.1;
+rho=0.1;
 
 n_childs = floor((n-7)/3);
 B = zeros(3,n);
@@ -29,7 +29,7 @@ D(1,1) = 1;
 E(7,1) = 1;
 
 % Problem OPF: 
-cvx_begin
+cvx_begin quiet
     variable x(n,1)
     minimize(square(c'*x) + mu'*x + .5*rho*sum_square(x-y));
     x(3)<=200;
@@ -39,5 +39,8 @@ cvx_begin
     norm(B*x,2) <= x(1) + x(7);
 cvx_end
 csvwrite(strcat(arg1,"x.csv"),x)
-fprintf("Residuo: %f",norm(x-y,2))
+residuo = norm(x-y,2)
+fprintf("Residuo: %f",residuo)
+dlmwrite('estado.dat',x,'-append');
+dlmwrite('residuo.dat',residuo,'-append');
 end

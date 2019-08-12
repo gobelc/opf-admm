@@ -1,6 +1,6 @@
 function [] = update_y(arg1)
 
-fprintf(strcat(arg1,"A.csv"))
+%fprintf(strcat(arg1,"A.csv"))
 
 A = csvread(strcat(arg1,"A.csv"));
 x = csvread(strcat(arg1,"x.csv"));
@@ -10,10 +10,10 @@ mu = csvread(strcat(arg1,"mu.csv"));
 
 %%% Init variables OPF
 n = size(y);
-rho=.1;
+rho=0.001;
 
 % Problem OPF: 
-cvx_begin
+cvx_begin quiet
     variable y(n,1)
     minimize(-mu'*y  + .5*rho*sum_square(x-y));
     A*y == 0;

@@ -1,0 +1,881 @@
+mpirun -np 4 ./solve_opf 
+Hello world from processor olaznog-ThinkPad-Edge-E540, rank 0 out of 4 processors
+Hello world from processor olaznog-ThinkPad-Edge-E540, rank 1 out of 4 processors
+Hello world from processor olaznog-ThinkPad-Edge-E540, rank 2 out of 4 processors
+Hello world from processor olaznog-ThinkPad-Edge-E540, rank 3 out of 4 processors
+The vector elements are : 0 The vector elements are : 1 The vector elements are : 2 The vector elements are : 3 Node 3
+Medida 1: 1 
+Medida 2: 1 
+Medida 3: 100 
+Medida 4: 0 
+Medida 5: 100 
+Medida 6: 0 
+Medida 7: 0 
+Matriz 00: 1 
+Matriz 01: -1 
+Matriz 02: 0 
+Matriz 03: 0 
+Matriz 04: 0.66666 
+Matriz 05: 0.62626 
+Matriz 06: -0.209159 
+Matriz 10: 0 
+Matriz 11: 0 
+Matriz 12: 1 
+Matriz 13: 0 
+Matriz 14: -1 
+Matriz 15: 0 
+Matriz 16: 0 
+Matriz 20: 0 
+Matriz 21: 0 
+Matriz 22: 0 
+Matriz 23: 1 
+Matriz 24: 0 
+Matriz 25: -1 
+Matriz 26: 0 
+
+Neighbors matrix:
+Node 3: [1,3,0,0,0]
+Linea 4 | P = 100.000000 , Q = 0.000000, l = 10000.000000 
+
+Iteracion: 0 | Nodo: 3
+
+x-update... 0 | Nodo: 3
+The vector elements are : 0 The vector elements are : 1 The vector elements are : 2 The vector elements are : 3 Node 0
+Medida 1: 1 
+Medida 2: 1 
+Medida 3: 100 
+Medida 4: 0 
+Medida 5: 100 
+Medida 6: 0 
+Medida 7: 0 
+Medida 8: 0 
+Medida 9: 0 
+Medida 10: 0 
+Matriz 00: 1 
+Matriz 01: -1 
+Matriz 02: 0 
+Matriz 03: 0 
+Matriz 04: 200000 
+Matriz 05: 200000 
+Matriz 06: -2e+10 
+Matriz 07: 0 
+Matriz 08: 0 
+Matriz 09: 0 
+Matriz 10: 0 
+Matriz 11: 0 
+Matriz 12: 1 
+Matriz 13: 0 
+Matriz 14: -1 
+Matriz 15: 0 
+Matriz 16: 0 
+Matriz 17: 1 
+Matriz 18: 0 
+Matriz 19: -100000 
+Matriz 20: 0 
+Matriz 21: 0 
+Matriz 22: 0 
+Matriz 23: 1 
+Matriz 24: 0 
+Matriz 25: -1 
+Matriz 26: 0 
+Matriz 27: 0 
+Matriz 28: 1 
+Matriz 29: -100000 
+
+Neighbors matrix:
+Node 0: [-1,0,1,0,0]
+Linea 1 | P = 100.000000 , Q = 0.000000, l = 10000.000000 
+
+Iteracion: 0 | Nodo: 0
+
+x-update... 0 | Nodo: 0
+The vector elements are : 0 The vector elements are : 1 The vector elements are : 2 The vector elements are : 3 Node 1
+Medida 1: 1 
+Medida 2: 1 
+Medida 3: 100 
+Medida 4: 0 
+Medida 5: 100 
+Medida 6: 0 
+Medida 7: 0 
+Medida 8: -2147483648 
+Medida 9: 0 
+Medida 10: -2147483648 
+Medida 11: -2147483648 
+Medida 12: 0 
+Medida 13: -2147483648 
+Matriz 00: 1 
+Matriz 01: -1 
+Matriz 02: 0 
+Matriz 03: 0 
+Matriz 04: 0.22222 
+Matriz 05: 0.24242 
+Matriz 06: -0.0270373 
+Matriz 07: 0 
+Matriz 08: 0 
+Matriz 09: 0 
+Matriz 010: 0 
+Matriz 011: 0 
+Matriz 012: 0 
+Matriz 10: 0 
+Matriz 11: 0 
+Matriz 12: 1 
+Matriz 13: 0 
+Matriz 14: -1 
+Matriz 15: 0 
+Matriz 16: 0 
+Matriz 17: 1 
+Matriz 18: 0 
+Matriz 19: -0.11111 
+Matriz 110: 1 
+Matriz 111: 0 
+Matriz 112: -0.22222 
+Matriz 20: 0 
+Matriz 21: 0 
+Matriz 22: 0 
+Matriz 23: 1 
+Matriz 24: 0 
+Matriz 25: -1 
+Matriz 26: 0 
+Matriz 27: 0 
+Matriz 28: 1 
+Matriz 29: -0.12121 
+Matriz 210: 0 
+Matriz 211: 1 
+Matriz 212: -0.21212 
+
+Neighbors matrix:
+Node 1: [0,1,2,3,0]
+Linea 2 | P = 100.000000 , Q = 0.000000, l = 10000.000000 
+
+Iteracion: 0 | Nodo: 1
+
+x-update... 0 | Nodo: 1
+The vector elements are : 0 The vector elements are : 1 The vector elements are : 2 The vector elements are : 3 Node 2
+Medida 1: 1 
+Medida 2: 1 
+Medida 3: 100 
+Medida 4: 0 
+Medida 5: 100 
+Medida 6: 0 
+Medida 7: 0 
+Matriz 00: 1 
+Matriz 01: -1 
+Matriz 02: 0 
+Matriz 03: 0 
+Matriz 04: 0.44444 
+Matriz 05: 0.42424 
+Matriz 06: -0.0943766 
+Matriz 10: 0 
+Matriz 11: 0 
+Matriz 12: 1 
+Matriz 13: 0 
+Matriz 14: -1 
+Matriz 15: 0 
+Matriz 16: 0 
+Matriz 20: 0 
+Matriz 21: 0 
+Matriz 22: 0 
+Matriz 23: 1 
+Matriz 24: 0 
+Matriz 25: -1 
+Matriz 26: 0 
+
+Neighbors matrix:
+Node 2: [1,2,0,0,0]
+Linea 3 | P = 100.000000 , Q = 0.000000, l = 10000.000000 
+
+Iteracion: 0 | Nodo: 2
+
+x-update... 0 | Nodo: 2
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+ 
+ 
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+Setting CVX paths...Setting CVX paths...Setting CVX paths...Setting CVX paths...done.
+done.
+done.
+/home/olaznog/workspace/opf-admm/3/A.csv/home/olaznog/workspace/opf-admm/1/A.csv/home/olaznog/workspace/opf-admm/0/A.csvdone.
+/home/olaznog/workspace/opf-admm/2/A.csvResiduo: 122.931236Residuo: 122.931214Residuo: 122.931214Residuo: 122.931246
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+Setting CVX paths...Setting CVX paths...Setting CVX paths...done.
+/home/olaznog/workspace/opf-admm/2/A.csvSetting CVX paths...done.
+/home/olaznog/workspace/opf-admm/1/A.csvdone.
+/home/olaznog/workspace/opf-admm/3/A.csvdone.
+/home/olaznog/workspace/opf-admm/0/A.csv
+y-update... 0 | Nodo: 2
+
+multipliers-update... 0 | Nodo: 2
+sending measures to ancestor...
+Node 2 is receiving voltage from ancestor 1
+
+y-update... 0 | Nodo: 3
+
+multipliers-update... 0 | Nodo: 3
+sending measures to ancestor...
+Node 3 is receiving voltage from ancestor 1
+
+y-update... 0 | Nodo: 1
+
+multipliers-update... 0 | Nodo: 1
+sending voltage to children...
+sending voltage to children...
+sending measures to ancestor...
+Node 1 is receiving voltage from ancestor 0
+Node 2 received voltage from ancestor 1. Measure: 1.000
+
+Iteracion: 1 | Nodo: 2
+
+x-update... 1 | Nodo: 2
+Node 3 received voltage from ancestor 1. Measure: 1.000
+
+Iteracion: 1 | Nodo: 3
+
+x-update... 1 | Nodo: 3
+
+y-update... 0 | Nodo: 0
+
+multipliers-update... 0 | Nodo: 0
+sending voltage to children...
+Node 1 received voltage from ancestor 0. Measure: 1.000
+
+Iteracion: 1 | Nodo: 1
+
+x-update... 1 | Nodo: 1
+
+Iteracion: 1 | Nodo: 0
+
+x-update... 1 | Nodo: 0
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+Setting CVX paths...done.
+/home/olaznog/workspace/opf-admm/2/A.csvSetting CVX paths...done.
+Setting CVX paths.../home/olaznog/workspace/opf-admm/1/A.csvSetting CVX paths...done.
+/home/olaznog/workspace/opf-admm/3/A.csvdone.
+/home/olaznog/workspace/opf-admm/0/A.csv>> Residuo: 31.080024
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+Residuo: 30.373945Residuo: 21.887760
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+Setting CVX paths...done.
+/home/olaznog/workspace/opf-admm/2/A.csvSetting CVX paths...Setting CVX paths...done.
+/home/olaznog/workspace/opf-admm/3/A.csvdone.
+/home/olaznog/workspace/opf-admm/0/A.csv
+y-update... 1 | Nodo: 2
+
+multipliers-update... 1 | Nodo: 2
+sending measures to ancestor...
+Node 2 is receiving voltage from ancestor 1
+
+y-update... 1 | Nodo: 3
+
+multipliers-update... 1 | Nodo: 3
+sending measures to ancestor...
+Node 3 is receiving voltage from ancestor 1
+ 
+
+y-update... 1 | Nodo: 0
+
+multipliers-update... 1 | Nodo: 0
+sending voltage to children...
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+Setting CVX paths...done.
+/home/olaznog/workspace/opf-admm/1/A.csv>> 
+y-update... 1 | Nodo: 1
+
+multipliers-update... 1 | Nodo: 1
+sending voltage to children...
+sending voltage to children...
+sending measures to ancestor...
+Node 1 is receiving voltage from ancestor 0
+Node 1 received voltage from ancestor 0. Measure: 1.000
+
+Iteracion: 2 | Nodo: 1
+
+x-update... 2 | Nodo: 1
+Node 2 received voltage from ancestor 1. Measure: 1.000
+
+Iteracion: 2 | Nodo: 2
+
+x-update... 2 | Nodo: 2
+
+Iteracion: 2 | Nodo: 0
+
+x-update... 2 | Nodo: 0
+Node 3 received voltage from ancestor 1. Measure: 1.000
+
+Iteracion: 2 | Nodo: 3
+
+x-update... 2 | Nodo: 3
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+Setting CVX paths...Setting CVX paths...done.
+Setting CVX paths.../home/olaznog/workspace/opf-admm/3/A.csvdone.
+Setting CVX paths.../home/olaznog/workspace/opf-admm/2/A.csvdone.
+/home/olaznog/workspace/opf-admm/1/A.csvdone.
+/home/olaznog/workspace/opf-admm/0/A.csv>> 
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+Residuo: 9.903441Residuo: 11.901758Residuo: 10000.004277 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+Setting CVX paths...done.
+/home/olaznog/workspace/opf-admm/1/A.csv
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+>> 
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+y-update... 2 | Nodo: 1
+
+multipliers-update... 2 | Nodo: 1
+sending voltage to children...
+sending voltage to children...
+sending measures to ancestor...
+Node 1 is receiving voltage from ancestor 0
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+Setting CVX paths...done.
+Setting CVX paths.../home/olaznog/workspace/opf-admm/2/A.csvdone.
+/home/olaznog/workspace/opf-admm/3/A.csvSetting CVX paths...done.
+/home/olaznog/workspace/opf-admm/0/A.csv
+y-update... 2 | Nodo: 2
+
+multipliers-update... 2 | Nodo: 2
+sending measures to ancestor...
+Node 2 is receiving voltage from ancestor 1
+Node 2 received voltage from ancestor 1. Measure: 1.000
+
+Iteracion: 3 | Nodo: 2
+
+x-update... 3 | Nodo: 2
+
+y-update... 2 | Nodo: 3
+
+multipliers-update... 2 | Nodo: 3
+sending measures to ancestor...
+Node 3 is receiving voltage from ancestor 1
+Node 3 received voltage from ancestor 1. Measure: 1.000
+
+Iteracion: 3 | Nodo: 3
+
+x-update... 3 | Nodo: 3
+
+y-update... 2 | Nodo: 0
+
+multipliers-update... 2 | Nodo: 0
+sending voltage to children...
+Node 1 received voltage from ancestor 0. Measure: 1.000
+
+Iteracion: 3 | Nodo: 1
+
+
+Iteracion: 3 | Nodo: 0
+
+x-update... 3 | Nodo: 0
+x-update... 3 | Nodo: 1
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+Setting CVX paths...done.
+Setting CVX paths.../home/olaznog/workspace/opf-admm/2/A.csvdone.
+/home/olaznog/workspace/opf-admm/3/A.csvSetting CVX paths...done.
+/home/olaznog/workspace/opf-admm/1/A.csvSetting CVX paths...done.
+/home/olaznog/workspace/opf-admm/0/A.csv>> Residuo: 7.734037Residuo: 8.270268Residuo: 1.271653
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+Setting CVX paths...done.
+/home/olaznog/workspace/opf-admm/1/A.csv
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+>> 
+y-update... 3 | Nodo: 1
+
+multipliers-update... 3 | Nodo: 1
+sending voltage to children...
+sending voltage to children...
+sending measures to ancestor...
+Node 1 is receiving voltage from ancestor 0
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+Setting CVX paths...Setting CVX paths...done.
+/home/olaznog/workspace/opf-admm/2/A.csvdone.
+/home/olaznog/workspace/opf-admm/3/A.csvSetting CVX paths...done.
+/home/olaznog/workspace/opf-admm/0/A.csv
+y-update... 3 | Nodo: 2
+
+multipliers-update... 3 | Nodo: 2
+sending measures to ancestor...
+Node 2 is receiving voltage from ancestor 1
+Node 2 received voltage from ancestor 1. Measure: 1.000
+
+Iteracion: 4 | Nodo: 2
+
+x-update... 4 | Nodo: 2
+
+y-update... 3 | Nodo: 3
+
+multipliers-update... 3 | Nodo: 3
+sending measures to ancestor...
+Node 3 is receiving voltage from ancestor 1
+Node 3 received voltage from ancestor 1. Measure: 1.000
+
+Iteracion: 4 | Nodo: 3
+
+x-update... 4 | Nodo: 3
+
+y-update... 3 | Nodo: 0
+
+multipliers-update... 3 | Nodo: 0
+sending voltage to children...
+Node 1 received voltage from ancestor 0. Measure: 1.000
+
+Iteracion: 4 | Nodo: 1
+
+
+Iteracion: 4 | Nodo: 0
+
+x-update... 4 | Nodo: 0
+x-update... 4 | Nodo: 1
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+Setting CVX paths...done.
+/home/olaznog/workspace/opf-admm/2/A.csvSetting CVX paths... 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+done.
+/home/olaznog/workspace/opf-admm/3/A.csvSetting CVX paths...Setting CVX paths...done.
+done.
+/home/olaznog/workspace/opf-admm/0/A.csv/home/olaznog/workspace/opf-admm/1/A.csv>> >> Residuo: 6.072693Residuo: 5.458474
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+Setting CVX paths...done.
+/home/olaznog/workspace/opf-admm/1/A.csv>>  
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+
+y-update... 4 | Nodo: 1
+
+multipliers-update... 4 | Nodo: 1
+sending voltage to children...
+sending voltage to children...
+sending measures to ancestor...
+Node 1 is receiving voltage from ancestor 0
+Setting CVX paths...Setting CVX paths...done.
+done.
+/home/olaznog/workspace/opf-admm/3/A.csv/home/olaznog/workspace/opf-admm/2/A.csv
+y-update... 4 | Nodo: 3
+
+multipliers-update... 4 | Nodo: 3
+sending measures to ancestor...
+Node 3 is receiving voltage from ancestor 1
+Node 3 received voltage from ancestor 1. Measure: 1.000
+
+Iteracion: 5 | Nodo: 3
+
+x-update... 5 | Nodo: 3
+
+y-update... 4 | Nodo: 2
+
+multipliers-update... 4 | Nodo: 2
+sending measures to ancestor...
+Node 2 is receiving voltage from ancestor 1
+Node 2 received voltage from ancestor 1. Measure: 1.000
+
+Iteracion: 5 | Nodo: 2
+
+x-update... 5 | Nodo: 2
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+Setting CVX paths...Setting CVX paths...done.
+/home/olaznog/workspace/opf-admm/3/A.csvdone.
+/home/olaznog/workspace/opf-admm/2/A.csvResiduo: 3.402462Residuo: 4.540600
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.538062) 64-bit (glnxa64)
+                             February 23, 2017
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+Setting CVX paths...done.
+/home/olaznog/workspace/opf-admm/3/A.csvSetting CVX paths...done.
+/home/olaznog/workspace/opf-admm/2/A.csv
+y-update... 5 | Nodo: 3
+
+multipliers-update... 5 | Nodo: 3
+sending measures to ancestor...
+Node 3 is receiving voltage from ancestor 1
+
+y-update... 5 | Nodo: 2
+
+multipliers-update... 5 | Nodo: 2
+sending measures to ancestor...
+Node 2 is receiving voltage from ancestor 1
+makefile:21: fallo en las instrucciones para el objetivo 'run'

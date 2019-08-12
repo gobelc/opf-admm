@@ -44,6 +44,7 @@
         "typeinfo": "cpp",
         "utility": "cpp",
         "valarray": "cpp",
-        "cstdarg": "cpp"
+        "cstdarg": "cpp",
+        "iomanip": "cpp"
     }
 }
