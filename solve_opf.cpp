@@ -27,7 +27,7 @@
 
 using namespace std;
 
-std::string path = "/home/gonzalo/workspace/opf-admm";
+std::string path = "/home/olaznog/workspace/opf-admm";
 
 int adj_matrix[NUM_BUSES][NUM_BUSES] = {{0,-1,0,0},{1,0,-1,-1},{0,1,0,0},{0,1,0,0}};
 int neighbor_matrix[NUM_BUSES][MAX_NUMBER_NEIGHBORS];
