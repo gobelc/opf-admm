@@ -9,7 +9,7 @@ mu = csvread(strcat(arg1,"mu.csv"));
 %%% Init variables OPF
 n = size(y,1);
 c = zeros(n,1);
-c(3)=1;
+c(3)=-1;
 
 rho=arg2;
 
@@ -29,8 +29,8 @@ E(7,1) = 1;
 % Problem OPF: 
 cvx_begin quiet
     variable x(n,1)
-    minimize(square(c'*x) + mu'*x + .5*rho*power(2,norm(x-y,2)));
-    x(3)==-30;
+    minimize(square(c'*x) + mu'*x + .5*rho*(x-y)'*(x-y));
+    x(3)==-10;
     x(2)<=1.1;
     x(2)>=.9;
     norm(B*x,2) <= x(1) + x(7);

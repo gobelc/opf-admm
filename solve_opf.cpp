@@ -9,7 +9,7 @@
 #include <fstream>
 #include <stdlib.h>
 #include <iomanip>
-
+#include "NetworkModel.hpp"
 
 #define DEBUG 1
 
@@ -17,9 +17,8 @@
 #define RHO .1
 
 
-/// NETWORK
+/// NETWORK (THIS MUST BE A COPY OF THE NETWORK MODEL PARAMATERS)
 #define SIZE 4
-
 #define NUM_BUSES SIZE
 #define NUM_LINES SIZE - 1
 #define MAX_NUMBER_CHILDREN 2
@@ -27,40 +26,27 @@
 
 using namespace std;
 
-std::string path = "/home/olaznog/workspace/opf-admm";
-
-int adj_matrix[NUM_BUSES][NUM_BUSES] = {{0,-1,0,0},{1,0,-1,-1},{0,1,0,0},{0,1,0,0}};
-int neighbor_matrix[NUM_BUSES][MAX_NUMBER_NEIGHBORS];
-
-float v_bus[NUM_BUSES] = {1.,1.,1.,1.};
-float p_inj[NUM_BUSES] = {2.34,3.12,2.2,1.};
-float q_inj[NUM_BUSES] = {.32,.13,.23,.35};
+extern string path;
+extern int adj_matrix[NUM_BUSES][NUM_BUSES];
+extern float v_bus[NUM_BUSES];
+extern float p_inj[NUM_BUSES];
+extern float q_inj[NUM_BUSES];
+extern float R_line[NUM_BUSES];
+extern float X_line[NUM_BUSES];
 
 float P_line[NUM_LINES];
 float Q_line[NUM_LINES];
-
 float l_line[NUM_LINES];
 
-float R_line[NUM_BUSES]= {100000.,.11111,.22222,.33333};
-float X_line[NUM_BUSES]= {100000.,.12121,.21212,.31313};
- 
-struct state{
-    float voltage;
-    float p_inj;
-    float q_inj;
-    float P_line;
-    float Q_line;
-};
-
-float x[NUM_BUSES][6+1+4*MAX_NUMBER_CHILDREN]; // xi = [vi_x,pi_x,qi_x,Pi_x,Qi_x,li_x]
-float y[NUM_BUSES][6][MAX_NUMBER_NEIGHBORS]; // yij = [vij_y,pij_y,qij_y,Pij_y,Qij_y,lij_y] \ TRIDIMENSIONAL ARRAY: NODE * VARIABLE * NEIGHBOR.
+int neighbor_matrix[NUM_BUSES][MAX_NUMBER_NEIGHBORS];
 
 // Create observation vectors containing floats
 
-struct observation22{
+/*struct observation22{
     vector<int> y;
     int bus_number;
 };
+*/
 
 void print(vector <int> const &a) {
    cout << "The vector elements are : ";
@@ -178,7 +164,7 @@ class Node: public Operation
             float measure;
             while (ifs.good()) {
                 measure = std::atof(c);
-                this->state_vector[counter] = measure;/*
+                this->state_vector[counter] = measure;
                 if (counter==0){ this->node_measures.voltage_ancestor = measure;}
                 if (counter==1){ this->node_measures.voltage = measure;}
                 if (counter==2){ this->node_measures.active_power_gen = measure;}
@@ -191,7 +177,7 @@ class Node: public Operation
                 if (counter==9){ this->children_measures[0].current = measure;}
                 if (counter==10){ this->children_measures[1].active_power = measure;}
                 if (counter==11){ this->children_measures[1].reactive_power = measure;}
-                if (counter==12){ this->children_measures[1].current = measure;}       */ 
+                if (counter==12){ this->children_measures[1].current = measure;}        
                 ifs.getline(c,10);
                 counter+=1;
             }
@@ -200,7 +186,7 @@ class Node: public Operation
 
         void update_observation(){
             string str = "sh m/update_y.sh ";
-            system((str + to_string(this->node_ID) + " " + path).c_str());
+            system((str + to_string(this->node_ID) + " " + to_string(RHO) + " " + path).c_str());
             std::ifstream ifs (to_string(this->node_ID)+"/y.csv", std::ifstream::in);
             char c[10];
             ifs.getline(c,10);
@@ -471,7 +457,7 @@ int main(int argc,char *argv[]){
     printf("Hello world from processor %s, rank %d out of %d processors\n",
            processor_name, rank, numtasks);
 
-    /* inicializacion */
+    /* inicializacion 
     observation22 observations[NUM_BUSES];
 
 
@@ -480,7 +466,7 @@ int main(int argc,char *argv[]){
         observations[i].bus_number = i;
         print(observations[i].y);
     }
-
+    */
     
     // Make neighbor matrix
     int c;
@@ -633,6 +619,7 @@ int main(int argc,char *argv[]){
         }
         
         nodo.state_vector = nodo.generate_state_vector();
+        nodo.write_state_vector();
         nodo.observation_vector = nodo.generate_observation_vector();
         nodo.write_observation_vector();
 

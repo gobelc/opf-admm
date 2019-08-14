@@ -29,9 +29,10 @@ E(7,1) = 1;
 % Problem OPF: 
 cvx_begin
     variable x(n,1)
-    minimize(square(c'*x) + mu'*x + .5*rho*power(2,norm(x-y,2)));
+    minimize(square(c'*x) + mu'*x + .5*rho*(x-y)'*(x-y));
     x(1)==1.;
-    x(2)==1.;
+    x(2)<=1.1;
+    x(2)>=.9;
     x(3)<=10;
     x(3)>=0.;
     x(5)==0.;
