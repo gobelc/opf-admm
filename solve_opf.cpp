@@ -13,8 +13,10 @@
 
 #define DEBUG 1
 
+
 /// ADMM Parameters
 #define RHO .1
+#define MAX_ITER 200
 
 
 /// NETWORK (THIS MUST BE A COPY OF THE NETWORK MODEL PARAMATERS)
@@ -31,8 +33,8 @@ extern int adj_matrix[NUM_BUSES][NUM_BUSES];
 extern float v_bus[NUM_BUSES];
 extern float p_inj[NUM_BUSES];
 extern float q_inj[NUM_BUSES];
-extern float R_line[NUM_BUSES];
-extern float X_line[NUM_BUSES];
+extern float R_line[NUM_BUSES-1];
+extern float X_line[NUM_BUSES-1];
 
 float P_line[NUM_LINES];
 float Q_line[NUM_LINES];
@@ -165,6 +167,7 @@ class Node: public Operation
             while (ifs.good()) {
                 measure = std::atof(c);
                 this->state_vector[counter] = measure;
+                /*
                 if (counter==0){ this->node_measures.voltage_ancestor = measure;}
                 if (counter==1){ this->node_measures.voltage = measure;}
                 if (counter==2){ this->node_measures.active_power_gen = measure;}
@@ -177,7 +180,8 @@ class Node: public Operation
                 if (counter==9){ this->children_measures[0].current = measure;}
                 if (counter==10){ this->children_measures[1].active_power = measure;}
                 if (counter==11){ this->children_measures[1].reactive_power = measure;}
-                if (counter==12){ this->children_measures[1].current = measure;}        
+                if (counter==12){ this->children_measures[1].current = measure;}       
+                */
                 ifs.getline(c,10);
                 counter+=1;
             }
@@ -384,8 +388,14 @@ Node::Node(int node_rank, int node_ID, int n_childs,int ancestor_ID,vector<int> 
             if (i==0 && j==1){
                 tempVal = -1.; //A12
             }
+            if (i==1 && j==0){
+                tempVal = -R/(pow(X,2)+pow(R,2)); //A21
+            }
             if (i==1 && j==2){
                 tempVal = 1.; // A23
+            }
+            if (i==2 && j==0){
+                tempVal = -X/(pow(X,2)+pow(R,2)); //A21
             }
             if (i==2 && j==3){
                 tempVal = 1.; // A34
@@ -540,7 +550,7 @@ int main(int argc,char *argv[]){
     
     int iters = 0;
 
-    while(iters<200){
+    while(iters<MAX_ITER){
 
         // MESSAGE PASSING
         struct children_observations{
@@ -619,7 +629,7 @@ int main(int argc,char *argv[]){
         }
         
         nodo.state_vector = nodo.generate_state_vector();
-        nodo.write_state_vector();
+        //nodo.write_state_vector();
         nodo.observation_vector = nodo.generate_observation_vector();
         nodo.write_observation_vector();
 
