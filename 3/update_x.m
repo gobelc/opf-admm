@@ -9,7 +9,7 @@ mu = csvread(strcat(arg1,"mu.csv"));
 %%% Init variables OPF
 n = size(y,1);
 c = zeros(n,1);
-c(3)=1;
+c(3)=1/100;
 
 cp = zeros(n);
 cp(5)=200;
@@ -32,10 +32,12 @@ E(7,1) = 1;
 cvx_begin quiet
     variable x(n,1)
     minimize(square(c'*x) + mu'*x + .5*rho*(x-y)'*(x-y));
-    x(3)<=20;
-    x(3)>=-10;
+    x(3)==-20;
+    %x(3)>=-10;
     x(2)<=1.1;
     x(2)>=.9;
+    x(1)<=1.1;
+    x(1)>=.9;
     norm(B*x,2) <= x(1) + x(7);
 cvx_end
 csvwrite(strcat(arg1,"x.csv"),x)

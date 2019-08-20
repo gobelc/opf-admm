@@ -15,7 +15,7 @@
 
 
 /// ADMM Parameters
-#define RHO .1
+#define RHO 1.
 #define MAX_ITER 200
 
 
@@ -41,7 +41,7 @@ float Q_line[NUM_LINES];
 float l_line[NUM_LINES];
 
 int neighbor_matrix[NUM_BUSES][MAX_NUMBER_NEIGHBORS];
-
+//float rho = RHO;
 // Create observation vectors containing floats
 
 /*struct observation22{
@@ -157,6 +157,14 @@ class Node: public Operation
         }
 
         void update_state(){
+            /*
+            std::ifstream ifs1 (to_string(this->node_ID)+"/rho.csv", std::ifstream::in);
+            char c_rho[10];
+            ifs1.getline(c_rho,10);
+            ifs1.close();
+            rho = std::atof(c_rho);
+            */
+            cout << fixed << setprecision(5) << rho <<endl;
             string str = "sh m/update_x.sh ";
             system((str + to_string(this->node_ID) + " " + to_string(RHO) + " " + path).c_str());
             std::ifstream ifs (to_string(this->node_ID)+"/x.csv", std::ifstream::in);
@@ -167,7 +175,6 @@ class Node: public Operation
             while (ifs.good()) {
                 measure = std::atof(c);
                 this->state_vector[counter] = measure;
-                /*
                 if (counter==0){ this->node_measures.voltage_ancestor = measure;}
                 if (counter==1){ this->node_measures.voltage = measure;}
                 if (counter==2){ this->node_measures.active_power_gen = measure;}
@@ -180,8 +187,7 @@ class Node: public Operation
                 if (counter==9){ this->children_measures[0].current = measure;}
                 if (counter==10){ this->children_measures[1].active_power = measure;}
                 if (counter==11){ this->children_measures[1].reactive_power = measure;}
-                if (counter==12){ this->children_measures[1].current = measure;}       
-                */
+                if (counter==12){ this->children_measures[1].current = measure;}
                 ifs.getline(c,10);
                 counter+=1;
             }
@@ -189,6 +195,13 @@ class Node: public Operation
         }
 
         void update_observation(){
+            /*
+            std::ifstream ifs2 (to_string(this->node_ID)+"/rho.csv", std::ifstream::in);
+            char c_rho[10];
+            ifs2.getline(c_rho,10);
+            ifs2.close();
+            rho = std::atof(c_rho);
+            */
             string str = "sh m/update_y.sh ";
             system((str + to_string(this->node_ID) + " " + to_string(RHO) + " " + path).c_str());
             std::ifstream ifs (to_string(this->node_ID)+"/y.csv", std::ifstream::in);
@@ -366,6 +379,7 @@ Node::Node(int node_rank, int node_ID, int n_childs,int ancestor_ID,vector<int> 
     child_var_init.active_power = 0.;
     child_var_init.reactive_power = 0.;
 
+    int root = 0;
     for(int i=0;i<n_childs;i++){
         this->children_measures.push_back(child_var_init);
     }
@@ -374,6 +388,15 @@ Node::Node(int node_rank, int node_ID, int n_childs,int ancestor_ID,vector<int> 
     int CC = 7+3*n_childs;
     int RR = 3;
     vector<vector<float>> matrix;
+    float R_anc, X_anc, g, b = 0;
+    /*
+    if (node_ID != root){
+        R_anc = R_line[ancestor_ID];
+        X_anc = X_line[ancestor_ID];
+        g=R_anc/(pow(X_anc,2)+pow(R_anc,2));
+        b=X_anc/(pow(X_anc,2)+pow(R_anc,2));
+    } // shunt impedance
+    */
 
     //cin>>CC; cin>>RR; already done
     for(int i = 0; i<RR; i++)
@@ -384,27 +407,35 @@ Node::Node(int node_rank, int node_ID, int n_childs,int ancestor_ID,vector<int> 
             float tempVal = 0.;
             if (i==0 && j==0){
                 tempVal = 1.; //A11
+                if (node_ID == root) tempVal=0;
             }
             if (i==0 && j==1){
                 tempVal = -1.; //A12
             }
             if (i==1 && j==0){
-                tempVal = -R/(pow(X,2)+pow(R,2)); //A21
+                tempVal = -g; //A21
+                if (node_ID == root) tempVal=0;
             }
             if (i==1 && j==2){
                 tempVal = 1.; // A23
             }
             if (i==2 && j==0){
-                tempVal = -X/(pow(X,2)+pow(R,2)); //A21
+                tempVal = -b; //A21
+                if (node_ID == root) tempVal=0;
+
             }
             if (i==2 && j==3){
                 tempVal = 1.; // A34
             }
             if (i==1 && j==4){
                 tempVal = -1.; // A25
+                if (node_ID == root) tempVal=0;
+
             }
             if (i==2 && j==5){
                 tempVal = -1.; // A36
+                if (node_ID == root) tempVal=0;
+
             }
             if (i==0 && j==4){
                 tempVal = 2*R; // A15
@@ -414,6 +445,7 @@ Node::Node(int node_rank, int node_ID, int n_childs,int ancestor_ID,vector<int> 
             }
             if (i==0 && j==6){
                 tempVal = -(pow(X,2)+pow(R,2)) ; // A17
+                if (node_ID == root) tempVal=0;
             }
 
             if (j>6){
@@ -509,7 +541,7 @@ int main(int argc,char *argv[]){
         }
     }
     int ancestor_ID = neighbor_matrix[rank][0];
-    Node nodo = Node(rank,rank,n_childs,ancestor_ID,childrens_ID,R_line[i],X_line[i],type);;
+    Node nodo = Node(rank,rank,n_childs,ancestor_ID,childrens_ID, i>0? R_line[i-1]:.0,i>0? X_line[i-1]:.0,type);
 
     nodo.write_matrix();
     nodo.write_state_vector();
@@ -571,16 +603,16 @@ int main(int argc,char *argv[]){
 
         //Send measures to children
         for(int i=0; i<n_childs;i++){
-            //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending voltage to children " << nodo.childrens_ID[i]  << ". Measure: " << voltage_obs << endl;
+            cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending voltage to children " << nodo.childrens_ID[i]  << ". Measure: " << voltage_obs << endl;
             MPI_Send(&voltage_obs, 1, MPI_FLOAT, nodo.childrens_ID[i], 0, MPI_COMM_WORLD);
 
         }
 
         // Send measures to ancestor
         if (rank>0){
-            //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending current to ancestor " <<  nodo.ancestor_ID  << ". Measure: " << current_obs << endl;
-            //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending active_power to ancestor " <<  nodo.ancestor_ID  << ". Measure: " << active_power_obs << endl;
-            //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending reactive_power to ancestor " <<  nodo.ancestor_ID  << ". Measure: " << reactive_power_obs << endl;
+            cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending current to ancestor " <<  nodo.ancestor_ID  << ". Measure: " << current_obs << endl;
+            cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending active_power to ancestor " <<  nodo.ancestor_ID  << ". Measure: " << active_power_obs << endl;
+            cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending reactive_power to ancestor " <<  nodo.ancestor_ID  << ". Measure: " << reactive_power_obs << endl;
             MPI_Send(&current_obs, 1, MPI_FLOAT, nodo.ancestor_ID, 0, MPI_COMM_WORLD);
             MPI_Send(&active_power_obs, 1, MPI_FLOAT, nodo.ancestor_ID, 0, MPI_COMM_WORLD);
             MPI_Send(&reactive_power_obs, 1, MPI_FLOAT, nodo.ancestor_ID, 0, MPI_COMM_WORLD);
@@ -589,12 +621,12 @@ int main(int argc,char *argv[]){
         //Receive voltage from ancestor
         float voltage_ancestor_obs;
         if (rank>0){
-            //cout << "Node " << nodo.node_ID << " is receiving voltage from ancestor " <<  nodo.ancestor_ID  << endl;
+            cout << "Node " << nodo.node_ID << " is receiving voltage from ancestor " <<  nodo.ancestor_ID  << endl;
             MPI_Recv(&voltage_ancestor_obs, 1, MPI_FLOAT, nodo.ancestor_ID, 0, MPI_COMM_WORLD,
                     MPI_STATUS_IGNORE);
-            nodo.node_measures.voltage_ancestor = voltage_ancestor_obs;
-            nodo.node_observations.voltage_ancestor  = voltage_ancestor_obs;
-            //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " received voltage from ancestor " << nodo.ancestor_ID << ". Measure: " << voltage_ancestor_obs << endl;
+            nodo.node_measures.voltage_ancestor = .5* (nodo.node_measures.voltage_ancestor + voltage_ancestor_obs);
+            nodo.node_observations.voltage_ancestor  = .5*(nodo.node_observations.voltage_ancestor + voltage_ancestor_obs);
+            cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " received voltage from ancestor " << nodo.ancestor_ID << ". Measure: " << voltage_ancestor_obs << endl;
         }
 
         //Receive measures from children
@@ -610,9 +642,9 @@ int main(int argc,char *argv[]){
             MPI_Recv(&reactive_power_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], 0, MPI_COMM_WORLD,
                     MPI_STATUS_IGNORE);
             
-            nodo.children_measures[0].current = current_rec_1;
-            nodo.children_measures[0].active_power = active_power_rec_1;
-            nodo.children_measures[0].reactive_power = reactive_power_rec_1;
+            nodo.children_measures[0].current = .5*(nodo.children_measures[0].current + current_rec_1);
+            nodo.children_measures[0].active_power = .5*(nodo.children_measures[0].active_power + active_power_rec_1);
+            nodo.children_measures[0].reactive_power = .5*(nodo.children_measures[0].reactive_power + reactive_power_rec_1);
         }
 
         if (n_childs > 1){
@@ -623,15 +655,15 @@ int main(int argc,char *argv[]){
             MPI_Recv(&reactive_power_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], 0, MPI_COMM_WORLD,
                     MPI_STATUS_IGNORE);
 
-            nodo.children_measures[1].current = current_rec_2;
-            nodo.children_measures[1].active_power = active_power_rec_2;
-            nodo.children_measures[1].reactive_power = reactive_power_rec_2;
+            nodo.children_measures[1].current = .5*(nodo.children_measures[1].current + current_rec_2);
+            nodo.children_measures[1].active_power = .5*(nodo.children_measures[1].active_power + active_power_rec_2);
+            nodo.children_measures[1].reactive_power = .5*(nodo.children_measures[1].reactive_power + reactive_power_rec_2);
         }
         
         nodo.state_vector = nodo.generate_state_vector();
-        //nodo.write_state_vector();
-        nodo.observation_vector = nodo.generate_observation_vector();
-        nodo.write_observation_vector();
+        nodo.write_state_vector();
+        //nodo.observation_vector = nodo.generate_observation_vector();
+        //nodo.write_observation_vector();
 
         iters+=1;
 
