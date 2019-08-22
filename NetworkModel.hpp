@@ -1,4 +1,4 @@
-std::string path = "/home/olaznog/workspace/opf-admm";
+std::string path = "/home/gonzalo/workspace/opf-admm";
 
 #define SIZE 4 // Change here
 #define NUM_BUSES SIZE
@@ -12,6 +12,6 @@ float v_bus[NUM_BUSES] = {1.,1.,1.,1.}; // Change here
 float p_inj[NUM_BUSES] = {2.34,3.12,2.2,1.}; // Change here
 float q_inj[NUM_BUSES] = {.32,.13,.23,.35}; // Change here
 
-float R_line[NUM_BUSES-1]= {1.632,1.088,3.6432}; // Change here
-float X_line[NUM_BUSES-1]= {1.1019,.7346,1.5188}; // Change here
+float R_line[NUM_BUSES-1]= {1.632,1.088,1.088}; // Change here
+float X_line[NUM_BUSES-1]= {1.1019,.7346,.7346}; // Change here
 

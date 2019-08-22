@@ -157,16 +157,16 @@ class Node: public Operation
         }
 
         void update_state(){
-            /*
+            
             std::ifstream ifs1 (to_string(this->node_ID)+"/rho.csv", std::ifstream::in);
             char c_rho[10];
             ifs1.getline(c_rho,10);
             ifs1.close();
             rho = std::atof(c_rho);
-            */
+            
             cout << fixed << setprecision(5) << rho <<endl;
             string str = "sh m/update_x.sh ";
-            system((str + to_string(this->node_ID) + " " + to_string(RHO) + " " + path).c_str());
+            system((str + to_string(this->node_ID) + " " + to_string(rho) + " " + path).c_str());
             std::ifstream ifs (to_string(this->node_ID)+"/x.csv", std::ifstream::in);
             char c[10];
             ifs.getline(c,10);
@@ -195,15 +195,15 @@ class Node: public Operation
         }
 
         void update_observation(){
-            /*
+            
             std::ifstream ifs2 (to_string(this->node_ID)+"/rho.csv", std::ifstream::in);
             char c_rho[10];
             ifs2.getline(c_rho,10);
             ifs2.close();
             rho = std::atof(c_rho);
-            */
+            
             string str = "sh m/update_y.sh ";
-            system((str + to_string(this->node_ID) + " " + to_string(RHO) + " " + path).c_str());
+            system((str + to_string(this->node_ID) + " " + to_string(rho) + " " + path).c_str());
             std::ifstream ifs (to_string(this->node_ID)+"/y.csv", std::ifstream::in);
             char c[10];
             ifs.getline(c,10);
@@ -389,14 +389,14 @@ Node::Node(int node_rank, int node_ID, int n_childs,int ancestor_ID,vector<int> 
     int RR = 3;
     vector<vector<float>> matrix;
     float R_anc, X_anc, g, b = 0;
-    /*
+    
     if (node_ID != root){
         R_anc = R_line[ancestor_ID];
         X_anc = X_line[ancestor_ID];
         g=R_anc/(pow(X_anc,2)+pow(R_anc,2));
         b=X_anc/(pow(X_anc,2)+pow(R_anc,2));
     } // shunt impedance
-    */
+    
 
     //cin>>CC; cin>>RR; already done
     for(int i = 0; i<RR; i++)

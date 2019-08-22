@@ -1,7 +1,20 @@
 clc
 close all
 
-path = '../data/19_08_19_4/';
+path = '../data/22_08_19_2/';
+
+R_line= [1.632,1.088,1.088];
+X_line= [1.1019,.7346,.7346];
+
+obs0 = csvread(strcat(path,'0/observacion.dat'));
+obs1 = csvread(strcat(path,'1/observacion.dat'));
+obs2 = csvread(strcat(path,'2/observacion.dat'));
+obs3 = csvread(strcat(path,'3/observacion.dat'));
+
+x0 = csvread(strcat(path,'0/estado.dat'));
+x1 = csvread(strcat(path,'1/estado.dat'));
+x2 = csvread(strcat(path,'2/estado.dat'));
+x3 = csvread(strcat(path,'3/estado.dat'));
 
 A0 = csvread(strcat(path,'0/A.csv'));
 A1 = csvread(strcat(path,'1/A.csv'));
@@ -38,6 +51,11 @@ v_bus = [v0(index) v1(index) v2(index) v3(index)]
 p_iny = [p0(index) p1(index) p2(index) p3(index)]
 q_iny = [q0(index) q1(index) q2(index) q3(index)]
 
+p_line = [P0(index) P1(index) P2(index) P3(index)]
+q_line = [Q0(index) Q1(index) Q2(index) Q3(index)]
+loss_line = [0 R_line(1)*l1(index) R_line(2)*l2(index) R_line(3)*l3(index)]
+current_line = [l0(index) l1(index) l2(index) l3(index)]
+
 x0(index,:)
 size(x0(index,:))
 size(y0(index,:))
@@ -47,3 +65,17 @@ A3*y3(index,:)'
 
 figure()
 plot(x1(:,2:7))
+
+
+% Residuo global
+r= [r0,r1,r2,r3];
+norma = zeros(200,1);
+for i=1:1:200
+    norma(i) = norm(r(i,:),2);
+end
+
+
+figure()
+plot(norma)
+
+
