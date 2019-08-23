@@ -28,6 +28,7 @@
 
 using namespace std;
 
+
 extern string path;
 extern int adj_matrix[NUM_BUSES][NUM_BUSES];
 extern float v_bus[NUM_BUSES];
@@ -35,6 +36,7 @@ extern float p_inj[NUM_BUSES];
 extern float q_inj[NUM_BUSES];
 extern float R_line[NUM_BUSES-1];
 extern float X_line[NUM_BUSES-1];
+extern float S_base;
 
 float P_line[NUM_LINES];
 float Q_line[NUM_LINES];
@@ -389,13 +391,15 @@ Node::Node(int node_rank, int node_ID, int n_childs,int ancestor_ID,vector<int> 
     int RR = 3;
     vector<vector<float>> matrix;
     float R_anc, X_anc, g, b = 0;
-    
+
+    /*
     if (node_ID != root){
         R_anc = R_line[ancestor_ID];
         X_anc = X_line[ancestor_ID];
         g=R_anc/(pow(X_anc,2)+pow(R_anc,2));
         b=X_anc/(pow(X_anc,2)+pow(R_anc,2));
     } // shunt impedance
+    */
     
 
     //cin>>CC; cin>>RR; already done
@@ -613,9 +617,9 @@ int main(int argc,char *argv[]){
             cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending current to ancestor " <<  nodo.ancestor_ID  << ". Measure: " << current_obs << endl;
             cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending active_power to ancestor " <<  nodo.ancestor_ID  << ". Measure: " << active_power_obs << endl;
             cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending reactive_power to ancestor " <<  nodo.ancestor_ID  << ". Measure: " << reactive_power_obs << endl;
-            MPI_Send(&current_obs, 1, MPI_FLOAT, nodo.ancestor_ID, 0, MPI_COMM_WORLD);
-            MPI_Send(&active_power_obs, 1, MPI_FLOAT, nodo.ancestor_ID, 0, MPI_COMM_WORLD);
-            MPI_Send(&reactive_power_obs, 1, MPI_FLOAT, nodo.ancestor_ID, 0, MPI_COMM_WORLD);
+            MPI_Send(&current_obs, 1, MPI_FLOAT, nodo.ancestor_ID, nodo.node_ID*1, MPI_COMM_WORLD);
+            MPI_Send(&active_power_obs, 1, MPI_FLOAT, nodo.ancestor_ID, nodo.node_ID*2, MPI_COMM_WORLD);
+            MPI_Send(&reactive_power_obs, 1, MPI_FLOAT, nodo.ancestor_ID, nodo.node_ID*3, MPI_COMM_WORLD);
         }
         
         //Receive voltage from ancestor
@@ -635,11 +639,11 @@ int main(int argc,char *argv[]){
         float reactive_power_rec_1,reactive_power_rec_2;
 
         if (n_childs > 0){
-            MPI_Recv(&current_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], 0, MPI_COMM_WORLD,
+            MPI_Recv(&current_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], nodo.node_ID*1, MPI_COMM_WORLD,
                     MPI_STATUS_IGNORE);
-            MPI_Recv(&active_power_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], 0, MPI_COMM_WORLD,
+            MPI_Recv(&active_power_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], nodo.node_ID*2, MPI_COMM_WORLD,
                     MPI_STATUS_IGNORE);
-            MPI_Recv(&reactive_power_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], 0, MPI_COMM_WORLD,
+            MPI_Recv(&reactive_power_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], nodo.node_ID*3, MPI_COMM_WORLD,
                     MPI_STATUS_IGNORE);
             
             nodo.children_measures[0].current = .5*(nodo.children_measures[0].current + current_rec_1);
@@ -648,11 +652,11 @@ int main(int argc,char *argv[]){
         }
 
         if (n_childs > 1){
-            MPI_Recv(&current_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], 0, MPI_COMM_WORLD,
+            MPI_Recv(&current_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], nodo.node_ID*1, MPI_COMM_WORLD,
                     MPI_STATUS_IGNORE);
-            MPI_Recv(&active_power_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], 0, MPI_COMM_WORLD,
+            MPI_Recv(&active_power_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], nodo.node_ID*2, MPI_COMM_WORLD,
                     MPI_STATUS_IGNORE);
-            MPI_Recv(&reactive_power_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], 0, MPI_COMM_WORLD,
+            MPI_Recv(&reactive_power_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], nodo.node_ID*3, MPI_COMM_WORLD,
                     MPI_STATUS_IGNORE);
 
             nodo.children_measures[1].current = .5*(nodo.children_measures[1].current + current_rec_2);

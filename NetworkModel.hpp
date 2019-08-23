@@ -8,10 +8,12 @@ std::string path = "/home/gonzalo/workspace/opf-admm";
 
 int adj_matrix[NUM_BUSES][NUM_BUSES] = {{0,-1,0,0},{1,0,-1,-1},{0,1,0,0},{0,1,0,0}}; // Change here
 
+
+float S_base = 100.0; // MVA
 float v_bus[NUM_BUSES] = {1.,1.,1.,1.}; // Change here
 float p_inj[NUM_BUSES] = {2.34,3.12,2.2,1.}; // Change here
 float q_inj[NUM_BUSES] = {.32,.13,.23,.35}; // Change here
 
-float R_line[NUM_BUSES-1]= {1.632,1.088,1.088}; // Change here
-float X_line[NUM_BUSES-1]= {1.1019,.7346,.7346}; // Change here
+float R_line[NUM_BUSES-1]= {0.00304,0.00304,0.00304}; // Change here
+float X_line[NUM_BUSES-1]= {0.0304,0.0304,0.0304}; // Change here
 

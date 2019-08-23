@@ -20,10 +20,17 @@ A0 = csvread(strcat(path,'0/A.csv'));
 A1 = csvread(strcat(path,'1/A.csv'));
 A2 = csvread(strcat(path,'2/A.csv'));
 A3 = csvread(strcat(path,'3/A.csv'));
+
 r0 = csvread(strcat(path,'0/residuo.dat'));
 r1 = csvread(strcat(path,'1/residuo.dat'));
 r2 = csvread(strcat(path,'2/residuo.dat'));
 r3 = csvread(strcat(path,'3/residuo.dat'));
+
+r_d0 = csvread(strcat(path,'0/residuo_dual.dat'));
+r_d1 = csvread(strcat(path,'1/residuo_dual.dat'));
+r_d2 = csvread(strcat(path,'2/residuo_dual.dat'));
+r_d3 = csvread(strcat(path,'3/residuo_dual.dat'));
+
 [v_ancestor0,v0,p0,q0,P0,Q0,l0,P10,Q10,l10] = load_node_root(strcat(path,'0/estado.dat'), 1, 200);
 [v_ancestor1,v1,p1,q1,P1,Q1,l1,P11,Q11,l11,P21,Q21,l21] = load_node1(strcat(path,'1/estado.dat'), 1, 200);
 [v_ancestor2,v2,p2,q2,P2,Q2,l2] = load_node_leaf(strcat(path,'2/estado.dat'), 1, 200);
