@@ -1,4 +1,4 @@
-std::string path = "/home/olaznog/workspace/opf-admm";
+std::string path = "/home/gonzalo/workspace/opf-admm";
 
 #define SIZE 4 // Change here
 #define NUM_BUSES SIZE

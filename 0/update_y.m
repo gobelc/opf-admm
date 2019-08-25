@@ -24,13 +24,13 @@ cvx_end
 mu = mu + rho*(x - y);
 residuo = norm(x-y);
 residuo_dual = rho * norm(y-y_old,2);
-%tau = .01;
+tau = 2;
 
-%if residuo>residuo_dual
-%    rho = rho*(1+tau);
-%elseif residuo_dual > 10 * residuo
-%    rho = rho*(1-tau);
-%end      
+if residuo>residuo_dual
+    rho = tau*rho;
+elseif residuo_dual > 10 * residuo
+    rho = rho/tau;
+end      
     
 csvwrite(strcat(arg1,"y.csv"),y)
 csvwrite(strcat(arg1,"mu.csv"),mu)
