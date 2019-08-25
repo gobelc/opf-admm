@@ -1,2 +1,3 @@
 *.o
-solve_opf
+solve_opp
+NetworkModel.hpp
