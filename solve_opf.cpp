@@ -16,7 +16,7 @@
 
 /// ADMM Parameters
 #define RHO 1.
-#define MAX_ITER 200
+#define MAX_ITER 100
 
 
 /// NETWORK (THIS MUST BE A COPY OF THE NETWORK MODEL PARAMATERS)
@@ -459,14 +459,17 @@ Node::Node(int node_rank, int node_ID, int n_childs,int ancestor_ID,vector<int> 
                     tempVal  =  1.; 
                 }
                 if(i==1 && j==6+c*3){
-                    tempVal  =  -R_line[childrens_ID[c-1]]; 
+                    tempVal  =  -R_line[childrens_ID[c-1]-1]; 
+                    cout << "Impedancia R linea hijo:" << tempVal <<endl;
                 }
 
                 if(i==2 && j==5+c*3){
                     tempVal  =  1.; 
                 }
                 if(i==2 && j==6+c*3){
-                    tempVal  = -X_line[childrens_ID[c-1]]; 
+                    tempVal  = -X_line[childrens_ID[c-1]-1]; 
+                    cout << "Impedancia Q linea hijo:" << tempVal<<endl;
+
                 }
             }
 
@@ -617,9 +620,9 @@ int main(int argc,char *argv[]){
             cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending current to ancestor " <<  nodo.ancestor_ID  << ". Measure: " << current_obs << endl;
             cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending active_power to ancestor " <<  nodo.ancestor_ID  << ". Measure: " << active_power_obs << endl;
             cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending reactive_power to ancestor " <<  nodo.ancestor_ID  << ". Measure: " << reactive_power_obs << endl;
-            MPI_Send(&current_obs, 1, MPI_FLOAT, nodo.ancestor_ID, nodo.node_ID, MPI_COMM_WORLD);
-            MPI_Send(&active_power_obs, 1, MPI_FLOAT, nodo.ancestor_ID, nodo.node_ID+1, MPI_COMM_WORLD);
-            MPI_Send(&reactive_power_obs, 1, MPI_FLOAT, nodo.ancestor_ID, nodo.node_ID+2, MPI_COMM_WORLD);
+            MPI_Send(&current_obs, 1, MPI_FLOAT, nodo.ancestor_ID, nodo.node_ID+100, MPI_COMM_WORLD);
+            MPI_Send(&active_power_obs, 1, MPI_FLOAT, nodo.ancestor_ID, nodo.node_ID+200, MPI_COMM_WORLD);
+            MPI_Send(&reactive_power_obs, 1, MPI_FLOAT, nodo.ancestor_ID, nodo.node_ID+300, MPI_COMM_WORLD);
         }
         
         //Receive voltage from ancestor
@@ -628,8 +631,8 @@ int main(int argc,char *argv[]){
             cout << "Node " << nodo.node_ID << " is receiving voltage from ancestor " <<  nodo.ancestor_ID  << endl;
             MPI_Recv(&voltage_ancestor_obs, 1, MPI_FLOAT, nodo.ancestor_ID, nodo.ancestor_ID, MPI_COMM_WORLD,
                     MPI_STATUS_IGNORE);
-            nodo.node_measures.voltage_ancestor = .5* (nodo.node_measures.voltage_ancestor + voltage_ancestor_obs);
-            nodo.node_observations.voltage_ancestor  = .5*(nodo.node_observations.voltage_ancestor + voltage_ancestor_obs);
+            nodo.node_measures.voltage_ancestor = voltage_ancestor_obs;
+            nodo.node_observations.voltage_ancestor  = voltage_ancestor_obs;
             cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " received voltage from ancestor " << nodo.ancestor_ID << ". Measure: " << voltage_ancestor_obs << endl;
         }
 
@@ -639,35 +642,45 @@ int main(int argc,char *argv[]){
         float reactive_power_rec_1,reactive_power_rec_2;
 
         if (n_childs > 0){
-            MPI_Recv(&current_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], nodo.childrens_ID[0], MPI_COMM_WORLD,
+            MPI_Recv(&current_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], nodo.childrens_ID[0]+100, MPI_COMM_WORLD,
                     MPI_STATUS_IGNORE);
-            MPI_Recv(&active_power_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], nodo.childrens_ID[0] + 1, MPI_COMM_WORLD,
+            MPI_Recv(&active_power_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], nodo.childrens_ID[0]+200, MPI_COMM_WORLD,
                     MPI_STATUS_IGNORE);
-            MPI_Recv(&reactive_power_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], nodo.childrens_ID[0] + 2, MPI_COMM_WORLD,
+            MPI_Recv(&reactive_power_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], nodo.childrens_ID[0]+300, MPI_COMM_WORLD,
                     MPI_STATUS_IGNORE);
             
-            nodo.children_measures[0].current = .5*(nodo.children_measures[0].current + current_rec_1);
-            nodo.children_measures[0].active_power = .5*(nodo.children_measures[0].active_power + active_power_rec_1);
-            nodo.children_measures[0].reactive_power = .5*(nodo.children_measures[0].reactive_power + reactive_power_rec_1);
+            //nodo.children_measures[0].current = .5*(nodo.children_measures[0].current + current_rec_1);
+            //nodo.children_measures[0].active_power = .5*(nodo.children_measures[0].active_power + active_power_rec_1);
+            //nodo.children_measures[0].reactive_power = .5*(nodo.children_measures[0].reactive_power + reactive_power_rec_1);
+            nodo.children_measures[0].current = current_rec_1;
+            nodo.children_measures[0].active_power = active_power_rec_1;
+            nodo.children_measures[0].reactive_power = reactive_power_rec_1;
+        
+        
         }
 
         if (n_childs > 1){
-            MPI_Recv(&current_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], nodo.childrens_ID[1], MPI_COMM_WORLD,
+            MPI_Recv(&current_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], nodo.childrens_ID[1]+100, MPI_COMM_WORLD,
                     MPI_STATUS_IGNORE);
-            MPI_Recv(&active_power_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], nodo.childrens_ID[1]+1, MPI_COMM_WORLD,
+            MPI_Recv(&active_power_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], nodo.childrens_ID[1]+200, MPI_COMM_WORLD,
                     MPI_STATUS_IGNORE);
-            MPI_Recv(&reactive_power_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], nodo.childrens_ID[1]+2, MPI_COMM_WORLD,
+            MPI_Recv(&reactive_power_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], nodo.childrens_ID[1]+300, MPI_COMM_WORLD,
                     MPI_STATUS_IGNORE);
 
-            nodo.children_measures[1].current = .5*(nodo.children_measures[1].current + current_rec_2);
-            nodo.children_measures[1].active_power = .5*(nodo.children_measures[1].active_power + active_power_rec_2);
-            nodo.children_measures[1].reactive_power = .5*(nodo.children_measures[1].reactive_power + reactive_power_rec_2);
+            //nodo.children_measures[1].current = .5*(nodo.children_measures[1].current + current_rec_2);
+            //nodo.children_measures[1].active_power = .5*(nodo.children_measures[1].active_power + active_power_rec_2);
+            //nodo.children_measures[1].reactive_power = .5*(nodo.children_measures[1].reactive_power + reactive_power_rec_2);
+            nodo.children_measures[1].current = current_rec_2;
+            nodo.children_measures[1].active_power = active_power_rec_2;
+            nodo.children_measures[1].reactive_power = reactive_power_rec_2;
+         
+        
         }
         
-        nodo.state_vector = nodo.generate_state_vector();
-        nodo.write_state_vector();
-        //nodo.observation_vector = nodo.generate_observation_vector();
-        //nodo.write_observation_vector();
+        //nodo.state_vector = nodo.generate_state_vector();
+        //nodo.write_state_vector();
+        nodo.observation_vector = nodo.generate_observation_vector();
+        nodo.write_observation_vector();
 
         iters+=1;
 
