@@ -11,6 +11,7 @@ S_base = 100; %MVA
 n = size(y,1);
 c = zeros(n,1);
 c(7)=1;
+c(3)=5;
 
 
 rho=arg2;
@@ -26,7 +27,7 @@ B(3,7)=1;
 cvx_begin quiet
     variable x(n,1)
     minimize(square(c'*x) + mu'*x + .5*rho*(x-y)'*(x-y));
-    x(3)==0;
+    x(3)==20/S_base;
     x(4)==0
     x(2)<=1.1;
     x(2)>=.9;

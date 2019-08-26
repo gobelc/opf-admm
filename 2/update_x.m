@@ -11,6 +11,7 @@ S_base = 100; %MVA
 n = size(y,1);
 c = zeros(n,1);
 c(7)=1;
+c(3)=5;
 
 
 rho=arg2;

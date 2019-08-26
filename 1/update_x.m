@@ -11,6 +11,8 @@ S_base = 100; %MVA
 n = size(y,1);
 c = zeros(n,1);
 c(7)=1;
+c(3)=50;
+
 rho=arg2;
 
 n_childs = floor((n-7)/3);
@@ -38,7 +40,7 @@ cvx_begin quiet
     minimize(square(c'*x) + mu'*x + .5*rho*(x-y)'*(x-y));
     x(2)<=1.1;
     x(2)>=.9;
-    x(3)== 0;
+    %x(3)== 0;
     %x(3)>=-10/S_base;
     x(1)<=1.1;
     x(1)>=.9;

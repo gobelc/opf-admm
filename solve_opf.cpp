@@ -16,7 +16,7 @@
 
 /// ADMM Parameters
 #define RHO 1.
-#define MAX_ITER 100
+#define MAX_ITER 2000
 
 
 /// NETWORK (THIS MUST BE A COPY OF THE NETWORK MODEL PARAMATERS)
