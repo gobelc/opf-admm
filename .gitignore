@@ -1,3 +1,4 @@
 *.o
 solve_opp
 NetworkModel.hpp
+makefile

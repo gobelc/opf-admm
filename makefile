@@ -1,22 +1,17 @@
-MPI_COMPILE_FLAGS = $(shell mpic++ --showme:compile)
-MPI_LINK_FLAGS = $(shell mpic++ --showme:link)
+4:
+	make -f 4bus.mk
 
-# Specify compiler
-CC=mpic++
+4run:
+	make -f 4bus.mk run
 
-.PHONY : all
-all : solve_opf
+4clean:
+	make -f 4bus.mk clean
 
-# Compile the source files into object files
-solve_opf : solve_opf.cpp
-	$(CC) $(MPI_COMPILE_FLAGS) -std=c++11 solve_opf.cpp $(MPI_LINK_FLAGS) -o solve_opf
+8:
+	make -f 8bus.mk
 
-# Clean target
-.PHONY : clean
-clean :
-	rm solve_opf.o solve_opf ./0/*.dat ./1/*.dat ./2/*.dat ./3/*.dat
+8run:
+	make -f 8bus.mk run
 
-
-.PHONY : run
-run :
-	mpirun -np 4 ./solve_opf 
+8clean:
+	make -f 8bus.mk clean

@@ -10,9 +10,11 @@ mu = csvread(strcat(arg1,"mu.csv"));
 S_base = 100; %MVA
 n = size(y,1);
 c = zeros(n,1);
-c(7)=1;
-c(3)=50;
 
+%% COST FUNCTION 
+R = 0.00304;
+%c(7) = R; %Minimize power loss
+c(5) = 1; %Minimize power loss
 rho=arg2;
 
 n_childs = floor((n-7)/3);
@@ -26,7 +28,7 @@ B2 = zeros(3,n);
 B2(1,8)=2;
 B2(2,9)=2;
 B2(3,2)=-1;
-B2(3,7)=1;
+B2(3,10)=1;
 
 D = zeros(n,1); 
 E = zeros(n,1);
@@ -34,18 +36,25 @@ E = zeros(n,1);
 D(1,1) = 1;
 E(7,1) = 1;
 
+%Restricciones de linea
+Pmax=100;
+Qmax=100;
+
 % Problem OPF: 
 cvx_begin quiet
     variable x(n,1)
-    minimize(square(c'*x) + mu'*x + .5*rho*(x-y)'*(x-y));
+    minimize(norm(c'*x) + mu'*x + .5*rho*(x-y)'*(x-y));
+    x(1)<=1.1;
+    x(1)>=.9;    
     x(2)<=1.1;
     x(2)>=.9;
-    %x(3)== 0;
-    %x(3)>=-10/S_base;
-    x(1)<=1.1;
-    x(1)>=.9;
+    x(3)<=5/S_base;
+    x(5) <= Pmax/S_base;
+    x(5) >= -Pmax/S_base;
+    x(6) <= Qmax/S_base;
+    x(6) >= -Qmax/S_base;
     norm(B*x,2) <= x(1) + x(7);
-    norm(B2*x,2) <= x(1) + x(7);
+    %norm(B2*x,2) <= x(1) + x(10);
 cvx_end
 csvwrite(strcat(arg1,"x.csv"),x)
 residuo = norm(x-y,2);

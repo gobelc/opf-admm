@@ -1,0 +1,1675 @@
+2019-08-31 17:59:37	Node 5 is sending current to ancestor 3. Measure: 0.000000. Iter: 0
+2019-08-31 17:59:37	Node 5 is sending active power to ancestor 3. Measure: 0.000000. Iter: 0
+2019-08-31 17:59:37	Node 5 is sending reactive power to ancestor 3. Measure: 0.000000. Iter: 0
+2019-08-31 17:59:55	Node 5 is sending current to ancestor 3. Measure: 6.169800. Iter: 1
+2019-08-31 17:59:55	Node 5 is sending active power to ancestor 3. Measure: 5.522300. Iter: 1
+2019-08-31 17:59:55	Node 5 is sending reactive power to ancestor 3. Measure: 2.364200. Iter: 1
+2019-08-31 18:00:14	Node 5 is sending current to ancestor 3. Measure: 6.112100. Iter: 2
+2019-08-31 18:00:14	Node 5 is sending active power to ancestor 3. Measure: 0.399840. Iter: 2
+2019-08-31 18:00:14	Node 5 is sending reactive power to ancestor 3. Measure: 2.271100. Iter: 2
+2019-08-31 18:00:32	Node 5 is sending current to ancestor 3. Measure: 6.083400. Iter: 3
+2019-08-31 18:00:32	Node 5 is sending active power to ancestor 3. Measure: -0.125110. Iter: 3
+2019-08-31 18:00:32	Node 5 is sending reactive power to ancestor 3. Measure: 1.613100. Iter: 3
+2019-08-31 18:00:52	Node 5 is sending current to ancestor 3. Measure: 6.069100. Iter: 4
+2019-08-31 18:00:52	Node 5 is sending active power to ancestor 3. Measure: -0.293670. Iter: 4
+2019-08-31 18:00:52	Node 5 is sending reactive power to ancestor 3. Measure: 1.143300. Iter: 4
+2019-08-31 18:01:10	Node 5 is sending current to ancestor 3. Measure: 6.061900. Iter: 5
+2019-08-31 18:01:10	Node 5 is sending active power to ancestor 3. Measure: -0.288980. Iter: 5
+2019-08-31 18:01:10	Node 5 is sending reactive power to ancestor 3. Measure: 0.954150. Iter: 5
+2019-08-31 18:01:29	Node 5 is sending current to ancestor 3. Measure: 6.058300. Iter: 6
+2019-08-31 18:01:29	Node 5 is sending active power to ancestor 3. Measure: -0.243320. Iter: 6
+2019-08-31 18:01:29	Node 5 is sending reactive power to ancestor 3. Measure: 0.929720. Iter: 6
+2019-08-31 18:01:48	Node 5 is sending current to ancestor 3. Measure: 6.056500. Iter: 7
+2019-08-31 18:01:48	Node 5 is sending active power to ancestor 3. Measure: -0.210250. Iter: 7
+2019-08-31 18:01:48	Node 5 is sending reactive power to ancestor 3. Measure: 0.929720. Iter: 7
+2019-08-31 18:02:07	Node 5 is sending current to ancestor 3. Measure: 6.054700. Iter: 8
+2019-08-31 18:02:07	Node 5 is sending active power to ancestor 3. Measure: -0.188590. Iter: 8
+2019-08-31 18:02:07	Node 5 is sending reactive power to ancestor 3. Measure: 0.929720. Iter: 8
+2019-08-31 18:02:07	Node 5 is receiving voltage from ancestor 3. Measure: 1.051100. Iter: 8
+2019-08-31 18:02:26	Node 5 is sending current to ancestor 3. Measure: 6.052900. Iter: 9
+2019-08-31 18:02:26	Node 5 is sending active power to ancestor 3. Measure: -0.183470. Iter: 9
+2019-08-31 18:02:26	Node 5 is sending reactive power to ancestor 3. Measure: 0.929720. Iter: 9
+2019-08-31 18:02:45	Node 5 is sending current to ancestor 3. Measure: 6.052000. Iter: 10
+2019-08-31 18:02:45	Node 5 is sending active power to ancestor 3. Measure: -0.190480. Iter: 10
+2019-08-31 18:02:45	Node 5 is sending reactive power to ancestor 3. Measure: 0.929430. Iter: 10
+2019-08-31 18:03:04	Node 5 is sending current to ancestor 3. Measure: 6.051100. Iter: 11
+2019-08-31 18:03:04	Node 5 is sending active power to ancestor 3. Measure: -0.198720. Iter: 11
+2019-08-31 18:03:04	Node 5 is sending reactive power to ancestor 3. Measure: 0.929430. Iter: 11
+2019-08-31 18:03:24	Node 5 is sending current to ancestor 3. Measure: 6.050200. Iter: 12
+2019-08-31 18:03:24	Node 5 is sending active power to ancestor 3. Measure: -0.203480. Iter: 12
+2019-08-31 18:03:24	Node 5 is sending reactive power to ancestor 3. Measure: 0.929430. Iter: 12
+2019-08-31 18:03:43	Node 5 is sending current to ancestor 3. Measure: 6.049300. Iter: 13
+2019-08-31 18:03:43	Node 5 is sending active power to ancestor 3. Measure: -0.204120. Iter: 13
+2019-08-31 18:03:43	Node 5 is sending reactive power to ancestor 3. Measure: 0.929430. Iter: 13
+2019-08-31 18:04:04	Node 5 is sending current to ancestor 3. Measure: 6.048900. Iter: 14
+2019-08-31 18:04:04	Node 5 is sending active power to ancestor 3. Measure: -0.202220. Iter: 14
+2019-08-31 18:04:04	Node 5 is sending reactive power to ancestor 3. Measure: 0.929430. Iter: 14
+2019-08-31 18:04:24	Node 5 is sending current to ancestor 3. Measure: 6.048500. Iter: 15
+2019-08-31 18:04:24	Node 5 is sending active power to ancestor 3. Measure: -0.200160. Iter: 15
+2019-08-31 18:04:24	Node 5 is sending reactive power to ancestor 3. Measure: 0.929430. Iter: 15
+2019-08-31 18:04:24	Node 5 is receiving voltage from ancestor 3. Measure: 1.060500. Iter: 15
+2019-08-31 18:04:44	Node 5 is sending current to ancestor 3. Measure: 6.048100. Iter: 16
+2019-08-31 18:04:44	Node 5 is sending active power to ancestor 3. Measure: -0.199050. Iter: 16
+2019-08-31 18:04:44	Node 5 is sending reactive power to ancestor 3. Measure: 0.929430. Iter: 16
+2019-08-31 18:05:05	Node 5 is sending current to ancestor 3. Measure: 6.047700. Iter: 17
+2019-08-31 18:05:05	Node 5 is sending active power to ancestor 3. Measure: -0.198970. Iter: 17
+2019-08-31 18:05:05	Node 5 is sending reactive power to ancestor 3. Measure: 0.929470. Iter: 17
+2019-08-31 18:05:25	Node 5 is sending current to ancestor 3. Measure: 6.047300. Iter: 18
+2019-08-31 18:05:25	Node 5 is sending active power to ancestor 3. Measure: -0.199440. Iter: 18
+2019-08-31 18:05:25	Node 5 is sending reactive power to ancestor 3. Measure: 0.929470. Iter: 18
+2019-08-31 18:05:46	Node 5 is sending current to ancestor 3. Measure: 6.046900. Iter: 19
+2019-08-31 18:05:46	Node 5 is sending active power to ancestor 3. Measure: -0.199960. Iter: 19
+2019-08-31 18:05:46	Node 5 is sending reactive power to ancestor 3. Measure: 0.929470. Iter: 19
+2019-08-31 18:05:46	Node 5 is receiving voltage from ancestor 3. Measure: 1.059300. Iter: 19
+2019-08-31 18:06:06	Node 5 is sending current to ancestor 3. Measure: 6.046500. Iter: 20
+2019-08-31 18:06:06	Node 5 is sending active power to ancestor 3. Measure: -0.200240. Iter: 20
+2019-08-31 18:06:06	Node 5 is sending reactive power to ancestor 3. Measure: 0.929470. Iter: 20
+2019-08-31 18:06:26	Node 5 is sending current to ancestor 3. Measure: 6.046100. Iter: 21
+2019-08-31 18:06:26	Node 5 is sending active power to ancestor 3. Measure: -0.200240. Iter: 21
+2019-08-31 18:06:26	Node 5 is sending reactive power to ancestor 3. Measure: 0.929630. Iter: 21
+2019-08-31 18:06:47	Node 5 is sending current to ancestor 3. Measure: 6.045600. Iter: 22
+2019-08-31 18:06:47	Node 5 is sending active power to ancestor 3. Measure: -0.200140. Iter: 22
+2019-08-31 18:06:47	Node 5 is sending reactive power to ancestor 3. Measure: 0.929630. Iter: 22
+2019-08-31 18:07:08	Node 5 is sending current to ancestor 3. Measure: 6.045400. Iter: 23
+2019-08-31 18:07:08	Node 5 is sending active power to ancestor 3. Measure: -0.200050. Iter: 23
+2019-08-31 18:07:08	Node 5 is sending reactive power to ancestor 3. Measure: 0.929630. Iter: 23
+2019-08-31 18:07:29	Node 5 is sending current to ancestor 3. Measure: 6.045200. Iter: 24
+2019-08-31 18:07:29	Node 5 is sending active power to ancestor 3. Measure: -0.199980. Iter: 24
+2019-08-31 18:07:29	Node 5 is sending reactive power to ancestor 3. Measure: 0.929630. Iter: 24
+2019-08-31 18:07:49	Node 5 is sending current to ancestor 3. Measure: 6.045000. Iter: 25
+2019-08-31 18:07:49	Node 5 is sending active power to ancestor 3. Measure: -0.199950. Iter: 25
+2019-08-31 18:07:49	Node 5 is sending reactive power to ancestor 3. Measure: 0.929630. Iter: 25
+2019-08-31 18:08:11	Node 5 is sending current to ancestor 3. Measure: 6.044800. Iter: 26
+2019-08-31 18:08:11	Node 5 is sending active power to ancestor 3. Measure: -0.199960. Iter: 26
+2019-08-31 18:08:11	Node 5 is sending reactive power to ancestor 3. Measure: 0.929630. Iter: 26
+2019-08-31 18:08:32	Node 5 is sending current to ancestor 3. Measure: 6.044600. Iter: 27
+2019-08-31 18:08:32	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 27
+2019-08-31 18:08:32	Node 5 is sending reactive power to ancestor 3. Measure: 0.929630. Iter: 27
+2019-08-31 18:08:32	Node 5 is receiving voltage from ancestor 3. Measure: 1.054000. Iter: 27
+2019-08-31 18:08:52	Node 5 is sending current to ancestor 3. Measure: 6.044400. Iter: 28
+2019-08-31 18:08:52	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 28
+2019-08-31 18:08:52	Node 5 is sending reactive power to ancestor 3. Measure: 0.929630. Iter: 28
+2019-08-31 18:09:14	Node 5 is sending current to ancestor 3. Measure: 6.044200. Iter: 29
+2019-08-31 18:09:14	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 29
+2019-08-31 18:09:14	Node 5 is sending reactive power to ancestor 3. Measure: 0.929800. Iter: 29
+2019-08-31 18:09:14	Node 5 is receiving voltage from ancestor 3. Measure: 1.048600. Iter: 29
+2019-08-31 18:09:34	Node 5 is sending current to ancestor 3. Measure: 6.044000. Iter: 30
+2019-08-31 18:09:34	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 30
+2019-08-31 18:09:34	Node 5 is sending reactive power to ancestor 3. Measure: 0.929800. Iter: 30
+2019-08-31 18:09:55	Node 5 is sending current to ancestor 3. Measure: 6.043900. Iter: 31
+2019-08-31 18:09:55	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 31
+2019-08-31 18:09:55	Node 5 is sending reactive power to ancestor 3. Measure: 0.929880. Iter: 31
+2019-08-31 18:10:16	Node 5 is sending current to ancestor 3. Measure: 6.043800. Iter: 32
+2019-08-31 18:10:16	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 32
+2019-08-31 18:10:16	Node 5 is sending reactive power to ancestor 3. Measure: 0.929880. Iter: 32
+2019-08-31 18:10:16	Node 5 is receiving voltage from ancestor 3. Measure: 1.045800. Iter: 32
+2019-08-31 18:10:37	Node 5 is sending current to ancestor 3. Measure: 6.043700. Iter: 33
+2019-08-31 18:10:37	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 33
+2019-08-31 18:10:37	Node 5 is sending reactive power to ancestor 3. Measure: 0.929880. Iter: 33
+2019-08-31 18:10:59	Node 5 is sending current to ancestor 3. Measure: 6.043600. Iter: 34
+2019-08-31 18:10:59	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 34
+2019-08-31 18:10:59	Node 5 is sending reactive power to ancestor 3. Measure: 0.929900. Iter: 34
+2019-08-31 18:10:59	Node 5 is receiving voltage from ancestor 3. Measure: 1.045200. Iter: 34
+2019-08-31 18:11:20	Node 5 is sending current to ancestor 3. Measure: 6.043500. Iter: 35
+2019-08-31 18:11:20	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 35
+2019-08-31 18:11:20	Node 5 is sending reactive power to ancestor 3. Measure: 0.929900. Iter: 35
+2019-08-31 18:11:41	Node 5 is sending current to ancestor 3. Measure: 6.043400. Iter: 36
+2019-08-31 18:11:41	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 36
+2019-08-31 18:11:41	Node 5 is sending reactive power to ancestor 3. Measure: 0.929930. Iter: 36
+2019-08-31 18:12:02	Node 5 is sending current to ancestor 3. Measure: 6.043300. Iter: 37
+2019-08-31 18:12:02	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 37
+2019-08-31 18:12:02	Node 5 is sending reactive power to ancestor 3. Measure: 0.929930. Iter: 37
+2019-08-31 18:12:23	Node 5 is sending current to ancestor 3. Measure: 6.043200. Iter: 38
+2019-08-31 18:12:23	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 38
+2019-08-31 18:12:23	Node 5 is sending reactive power to ancestor 3. Measure: 0.929930. Iter: 38
+2019-08-31 18:12:44	Node 5 is sending current to ancestor 3. Measure: 6.043100. Iter: 39
+2019-08-31 18:12:44	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 39
+2019-08-31 18:12:44	Node 5 is sending reactive power to ancestor 3. Measure: 0.929930. Iter: 39
+2019-08-31 18:13:06	Node 5 is sending current to ancestor 3. Measure: 6.043000. Iter: 40
+2019-08-31 18:13:06	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 40
+2019-08-31 18:13:06	Node 5 is sending reactive power to ancestor 3. Measure: 0.929930. Iter: 40
+2019-08-31 18:13:27	Node 5 is sending current to ancestor 3. Measure: 6.042900. Iter: 41
+2019-08-31 18:13:27	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 41
+2019-08-31 18:13:27	Node 5 is sending reactive power to ancestor 3. Measure: 0.929930. Iter: 41
+2019-08-31 18:13:49	Node 5 is sending current to ancestor 3. Measure: 6.042700. Iter: 42
+2019-08-31 18:13:49	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 42
+2019-08-31 18:13:49	Node 5 is sending reactive power to ancestor 3. Measure: 0.929930. Iter: 42
+2019-08-31 18:14:10	Node 5 is sending current to ancestor 3. Measure: 6.042500. Iter: 43
+2019-08-31 18:14:10	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 43
+2019-08-31 18:14:10	Node 5 is sending reactive power to ancestor 3. Measure: 0.929930. Iter: 43
+2019-08-31 18:14:31	Node 5 is sending current to ancestor 3. Measure: 6.042300. Iter: 44
+2019-08-31 18:14:31	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 44
+2019-08-31 18:14:31	Node 5 is sending reactive power to ancestor 3. Measure: 0.929930. Iter: 44
+2019-08-31 18:14:53	Node 5 is sending current to ancestor 3. Measure: 6.042100. Iter: 45
+2019-08-31 18:14:53	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 45
+2019-08-31 18:14:53	Node 5 is sending reactive power to ancestor 3. Measure: 0.929930. Iter: 45
+2019-08-31 18:14:53	Node 5 is receiving voltage from ancestor 3. Measure: 1.044300. Iter: 45
+2019-08-31 18:15:14	Node 5 is sending current to ancestor 3. Measure: 6.041700. Iter: 46
+2019-08-31 18:15:14	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 46
+2019-08-31 18:15:14	Node 5 is sending reactive power to ancestor 3. Measure: 0.929930. Iter: 46
+2019-08-31 18:15:14	Node 5 is receiving voltage from ancestor 3. Measure: 1.044300. Iter: 46
+2019-08-31 18:15:35	Node 5 is sending current to ancestor 3. Measure: 6.040800. Iter: 47
+2019-08-31 18:15:35	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 47
+2019-08-31 18:15:35	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 47
+2019-08-31 18:15:57	Node 5 is sending current to ancestor 3. Measure: 6.039900. Iter: 48
+2019-08-31 18:15:57	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 48
+2019-08-31 18:15:57	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 48
+2019-08-31 18:16:19	Node 5 is sending current to ancestor 3. Measure: 6.039000. Iter: 49
+2019-08-31 18:16:19	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 49
+2019-08-31 18:16:19	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 49
+2019-08-31 18:16:40	Node 5 is sending current to ancestor 3. Measure: 6.038100. Iter: 50
+2019-08-31 18:16:40	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 50
+2019-08-31 18:16:40	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 50
+2019-08-31 18:17:02	Node 5 is sending current to ancestor 3. Measure: 6.036300. Iter: 51
+2019-08-31 18:17:02	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 51
+2019-08-31 18:17:02	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 51
+2019-08-31 18:17:02	Node 5 is receiving voltage from ancestor 3. Measure: 1.043800. Iter: 51
+2019-08-31 18:17:23	Node 5 is sending current to ancestor 3. Measure: 6.032700. Iter: 52
+2019-08-31 18:17:23	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 52
+2019-08-31 18:17:23	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 52
+2019-08-31 18:17:45	Node 5 is sending current to ancestor 3. Measure: 6.025600. Iter: 53
+2019-08-31 18:17:45	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 53
+2019-08-31 18:17:45	Node 5 is sending reactive power to ancestor 3. Measure: 0.929950. Iter: 53
+2019-08-31 18:18:06	Node 5 is sending current to ancestor 3. Measure: 6.018500. Iter: 54
+2019-08-31 18:18:06	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 54
+2019-08-31 18:18:06	Node 5 is sending reactive power to ancestor 3. Measure: 0.929950. Iter: 54
+2019-08-31 18:18:27	Node 5 is sending current to ancestor 3. Measure: 6.011400. Iter: 55
+2019-08-31 18:18:27	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 55
+2019-08-31 18:18:27	Node 5 is sending reactive power to ancestor 3. Measure: 0.929950. Iter: 55
+2019-08-31 18:18:49	Node 5 is sending current to ancestor 3. Measure: 6.004300. Iter: 56
+2019-08-31 18:18:49	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 56
+2019-08-31 18:18:49	Node 5 is sending reactive power to ancestor 3. Measure: 0.929950. Iter: 56
+2019-08-31 18:19:10	Node 5 is sending current to ancestor 3. Measure: 5.997200. Iter: 57
+2019-08-31 18:19:10	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 57
+2019-08-31 18:19:10	Node 5 is sending reactive power to ancestor 3. Measure: 0.929950. Iter: 57
+2019-08-31 18:19:32	Node 5 is sending current to ancestor 3. Measure: 5.983000. Iter: 58
+2019-08-31 18:19:32	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 58
+2019-08-31 18:19:32	Node 5 is sending reactive power to ancestor 3. Measure: 0.929950. Iter: 58
+2019-08-31 18:19:53	Node 5 is sending current to ancestor 3. Measure: 5.968900. Iter: 59
+2019-08-31 18:19:53	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 59
+2019-08-31 18:19:53	Node 5 is sending reactive power to ancestor 3. Measure: 0.929950. Iter: 59
+2019-08-31 18:20:15	Node 5 is sending current to ancestor 3. Measure: 5.954800. Iter: 60
+2019-08-31 18:20:15	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 60
+2019-08-31 18:20:15	Node 5 is sending reactive power to ancestor 3. Measure: 0.929950. Iter: 60
+2019-08-31 18:20:37	Node 5 is sending current to ancestor 3. Measure: 5.940700. Iter: 61
+2019-08-31 18:20:37	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 61
+2019-08-31 18:20:37	Node 5 is sending reactive power to ancestor 3. Measure: 0.929950. Iter: 61
+2019-08-31 18:20:58	Node 5 is sending current to ancestor 3. Measure: 5.912700. Iter: 62
+2019-08-31 18:20:58	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 62
+2019-08-31 18:20:58	Node 5 is sending reactive power to ancestor 3. Measure: 0.929950. Iter: 62
+2019-08-31 18:21:20	Node 5 is sending current to ancestor 3. Measure: 5.884900. Iter: 63
+2019-08-31 18:21:20	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 63
+2019-08-31 18:21:20	Node 5 is sending reactive power to ancestor 3. Measure: 0.929950. Iter: 63
+2019-08-31 18:21:20	Node 5 is receiving voltage from ancestor 3. Measure: 1.043400. Iter: 63
+2019-08-31 18:21:42	Node 5 is sending current to ancestor 3. Measure: 5.857200. Iter: 64
+2019-08-31 18:21:42	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 64
+2019-08-31 18:21:42	Node 5 is sending reactive power to ancestor 3. Measure: 0.929950. Iter: 64
+2019-08-31 18:21:42	Node 5 is receiving voltage from ancestor 3. Measure: 1.043500. Iter: 64
+2019-08-31 18:22:03	Node 5 is sending current to ancestor 3. Measure: 5.829600. Iter: 65
+2019-08-31 18:22:03	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 65
+2019-08-31 18:22:03	Node 5 is sending reactive power to ancestor 3. Measure: 0.929970. Iter: 65
+2019-08-31 18:22:24	Node 5 is sending current to ancestor 3. Measure: 5.802100. Iter: 66
+2019-08-31 18:22:24	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 66
+2019-08-31 18:22:24	Node 5 is sending reactive power to ancestor 3. Measure: 0.929980. Iter: 66
+2019-08-31 18:22:46	Node 5 is sending current to ancestor 3. Measure: 5.774800. Iter: 67
+2019-08-31 18:22:46	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 67
+2019-08-31 18:22:46	Node 5 is sending reactive power to ancestor 3. Measure: 0.929980. Iter: 67
+2019-08-31 18:22:46	Node 5 is receiving voltage from ancestor 3. Measure: 1.042600. Iter: 67
+2019-08-31 18:23:07	Node 5 is sending current to ancestor 3. Measure: 5.747600. Iter: 68
+2019-08-31 18:23:07	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 68
+2019-08-31 18:23:07	Node 5 is sending reactive power to ancestor 3. Measure: 0.929980. Iter: 68
+2019-08-31 18:23:29	Node 5 is sending current to ancestor 3. Measure: 5.720500. Iter: 69
+2019-08-31 18:23:29	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 69
+2019-08-31 18:23:29	Node 5 is sending reactive power to ancestor 3. Measure: 0.929980. Iter: 69
+2019-08-31 18:23:29	Node 5 is receiving voltage from ancestor 3. Measure: 1.042500. Iter: 69
+2019-08-31 18:23:51	Node 5 is sending current to ancestor 3. Measure: 5.693600. Iter: 70
+2019-08-31 18:23:51	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 70
+2019-08-31 18:23:51	Node 5 is sending reactive power to ancestor 3. Measure: 0.929980. Iter: 70
+2019-08-31 18:23:51	Node 5 is receiving voltage from ancestor 3. Measure: 1.042600. Iter: 70
+2019-08-31 18:24:12	Node 5 is sending current to ancestor 3. Measure: 5.666800. Iter: 71
+2019-08-31 18:24:12	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 71
+2019-08-31 18:24:12	Node 5 is sending reactive power to ancestor 3. Measure: 0.929990. Iter: 71
+2019-08-31 18:24:34	Node 5 is sending current to ancestor 3. Measure: 5.640100. Iter: 72
+2019-08-31 18:24:34	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 72
+2019-08-31 18:24:34	Node 5 is sending reactive power to ancestor 3. Measure: 0.929990. Iter: 72
+2019-08-31 18:24:56	Node 5 is sending current to ancestor 3. Measure: 5.613500. Iter: 73
+2019-08-31 18:24:56	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 73
+2019-08-31 18:24:56	Node 5 is sending reactive power to ancestor 3. Measure: 0.929990. Iter: 73
+2019-08-31 18:24:56	Node 5 is receiving voltage from ancestor 3. Measure: 1.042500. Iter: 73
+2019-08-31 18:25:17	Node 5 is sending current to ancestor 3. Measure: 5.587100. Iter: 74
+2019-08-31 18:25:17	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 74
+2019-08-31 18:25:17	Node 5 is sending reactive power to ancestor 3. Measure: 0.929990. Iter: 74
+2019-08-31 18:25:38	Node 5 is sending current to ancestor 3. Measure: 5.560800. Iter: 75
+2019-08-31 18:25:38	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 75
+2019-08-31 18:25:38	Node 5 is sending reactive power to ancestor 3. Measure: 0.929990. Iter: 75
+2019-08-31 18:25:38	Node 5 is receiving voltage from ancestor 3. Measure: 1.042600. Iter: 75
+2019-08-31 18:26:01	Node 5 is sending current to ancestor 3. Measure: 5.534600. Iter: 76
+2019-08-31 18:26:01	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 76
+2019-08-31 18:26:01	Node 5 is sending reactive power to ancestor 3. Measure: 0.930000. Iter: 76
+2019-08-31 18:26:22	Node 5 is sending current to ancestor 3. Measure: 5.482700. Iter: 77
+2019-08-31 18:26:22	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 77
+2019-08-31 18:26:22	Node 5 is sending reactive power to ancestor 3. Measure: 0.929990. Iter: 77
+2019-08-31 18:26:44	Node 5 is sending current to ancestor 3. Measure: 5.431300. Iter: 78
+2019-08-31 18:26:44	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 78
+2019-08-31 18:26:44	Node 5 is sending reactive power to ancestor 3. Measure: 0.929990. Iter: 78
+2019-08-31 18:27:06	Node 5 is sending current to ancestor 3. Measure: 5.380400. Iter: 79
+2019-08-31 18:27:06	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 79
+2019-08-31 18:27:06	Node 5 is sending reactive power to ancestor 3. Measure: 0.929980. Iter: 79
+2019-08-31 18:27:27	Node 5 is sending current to ancestor 3. Measure: 5.329900. Iter: 80
+2019-08-31 18:27:27	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 80
+2019-08-31 18:27:27	Node 5 is sending reactive power to ancestor 3. Measure: 0.929970. Iter: 80
+2019-08-31 18:27:49	Node 5 is sending current to ancestor 3. Measure: 5.279900. Iter: 81
+2019-08-31 18:27:49	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 81
+2019-08-31 18:27:49	Node 5 is sending reactive power to ancestor 3. Measure: 0.929970. Iter: 81
+2019-08-31 18:28:10	Node 5 is sending current to ancestor 3. Measure: 5.230400. Iter: 82
+2019-08-31 18:28:10	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 82
+2019-08-31 18:28:10	Node 5 is sending reactive power to ancestor 3. Measure: 0.929960. Iter: 82
+2019-08-31 18:28:32	Node 5 is sending current to ancestor 3. Measure: 5.181300. Iter: 83
+2019-08-31 18:28:32	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 83
+2019-08-31 18:28:32	Node 5 is sending reactive power to ancestor 3. Measure: 0.929960. Iter: 83
+2019-08-31 18:28:54	Node 5 is sending current to ancestor 3. Measure: 5.132700. Iter: 84
+2019-08-31 18:28:54	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 84
+2019-08-31 18:28:54	Node 5 is sending reactive power to ancestor 3. Measure: 0.929960. Iter: 84
+2019-08-31 18:29:15	Node 5 is sending current to ancestor 3. Measure: 5.037300. Iter: 85
+2019-08-31 18:29:15	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 85
+2019-08-31 18:29:15	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 85
+2019-08-31 18:29:37	Node 5 is sending current to ancestor 3. Measure: 4.943700. Iter: 86
+2019-08-31 18:29:37	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 86
+2019-08-31 18:29:37	Node 5 is sending reactive power to ancestor 3. Measure: 0.929930. Iter: 86
+2019-08-31 18:29:59	Node 5 is sending current to ancestor 3. Measure: 4.852000. Iter: 87
+2019-08-31 18:29:59	Node 5 is sending active power to ancestor 3. Measure: -0.199980. Iter: 87
+2019-08-31 18:29:59	Node 5 is sending reactive power to ancestor 3. Measure: 0.929850. Iter: 87
+2019-08-31 18:30:20	Node 5 is sending current to ancestor 3. Measure: 4.762000. Iter: 88
+2019-08-31 18:30:20	Node 5 is sending active power to ancestor 3. Measure: -0.199980. Iter: 88
+2019-08-31 18:30:20	Node 5 is sending reactive power to ancestor 3. Measure: 0.929790. Iter: 88
+2019-08-31 18:30:42	Node 5 is sending current to ancestor 3. Measure: 4.673600. Iter: 89
+2019-08-31 18:30:42	Node 5 is sending active power to ancestor 3. Measure: -0.199980. Iter: 89
+2019-08-31 18:30:42	Node 5 is sending reactive power to ancestor 3. Measure: 0.929740. Iter: 89
+2019-08-31 18:31:03	Node 5 is sending current to ancestor 3. Measure: 4.586900. Iter: 90
+2019-08-31 18:31:03	Node 5 is sending active power to ancestor 3. Measure: -0.199980. Iter: 90
+2019-08-31 18:31:03	Node 5 is sending reactive power to ancestor 3. Measure: 0.929700. Iter: 90
+2019-08-31 18:31:03	Node 5 is receiving voltage from ancestor 3. Measure: 1.043400. Iter: 90
+2019-08-31 18:31:25	Node 5 is sending current to ancestor 3. Measure: 4.501700. Iter: 91
+2019-08-31 18:31:25	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 91
+2019-08-31 18:31:25	Node 5 is sending reactive power to ancestor 3. Measure: 0.929680. Iter: 91
+2019-08-31 18:31:47	Node 5 is sending current to ancestor 3. Measure: 4.418100. Iter: 92
+2019-08-31 18:31:47	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 92
+2019-08-31 18:31:47	Node 5 is sending reactive power to ancestor 3. Measure: 0.929650. Iter: 92
+2019-08-31 18:31:47	Node 5 is receiving voltage from ancestor 3. Measure: 1.044100. Iter: 92
+2019-08-31 18:32:09	Node 5 is sending current to ancestor 3. Measure: 4.336100. Iter: 93
+2019-08-31 18:32:09	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 93
+2019-08-31 18:32:09	Node 5 is sending reactive power to ancestor 3. Measure: 0.929640. Iter: 93
+2019-08-31 18:32:30	Node 5 is sending current to ancestor 3. Measure: 4.255600. Iter: 94
+2019-08-31 18:32:30	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 94
+2019-08-31 18:32:30	Node 5 is sending reactive power to ancestor 3. Measure: 0.929640. Iter: 94
+2019-08-31 18:32:30	Node 5 is receiving voltage from ancestor 3. Measure: 1.044500. Iter: 94
+2019-08-31 18:32:52	Node 5 is sending current to ancestor 3. Measure: 4.176600. Iter: 95
+2019-08-31 18:32:52	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 95
+2019-08-31 18:32:52	Node 5 is sending reactive power to ancestor 3. Measure: 0.929650. Iter: 95
+2019-08-31 18:33:14	Node 5 is sending current to ancestor 3. Measure: 4.099000. Iter: 96
+2019-08-31 18:33:14	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 96
+2019-08-31 18:33:14	Node 5 is sending reactive power to ancestor 3. Measure: 0.929670. Iter: 96
+2019-08-31 18:33:14	Node 5 is receiving voltage from ancestor 3. Measure: 1.044800. Iter: 96
+2019-08-31 18:33:35	Node 5 is sending current to ancestor 3. Measure: 4.022900. Iter: 97
+2019-08-31 18:33:35	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 97
+2019-08-31 18:33:35	Node 5 is sending reactive power to ancestor 3. Measure: 0.929710. Iter: 97
+2019-08-31 18:33:57	Node 5 is sending current to ancestor 3. Measure: 3.948200. Iter: 98
+2019-08-31 18:33:57	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 98
+2019-08-31 18:33:57	Node 5 is sending reactive power to ancestor 3. Measure: 0.929760. Iter: 98
+2019-08-31 18:33:57	Node 5 is receiving voltage from ancestor 3. Measure: 1.045100. Iter: 98
+2019-08-31 18:34:19	Node 5 is sending current to ancestor 3. Measure: 3.874900. Iter: 99
+2019-08-31 18:34:19	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 99
+2019-08-31 18:34:19	Node 5 is sending reactive power to ancestor 3. Measure: 0.929830. Iter: 99
+2019-08-31 18:34:41	Node 5 is sending current to ancestor 3. Measure: 3.802900. Iter: 100
+2019-08-31 18:34:41	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 100
+2019-08-31 18:34:41	Node 5 is sending reactive power to ancestor 3. Measure: 0.929920. Iter: 100
+2019-08-31 18:34:41	Node 5 is receiving voltage from ancestor 3. Measure: 1.045400. Iter: 100
+2019-08-31 18:35:02	Node 5 is sending current to ancestor 3. Measure: 3.732200. Iter: 101
+2019-08-31 18:35:02	Node 5 is sending active power to ancestor 3. Measure: -0.200020. Iter: 101
+2019-08-31 18:35:02	Node 5 is sending reactive power to ancestor 3. Measure: 0.930100. Iter: 101
+2019-08-31 18:35:02	Node 5 is receiving voltage from ancestor 3. Measure: 1.045600. Iter: 101
+2019-08-31 18:35:24	Node 5 is sending current to ancestor 3. Measure: 3.662900. Iter: 102
+2019-08-31 18:35:24	Node 5 is sending active power to ancestor 3. Measure: -0.200020. Iter: 102
+2019-08-31 18:35:24	Node 5 is sending reactive power to ancestor 3. Measure: 0.930280. Iter: 102
+2019-08-31 18:35:45	Node 5 is sending current to ancestor 3. Measure: 3.594800. Iter: 103
+2019-08-31 18:35:45	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 103
+2019-08-31 18:35:45	Node 5 is sending reactive power to ancestor 3. Measure: 0.930450. Iter: 103
+2019-08-31 18:36:07	Node 5 is sending current to ancestor 3. Measure: 3.528000. Iter: 104
+2019-08-31 18:36:07	Node 5 is sending active power to ancestor 3. Measure: -0.200020. Iter: 104
+2019-08-31 18:36:07	Node 5 is sending reactive power to ancestor 3. Measure: 0.930450. Iter: 104
+2019-08-31 18:36:07	Node 5 is receiving voltage from ancestor 3. Measure: 1.046000. Iter: 104
+2019-08-31 18:36:29	Node 5 is sending current to ancestor 3. Measure: 3.462400. Iter: 105
+2019-08-31 18:36:29	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 105
+2019-08-31 18:36:29	Node 5 is sending reactive power to ancestor 3. Measure: 0.930450. Iter: 105
+2019-08-31 18:36:51	Node 5 is sending current to ancestor 3. Measure: 3.398000. Iter: 106
+2019-08-31 18:36:51	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 106
+2019-08-31 18:36:51	Node 5 is sending reactive power to ancestor 3. Measure: 0.930440. Iter: 106
+2019-08-31 18:37:12	Node 5 is sending current to ancestor 3. Measure: 3.334800. Iter: 107
+2019-08-31 18:37:12	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 107
+2019-08-31 18:37:12	Node 5 is sending reactive power to ancestor 3. Measure: 0.930440. Iter: 107
+2019-08-31 18:37:12	Node 5 is receiving voltage from ancestor 3. Measure: 1.046300. Iter: 107
+2019-08-31 18:37:34	Node 5 is sending current to ancestor 3. Measure: 3.272800. Iter: 108
+2019-08-31 18:37:34	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 108
+2019-08-31 18:37:34	Node 5 is sending reactive power to ancestor 3. Measure: 0.930440. Iter: 108
+2019-08-31 18:37:34	Node 5 is receiving voltage from ancestor 3. Measure: 1.046300. Iter: 108
+2019-08-31 18:37:55	Node 5 is sending current to ancestor 3. Measure: 3.212000. Iter: 109
+2019-08-31 18:37:55	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 109
+2019-08-31 18:37:55	Node 5 is sending reactive power to ancestor 3. Measure: 0.930430. Iter: 109
+2019-08-31 18:38:17	Node 5 is sending current to ancestor 3. Measure: 3.152300. Iter: 110
+2019-08-31 18:38:17	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 110
+2019-08-31 18:38:17	Node 5 is sending reactive power to ancestor 3. Measure: 0.930420. Iter: 110
+2019-08-31 18:38:40	Node 5 is sending current to ancestor 3. Measure: 3.093700. Iter: 111
+2019-08-31 18:38:40	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 111
+2019-08-31 18:38:40	Node 5 is sending reactive power to ancestor 3. Measure: 0.930420. Iter: 111
+2019-08-31 18:38:40	Node 5 is receiving voltage from ancestor 3. Measure: 1.046800. Iter: 111
+2019-08-31 18:39:01	Node 5 is sending current to ancestor 3. Measure: 3.036200. Iter: 112
+2019-08-31 18:39:01	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 112
+2019-08-31 18:39:01	Node 5 is sending reactive power to ancestor 3. Measure: 0.930410. Iter: 112
+2019-08-31 18:39:23	Node 5 is sending current to ancestor 3. Measure: 2.979800. Iter: 113
+2019-08-31 18:39:23	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 113
+2019-08-31 18:39:23	Node 5 is sending reactive power to ancestor 3. Measure: 0.930400. Iter: 113
+2019-08-31 18:39:23	Node 5 is receiving voltage from ancestor 3. Measure: 1.047000. Iter: 113
+2019-08-31 18:39:45	Node 5 is sending current to ancestor 3. Measure: 2.924400. Iter: 114
+2019-08-31 18:39:45	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 114
+2019-08-31 18:39:45	Node 5 is sending reactive power to ancestor 3. Measure: 0.930400. Iter: 114
+2019-08-31 18:39:45	Node 5 is receiving voltage from ancestor 3. Measure: 1.047000. Iter: 114
+2019-08-31 18:40:06	Node 5 is sending current to ancestor 3. Measure: 2.870000. Iter: 115
+2019-08-31 18:40:06	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 115
+2019-08-31 18:40:06	Node 5 is sending reactive power to ancestor 3. Measure: 0.930390. Iter: 115
+2019-08-31 18:40:28	Node 5 is sending current to ancestor 3. Measure: 2.816700. Iter: 116
+2019-08-31 18:40:28	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 116
+2019-08-31 18:40:28	Node 5 is sending reactive power to ancestor 3. Measure: 0.930380. Iter: 116
+2019-08-31 18:40:50	Node 5 is sending current to ancestor 3. Measure: 2.764400. Iter: 117
+2019-08-31 18:40:50	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 117
+2019-08-31 18:40:50	Node 5 is sending reactive power to ancestor 3. Measure: 0.930380. Iter: 117
+2019-08-31 18:41:12	Node 5 is sending current to ancestor 3. Measure: 2.713000. Iter: 118
+2019-08-31 18:41:12	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 118
+2019-08-31 18:41:12	Node 5 is sending reactive power to ancestor 3. Measure: 0.930370. Iter: 118
+2019-08-31 18:41:12	Node 5 is receiving voltage from ancestor 3. Measure: 1.047400. Iter: 118
+2019-08-31 18:41:33	Node 5 is sending current to ancestor 3. Measure: 2.662600. Iter: 119
+2019-08-31 18:41:33	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 119
+2019-08-31 18:41:33	Node 5 is sending reactive power to ancestor 3. Measure: 0.930360. Iter: 119
+2019-08-31 18:41:55	Node 5 is sending current to ancestor 3. Measure: 2.613100. Iter: 120
+2019-08-31 18:41:55	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 120
+2019-08-31 18:41:55	Node 5 is sending reactive power to ancestor 3. Measure: 0.930350. Iter: 120
+2019-08-31 18:42:17	Node 5 is sending current to ancestor 3. Measure: 2.564500. Iter: 121
+2019-08-31 18:42:17	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 121
+2019-08-31 18:42:17	Node 5 is sending reactive power to ancestor 3. Measure: 0.930350. Iter: 121
+2019-08-31 18:42:39	Node 5 is sending current to ancestor 3. Measure: 2.540400. Iter: 122
+2019-08-31 18:42:39	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 122
+2019-08-31 18:42:39	Node 5 is sending reactive power to ancestor 3. Measure: 0.930340. Iter: 122
+2019-08-31 18:43:00	Node 5 is sending current to ancestor 3. Measure: 2.516600. Iter: 123
+2019-08-31 18:43:00	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 123
+2019-08-31 18:43:00	Node 5 is sending reactive power to ancestor 3. Measure: 0.930330. Iter: 123
+2019-08-31 18:43:22	Node 5 is sending current to ancestor 3. Measure: 2.493000. Iter: 124
+2019-08-31 18:43:22	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 124
+2019-08-31 18:43:22	Node 5 is sending reactive power to ancestor 3. Measure: 0.930320. Iter: 124
+2019-08-31 18:43:44	Node 5 is sending current to ancestor 3. Measure: 2.469600. Iter: 125
+2019-08-31 18:43:44	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 125
+2019-08-31 18:43:44	Node 5 is sending reactive power to ancestor 3. Measure: 0.930310. Iter: 125
+2019-08-31 18:44:06	Node 5 is sending current to ancestor 3. Measure: 2.446400. Iter: 126
+2019-08-31 18:44:06	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 126
+2019-08-31 18:44:06	Node 5 is sending reactive power to ancestor 3. Measure: 0.930300. Iter: 126
+2019-08-31 18:44:06	Node 5 is receiving voltage from ancestor 3. Measure: 1.047700. Iter: 126
+2019-08-31 18:44:28	Node 5 is sending current to ancestor 3. Measure: 2.423500. Iter: 127
+2019-08-31 18:44:28	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 127
+2019-08-31 18:44:28	Node 5 is sending reactive power to ancestor 3. Measure: 0.930290. Iter: 127
+2019-08-31 18:44:50	Node 5 is sending current to ancestor 3. Measure: 2.400800. Iter: 128
+2019-08-31 18:44:50	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 128
+2019-08-31 18:44:50	Node 5 is sending reactive power to ancestor 3. Measure: 0.930270. Iter: 128
+2019-08-31 18:44:50	Node 5 is receiving voltage from ancestor 3. Measure: 1.048200. Iter: 128
+2019-08-31 18:45:11	Node 5 is sending current to ancestor 3. Measure: 2.389500. Iter: 129
+2019-08-31 18:45:11	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 129
+2019-08-31 18:45:11	Node 5 is sending reactive power to ancestor 3. Measure: 0.930260. Iter: 129
+2019-08-31 18:45:33	Node 5 is sending current to ancestor 3. Measure: 2.378200. Iter: 130
+2019-08-31 18:45:33	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 130
+2019-08-31 18:45:33	Node 5 is sending reactive power to ancestor 3. Measure: 0.930240. Iter: 130
+2019-08-31 18:45:33	Node 5 is receiving voltage from ancestor 3. Measure: 1.048500. Iter: 130
+2019-08-31 18:45:55	Node 5 is sending current to ancestor 3. Measure: 2.367000. Iter: 131
+2019-08-31 18:45:55	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 131
+2019-08-31 18:45:55	Node 5 is sending reactive power to ancestor 3. Measure: 0.930230. Iter: 131
+2019-08-31 18:46:16	Node 5 is sending current to ancestor 3. Measure: 2.355800. Iter: 132
+2019-08-31 18:46:16	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 132
+2019-08-31 18:46:16	Node 5 is sending reactive power to ancestor 3. Measure: 0.930210. Iter: 132
+2019-08-31 18:46:38	Node 5 is sending current to ancestor 3. Measure: 2.350200. Iter: 133
+2019-08-31 18:46:38	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 133
+2019-08-31 18:46:38	Node 5 is sending reactive power to ancestor 3. Measure: 0.930210. Iter: 133
+2019-08-31 18:47:00	Node 5 is sending current to ancestor 3. Measure: 2.344700. Iter: 134
+2019-08-31 18:47:00	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 134
+2019-08-31 18:47:00	Node 5 is sending reactive power to ancestor 3. Measure: 0.930210. Iter: 134
+2019-08-31 18:47:00	Node 5 is receiving voltage from ancestor 3. Measure: 1.048800. Iter: 134
+2019-08-31 18:47:22	Node 5 is sending current to ancestor 3. Measure: 2.339200. Iter: 135
+2019-08-31 18:47:22	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 135
+2019-08-31 18:47:22	Node 5 is sending reactive power to ancestor 3. Measure: 0.930210. Iter: 135
+2019-08-31 18:47:44	Node 5 is sending current to ancestor 3. Measure: 2.333700. Iter: 136
+2019-08-31 18:47:44	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 136
+2019-08-31 18:47:44	Node 5 is sending reactive power to ancestor 3. Measure: 0.930200. Iter: 136
+2019-08-31 18:47:44	Node 5 is receiving voltage from ancestor 3. Measure: 1.049000. Iter: 136
+2019-08-31 18:48:06	Node 5 is sending current to ancestor 3. Measure: 2.328200. Iter: 137
+2019-08-31 18:48:06	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 137
+2019-08-31 18:48:06	Node 5 is sending reactive power to ancestor 3. Measure: 0.930200. Iter: 137
+2019-08-31 18:48:06	Node 5 is receiving voltage from ancestor 3. Measure: 1.049000. Iter: 137
+2019-08-31 18:48:27	Node 5 is sending current to ancestor 3. Measure: 2.322700. Iter: 138
+2019-08-31 18:48:27	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 138
+2019-08-31 18:48:27	Node 5 is sending reactive power to ancestor 3. Measure: 0.930190. Iter: 138
+2019-08-31 18:48:50	Node 5 is sending current to ancestor 3. Measure: 2.317200. Iter: 139
+2019-08-31 18:48:50	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 139
+2019-08-31 18:48:50	Node 5 is sending reactive power to ancestor 3. Measure: 0.930180. Iter: 139
+2019-08-31 18:48:50	Node 5 is receiving voltage from ancestor 3. Measure: 1.049300. Iter: 139
+2019-08-31 18:49:11	Node 5 is sending current to ancestor 3. Measure: 2.311700. Iter: 140
+2019-08-31 18:49:11	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 140
+2019-08-31 18:49:11	Node 5 is sending reactive power to ancestor 3. Measure: 0.930180. Iter: 140
+2019-08-31 18:49:33	Node 5 is sending current to ancestor 3. Measure: 2.306200. Iter: 141
+2019-08-31 18:49:33	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 141
+2019-08-31 18:49:33	Node 5 is sending reactive power to ancestor 3. Measure: 0.930180. Iter: 141
+2019-08-31 18:49:54	Node 5 is sending current to ancestor 3. Measure: 2.300800. Iter: 142
+2019-08-31 18:49:54	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 142
+2019-08-31 18:49:54	Node 5 is sending reactive power to ancestor 3. Measure: 0.930180. Iter: 142
+2019-08-31 18:50:16	Node 5 is sending current to ancestor 3. Measure: 2.295400. Iter: 143
+2019-08-31 18:50:16	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 143
+2019-08-31 18:50:16	Node 5 is sending reactive power to ancestor 3. Measure: 0.930180. Iter: 143
+2019-08-31 18:50:38	Node 5 is sending current to ancestor 3. Measure: 2.290000. Iter: 144
+2019-08-31 18:50:38	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 144
+2019-08-31 18:50:38	Node 5 is sending reactive power to ancestor 3. Measure: 0.930180. Iter: 144
+2019-08-31 18:51:00	Node 5 is sending current to ancestor 3. Measure: 2.284600. Iter: 145
+2019-08-31 18:51:00	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 145
+2019-08-31 18:51:00	Node 5 is sending reactive power to ancestor 3. Measure: 0.930180. Iter: 145
+2019-08-31 18:51:21	Node 5 is sending current to ancestor 3. Measure: 2.273800. Iter: 146
+2019-08-31 18:51:21	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 146
+2019-08-31 18:51:21	Node 5 is sending reactive power to ancestor 3. Measure: 0.930170. Iter: 146
+2019-08-31 18:51:43	Node 5 is sending current to ancestor 3. Measure: 2.263100. Iter: 147
+2019-08-31 18:51:43	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 147
+2019-08-31 18:51:43	Node 5 is sending reactive power to ancestor 3. Measure: 0.930160. Iter: 147
+2019-08-31 18:51:43	Node 5 is receiving voltage from ancestor 3. Measure: 1.049400. Iter: 147
+2019-08-31 18:52:05	Node 5 is sending current to ancestor 3. Measure: 2.252400. Iter: 148
+2019-08-31 18:52:05	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 148
+2019-08-31 18:52:05	Node 5 is sending reactive power to ancestor 3. Measure: 0.930150. Iter: 148
+2019-08-31 18:52:27	Node 5 is sending current to ancestor 3. Measure: 2.241800. Iter: 149
+2019-08-31 18:52:27	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 149
+2019-08-31 18:52:27	Node 5 is sending reactive power to ancestor 3. Measure: 0.930130. Iter: 149
+2019-08-31 18:52:27	Node 5 is receiving voltage from ancestor 3. Measure: 1.049600. Iter: 149
+2019-08-31 18:52:49	Node 5 is sending current to ancestor 3. Measure: 2.231200. Iter: 150
+2019-08-31 18:52:49	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 150
+2019-08-31 18:52:49	Node 5 is sending reactive power to ancestor 3. Measure: 0.930120. Iter: 150
+2019-08-31 18:53:11	Node 5 is sending current to ancestor 3. Measure: 2.220700. Iter: 151
+2019-08-31 18:53:11	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 151
+2019-08-31 18:53:11	Node 5 is sending reactive power to ancestor 3. Measure: 0.930110. Iter: 151
+2019-08-31 18:53:32	Node 5 is sending current to ancestor 3. Measure: 2.210200. Iter: 152
+2019-08-31 18:53:32	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 152
+2019-08-31 18:53:32	Node 5 is sending reactive power to ancestor 3. Measure: 0.930100. Iter: 152
+2019-08-31 18:53:54	Node 5 is sending current to ancestor 3. Measure: 2.199800. Iter: 153
+2019-08-31 18:53:54	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 153
+2019-08-31 18:53:54	Node 5 is sending reactive power to ancestor 3. Measure: 0.930090. Iter: 153
+2019-08-31 18:54:16	Node 5 is sending current to ancestor 3. Measure: 2.189400. Iter: 154
+2019-08-31 18:54:16	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 154
+2019-08-31 18:54:16	Node 5 is sending reactive power to ancestor 3. Measure: 0.930080. Iter: 154
+2019-08-31 18:54:37	Node 5 is sending current to ancestor 3. Measure: 2.179100. Iter: 155
+2019-08-31 18:54:37	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 155
+2019-08-31 18:54:37	Node 5 is sending reactive power to ancestor 3. Measure: 0.930070. Iter: 155
+2019-08-31 18:54:59	Node 5 is sending current to ancestor 3. Measure: 2.168800. Iter: 156
+2019-08-31 18:54:59	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 156
+2019-08-31 18:54:59	Node 5 is sending reactive power to ancestor 3. Measure: 0.930060. Iter: 156
+2019-08-31 18:55:21	Node 5 is sending current to ancestor 3. Measure: 2.148500. Iter: 157
+2019-08-31 18:55:21	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 157
+2019-08-31 18:55:21	Node 5 is sending reactive power to ancestor 3. Measure: 0.930050. Iter: 157
+2019-08-31 18:55:43	Node 5 is sending current to ancestor 3. Measure: 2.128400. Iter: 158
+2019-08-31 18:55:43	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 158
+2019-08-31 18:55:43	Node 5 is sending reactive power to ancestor 3. Measure: 0.930040. Iter: 158
+2019-08-31 18:56:05	Node 5 is sending current to ancestor 3. Measure: 2.108400. Iter: 159
+2019-08-31 18:56:05	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 159
+2019-08-31 18:56:05	Node 5 is sending reactive power to ancestor 3. Measure: 0.930030. Iter: 159
+2019-08-31 18:56:05	Node 5 is receiving voltage from ancestor 3. Measure: 1.049700. Iter: 159
+2019-08-31 18:56:27	Node 5 is sending current to ancestor 3. Measure: 2.088600. Iter: 160
+2019-08-31 18:56:27	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 160
+2019-08-31 18:56:27	Node 5 is sending reactive power to ancestor 3. Measure: 0.930020. Iter: 160
+2019-08-31 18:56:27	Node 5 is receiving voltage from ancestor 3. Measure: 1.049700. Iter: 160
+2019-08-31 18:56:49	Node 5 is sending current to ancestor 3. Measure: 2.049800. Iter: 161
+2019-08-31 18:56:49	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 161
+2019-08-31 18:56:49	Node 5 is sending reactive power to ancestor 3. Measure: 0.930010. Iter: 161
+2019-08-31 18:57:11	Node 5 is sending current to ancestor 3. Measure: 2.011700. Iter: 162
+2019-08-31 18:57:11	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 162
+2019-08-31 18:57:11	Node 5 is sending reactive power to ancestor 3. Measure: 0.930010. Iter: 162
+2019-08-31 18:57:33	Node 5 is sending current to ancestor 3. Measure: 1.974300. Iter: 163
+2019-08-31 18:57:33	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 163
+2019-08-31 18:57:33	Node 5 is sending reactive power to ancestor 3. Measure: 0.930010. Iter: 163
+2019-08-31 18:57:54	Node 5 is sending current to ancestor 3. Measure: 1.937600. Iter: 164
+2019-08-31 18:57:54	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 164
+2019-08-31 18:57:54	Node 5 is sending reactive power to ancestor 3. Measure: 0.930010. Iter: 164
+2019-08-31 18:58:16	Node 5 is sending current to ancestor 3. Measure: 1.901600. Iter: 165
+2019-08-31 18:58:16	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 165
+2019-08-31 18:58:16	Node 5 is sending reactive power to ancestor 3. Measure: 0.930000. Iter: 165
+2019-08-31 18:58:16	Node 5 is receiving voltage from ancestor 3. Measure: 1.049900. Iter: 165
+2019-08-31 18:58:38	Node 5 is sending current to ancestor 3. Measure: 1.866300. Iter: 166
+2019-08-31 18:58:38	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 166
+2019-08-31 18:58:38	Node 5 is sending reactive power to ancestor 3. Measure: 0.929990. Iter: 166
+2019-08-31 18:59:00	Node 5 is sending current to ancestor 3. Measure: 1.831700. Iter: 167
+2019-08-31 18:59:00	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 167
+2019-08-31 18:59:00	Node 5 is sending reactive power to ancestor 3. Measure: 0.929980. Iter: 167
+2019-08-31 18:59:00	Node 5 is receiving voltage from ancestor 3. Measure: 1.050100. Iter: 167
+2019-08-31 18:59:22	Node 5 is sending current to ancestor 3. Measure: 1.797700. Iter: 168
+2019-08-31 18:59:22	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 168
+2019-08-31 18:59:22	Node 5 is sending reactive power to ancestor 3. Measure: 0.929980. Iter: 168
+2019-08-31 18:59:44	Node 5 is sending current to ancestor 3. Measure: 1.764400. Iter: 169
+2019-08-31 18:59:44	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 169
+2019-08-31 18:59:44	Node 5 is sending reactive power to ancestor 3. Measure: 0.929960. Iter: 169
+2019-08-31 18:59:44	Node 5 is receiving voltage from ancestor 3. Measure: 1.050300. Iter: 169
+2019-08-31 19:00:05	Node 5 is sending current to ancestor 3. Measure: 1.747900. Iter: 170
+2019-08-31 19:00:05	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 170
+2019-08-31 19:00:05	Node 5 is sending reactive power to ancestor 3. Measure: 0.929960. Iter: 170
+2019-08-31 19:00:05	Node 5 is receiving voltage from ancestor 3. Measure: 1.050300. Iter: 170
+2019-08-31 19:00:27	Node 5 is sending current to ancestor 3. Measure: 1.731500. Iter: 171
+2019-08-31 19:00:27	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 171
+2019-08-31 19:00:27	Node 5 is sending reactive power to ancestor 3. Measure: 0.929950. Iter: 171
+2019-08-31 19:00:27	Node 5 is receiving voltage from ancestor 3. Measure: 1.050400. Iter: 171
+2019-08-31 19:00:49	Node 5 is sending current to ancestor 3. Measure: 1.715300. Iter: 172
+2019-08-31 19:00:49	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 172
+2019-08-31 19:00:49	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 172
+2019-08-31 19:01:10	Node 5 is sending current to ancestor 3. Measure: 1.699200. Iter: 173
+2019-08-31 19:01:10	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 173
+2019-08-31 19:01:10	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 173
+2019-08-31 19:01:33	Node 5 is sending current to ancestor 3. Measure: 1.683300. Iter: 174
+2019-08-31 19:01:33	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 174
+2019-08-31 19:01:33	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 174
+2019-08-31 19:01:33	Node 5 is receiving voltage from ancestor 3. Measure: 1.050600. Iter: 174
+2019-08-31 19:01:54	Node 5 is sending current to ancestor 3. Measure: 1.667500. Iter: 175
+2019-08-31 19:01:54	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 175
+2019-08-31 19:01:54	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 175
+2019-08-31 19:02:17	Node 5 is sending current to ancestor 3. Measure: 1.651900. Iter: 176
+2019-08-31 19:02:17	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 176
+2019-08-31 19:02:17	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 176
+2019-08-31 19:02:17	Node 5 is receiving voltage from ancestor 3. Measure: 1.050700. Iter: 176
+2019-08-31 19:02:38	Node 5 is sending current to ancestor 3. Measure: 1.636400. Iter: 177
+2019-08-31 19:02:38	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 177
+2019-08-31 19:02:38	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 177
+2019-08-31 19:02:38	Node 5 is receiving voltage from ancestor 3. Measure: 1.050700. Iter: 177
+2019-08-31 19:03:00	Node 5 is sending current to ancestor 3. Measure: 1.621100. Iter: 178
+2019-08-31 19:03:00	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 178
+2019-08-31 19:03:00	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 178
+2019-08-31 19:03:22	Node 5 is sending current to ancestor 3. Measure: 1.605900. Iter: 179
+2019-08-31 19:03:22	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 179
+2019-08-31 19:03:22	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 179
+2019-08-31 19:03:44	Node 5 is sending current to ancestor 3. Measure: 1.590800. Iter: 180
+2019-08-31 19:03:44	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 180
+2019-08-31 19:03:44	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 180
+2019-08-31 19:03:44	Node 5 is receiving voltage from ancestor 3. Measure: 1.050800. Iter: 180
+2019-08-31 19:04:06	Node 5 is sending current to ancestor 3. Measure: 1.575900. Iter: 181
+2019-08-31 19:04:06	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 181
+2019-08-31 19:04:06	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 181
+2019-08-31 19:04:27	Node 5 is sending current to ancestor 3. Measure: 1.561100. Iter: 182
+2019-08-31 19:04:27	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 182
+2019-08-31 19:04:27	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 182
+2019-08-31 19:04:50	Node 5 is sending current to ancestor 3. Measure: 1.546500. Iter: 183
+2019-08-31 19:04:50	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 183
+2019-08-31 19:04:50	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 183
+2019-08-31 19:05:12	Node 5 is sending current to ancestor 3. Measure: 1.532000. Iter: 184
+2019-08-31 19:05:12	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 184
+2019-08-31 19:05:12	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 184
+2019-08-31 19:05:12	Node 5 is receiving voltage from ancestor 3. Measure: 1.050900. Iter: 184
+2019-08-31 19:05:33	Node 5 is sending current to ancestor 3. Measure: 1.517600. Iter: 185
+2019-08-31 19:05:33	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 185
+2019-08-31 19:05:33	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 185
+2019-08-31 19:05:55	Node 5 is sending current to ancestor 3. Measure: 1.503400. Iter: 186
+2019-08-31 19:05:55	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 186
+2019-08-31 19:05:55	Node 5 is sending reactive power to ancestor 3. Measure: 0.929930. Iter: 186
+2019-08-31 19:06:16	Node 5 is sending current to ancestor 3. Measure: 1.496300. Iter: 187
+2019-08-31 19:06:16	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 187
+2019-08-31 19:06:16	Node 5 is sending reactive power to ancestor 3. Measure: 0.929930. Iter: 187
+2019-08-31 19:06:39	Node 5 is sending current to ancestor 3. Measure: 1.489300. Iter: 188
+2019-08-31 19:06:39	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 188
+2019-08-31 19:06:39	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 188
+2019-08-31 19:07:01	Node 5 is sending current to ancestor 3. Measure: 1.482300. Iter: 189
+2019-08-31 19:07:01	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 189
+2019-08-31 19:07:01	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 189
+2019-08-31 19:07:01	Node 5 is receiving voltage from ancestor 3. Measure: 1.051100. Iter: 189
+2019-08-31 19:07:22	Node 5 is sending current to ancestor 3. Measure: 1.475300. Iter: 190
+2019-08-31 19:07:22	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 190
+2019-08-31 19:07:22	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 190
+2019-08-31 19:07:44	Node 5 is sending current to ancestor 3. Measure: 1.461500. Iter: 191
+2019-08-31 19:07:44	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 191
+2019-08-31 19:07:44	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 191
+2019-08-31 19:08:06	Node 5 is sending current to ancestor 3. Measure: 1.447800. Iter: 192
+2019-08-31 19:08:06	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 192
+2019-08-31 19:08:06	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 192
+2019-08-31 19:08:28	Node 5 is sending current to ancestor 3. Measure: 1.434200. Iter: 193
+2019-08-31 19:08:28	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 193
+2019-08-31 19:08:28	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 193
+2019-08-31 19:08:50	Node 5 is sending current to ancestor 3. Measure: 1.420700. Iter: 194
+2019-08-31 19:08:50	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 194
+2019-08-31 19:08:50	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 194
+2019-08-31 19:09:12	Node 5 is sending current to ancestor 3. Measure: 1.407400. Iter: 195
+2019-08-31 19:09:12	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 195
+2019-08-31 19:09:12	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 195
+2019-08-31 19:09:12	Node 5 is receiving voltage from ancestor 3. Measure: 1.051200. Iter: 195
+2019-08-31 19:09:34	Node 5 is sending current to ancestor 3. Measure: 1.394200. Iter: 196
+2019-08-31 19:09:34	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 196
+2019-08-31 19:09:34	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 196
+2019-08-31 19:09:34	Node 5 is receiving voltage from ancestor 3. Measure: 1.051200. Iter: 196
+2019-08-31 19:09:56	Node 5 is sending current to ancestor 3. Measure: 1.381100. Iter: 197
+2019-08-31 19:09:56	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 197
+2019-08-31 19:09:56	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 197
+2019-08-31 19:09:56	Node 5 is receiving voltage from ancestor 3. Measure: 1.051400. Iter: 197
+2019-08-31 19:10:17	Node 5 is sending current to ancestor 3. Measure: 1.368100. Iter: 198
+2019-08-31 19:10:17	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 198
+2019-08-31 19:10:17	Node 5 is sending reactive power to ancestor 3. Measure: 0.929930. Iter: 198
+2019-08-31 19:10:17	Node 5 is receiving voltage from ancestor 3. Measure: 1.051500. Iter: 198
+2019-08-31 19:10:39	Node 5 is sending current to ancestor 3. Measure: 1.355300. Iter: 199
+2019-08-31 19:10:39	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 199
+2019-08-31 19:10:39	Node 5 is sending reactive power to ancestor 3. Measure: 0.929930. Iter: 199
+2019-08-31 19:11:01	Node 5 is sending current to ancestor 3. Measure: 1.342600. Iter: 200
+2019-08-31 19:11:01	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 200
+2019-08-31 19:11:01	Node 5 is sending reactive power to ancestor 3. Measure: 0.929930. Iter: 200
+2019-08-31 19:11:01	Node 5 is receiving voltage from ancestor 3. Measure: 1.051600. Iter: 200
+2019-08-31 19:11:23	Node 5 is sending current to ancestor 3. Measure: 1.330000. Iter: 201
+2019-08-31 19:11:23	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 201
+2019-08-31 19:11:23	Node 5 is sending reactive power to ancestor 3. Measure: 0.929930. Iter: 201
+2019-08-31 19:11:23	Node 5 is receiving voltage from ancestor 3. Measure: 1.051600. Iter: 201
+2019-08-31 19:11:45	Node 5 is sending current to ancestor 3. Measure: 1.317500. Iter: 202
+2019-08-31 19:11:45	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 202
+2019-08-31 19:11:45	Node 5 is sending reactive power to ancestor 3. Measure: 0.929930. Iter: 202
+2019-08-31 19:11:45	Node 5 is receiving voltage from ancestor 3. Measure: 1.051600. Iter: 202
+2019-08-31 19:12:06	Node 5 is sending current to ancestor 3. Measure: 1.305100. Iter: 203
+2019-08-31 19:12:06	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 203
+2019-08-31 19:12:06	Node 5 is sending reactive power to ancestor 3. Measure: 0.929930. Iter: 203
+2019-08-31 19:12:06	Node 5 is receiving voltage from ancestor 3. Measure: 1.051600. Iter: 203
+2019-08-31 19:12:28	Node 5 is sending current to ancestor 3. Measure: 1.292900. Iter: 204
+2019-08-31 19:12:28	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 204
+2019-08-31 19:12:28	Node 5 is sending reactive power to ancestor 3. Measure: 0.929930. Iter: 204
+2019-08-31 19:12:50	Node 5 is sending current to ancestor 3. Measure: 1.280800. Iter: 205
+2019-08-31 19:12:50	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 205
+2019-08-31 19:12:50	Node 5 is sending reactive power to ancestor 3. Measure: 0.929930. Iter: 205
+2019-08-31 19:13:12	Node 5 is sending current to ancestor 3. Measure: 1.268800. Iter: 206
+2019-08-31 19:13:12	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 206
+2019-08-31 19:13:12	Node 5 is sending reactive power to ancestor 3. Measure: 0.929930. Iter: 206
+2019-08-31 19:13:12	Node 5 is receiving voltage from ancestor 3. Measure: 1.051600. Iter: 206
+2019-08-31 19:13:34	Node 5 is sending current to ancestor 3. Measure: 1.256900. Iter: 207
+2019-08-31 19:13:34	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 207
+2019-08-31 19:13:34	Node 5 is sending reactive power to ancestor 3. Measure: 0.929920. Iter: 207
+2019-08-31 19:13:34	Node 5 is receiving voltage from ancestor 3. Measure: 1.051600. Iter: 207
+2019-08-31 19:13:56	Node 5 is sending current to ancestor 3. Measure: 1.245100. Iter: 208
+2019-08-31 19:13:56	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 208
+2019-08-31 19:13:56	Node 5 is sending reactive power to ancestor 3. Measure: 0.929910. Iter: 208
+2019-08-31 19:14:17	Node 5 is sending current to ancestor 3. Measure: 1.233400. Iter: 209
+2019-08-31 19:14:17	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 209
+2019-08-31 19:14:17	Node 5 is sending reactive power to ancestor 3. Measure: 0.929910. Iter: 209
+2019-08-31 19:14:17	Node 5 is receiving voltage from ancestor 3. Measure: 1.051700. Iter: 209
+2019-08-31 19:14:40	Node 5 is sending current to ancestor 3. Measure: 1.221800. Iter: 210
+2019-08-31 19:14:40	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 210
+2019-08-31 19:14:40	Node 5 is sending reactive power to ancestor 3. Measure: 0.929900. Iter: 210
+2019-08-31 19:15:02	Node 5 is sending current to ancestor 3. Measure: 1.210300. Iter: 211
+2019-08-31 19:15:02	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 211
+2019-08-31 19:15:02	Node 5 is sending reactive power to ancestor 3. Measure: 0.929890. Iter: 211
+2019-08-31 19:15:23	Node 5 is sending current to ancestor 3. Measure: 1.199000. Iter: 212
+2019-08-31 19:15:23	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 212
+2019-08-31 19:15:23	Node 5 is sending reactive power to ancestor 3. Measure: 0.929890. Iter: 212
+2019-08-31 19:15:46	Node 5 is sending current to ancestor 3. Measure: 1.187800. Iter: 213
+2019-08-31 19:15:46	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 213
+2019-08-31 19:15:46	Node 5 is sending reactive power to ancestor 3. Measure: 0.929890. Iter: 213
+2019-08-31 19:16:07	Node 5 is sending current to ancestor 3. Measure: 1.176700. Iter: 214
+2019-08-31 19:16:07	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 214
+2019-08-31 19:16:07	Node 5 is sending reactive power to ancestor 3. Measure: 0.929900. Iter: 214
+2019-08-31 19:16:29	Node 5 is sending current to ancestor 3. Measure: 1.165700. Iter: 215
+2019-08-31 19:16:29	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 215
+2019-08-31 19:16:29	Node 5 is sending reactive power to ancestor 3. Measure: 0.929930. Iter: 215
+2019-08-31 19:16:51	Node 5 is sending current to ancestor 3. Measure: 1.154800. Iter: 216
+2019-08-31 19:16:51	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 216
+2019-08-31 19:16:51	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 216
+2019-08-31 19:16:51	Node 5 is receiving voltage from ancestor 3. Measure: 1.051700. Iter: 216
+2019-08-31 19:17:13	Node 5 is sending current to ancestor 3. Measure: 1.144000. Iter: 217
+2019-08-31 19:17:13	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 217
+2019-08-31 19:17:13	Node 5 is sending reactive power to ancestor 3. Measure: 0.929950. Iter: 217
+2019-08-31 19:17:34	Node 5 is sending current to ancestor 3. Measure: 1.133300. Iter: 218
+2019-08-31 19:17:34	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 218
+2019-08-31 19:17:34	Node 5 is sending reactive power to ancestor 3. Measure: 0.929950. Iter: 218
+2019-08-31 19:17:56	Node 5 is sending current to ancestor 3. Measure: 1.128000. Iter: 219
+2019-08-31 19:17:56	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 219
+2019-08-31 19:17:56	Node 5 is sending reactive power to ancestor 3. Measure: 0.929950. Iter: 219
+2019-08-31 19:17:56	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 219
+2019-08-31 19:18:18	Node 5 is sending current to ancestor 3. Measure: 1.122700. Iter: 220
+2019-08-31 19:18:18	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 220
+2019-08-31 19:18:18	Node 5 is sending reactive power to ancestor 3. Measure: 0.929950. Iter: 220
+2019-08-31 19:18:18	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 220
+2019-08-31 19:18:40	Node 5 is sending current to ancestor 3. Measure: 1.117400. Iter: 221
+2019-08-31 19:18:40	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 221
+2019-08-31 19:18:40	Node 5 is sending reactive power to ancestor 3. Measure: 0.929950. Iter: 221
+2019-08-31 19:19:02	Node 5 is sending current to ancestor 3. Measure: 1.114800. Iter: 222
+2019-08-31 19:19:02	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 222
+2019-08-31 19:19:02	Node 5 is sending reactive power to ancestor 3. Measure: 0.929950. Iter: 222
+2019-08-31 19:19:02	Node 5 is receiving voltage from ancestor 3. Measure: 1.052100. Iter: 222
+2019-08-31 19:19:23	Node 5 is sending current to ancestor 3. Measure: 1.112200. Iter: 223
+2019-08-31 19:19:23	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 223
+2019-08-31 19:19:23	Node 5 is sending reactive power to ancestor 3. Measure: 0.929950. Iter: 223
+2019-08-31 19:19:45	Node 5 is sending current to ancestor 3. Measure: 1.109600. Iter: 224
+2019-08-31 19:19:45	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 224
+2019-08-31 19:19:45	Node 5 is sending reactive power to ancestor 3. Measure: 0.929950. Iter: 224
+2019-08-31 19:19:45	Node 5 is receiving voltage from ancestor 3. Measure: 1.052100. Iter: 224
+2019-08-31 19:20:06	Node 5 is sending current to ancestor 3. Measure: 1.107000. Iter: 225
+2019-08-31 19:20:06	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 225
+2019-08-31 19:20:06	Node 5 is sending reactive power to ancestor 3. Measure: 0.929950. Iter: 225
+2019-08-31 19:20:29	Node 5 is sending current to ancestor 3. Measure: 1.101800. Iter: 226
+2019-08-31 19:20:29	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 226
+2019-08-31 19:20:29	Node 5 is sending reactive power to ancestor 3. Measure: 0.929950. Iter: 226
+2019-08-31 19:20:50	Node 5 is sending current to ancestor 3. Measure: 1.096600. Iter: 227
+2019-08-31 19:20:50	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 227
+2019-08-31 19:20:50	Node 5 is sending reactive power to ancestor 3. Measure: 0.929950. Iter: 227
+2019-08-31 19:20:50	Node 5 is receiving voltage from ancestor 3. Measure: 1.052100. Iter: 227
+2019-08-31 19:21:12	Node 5 is sending current to ancestor 3. Measure: 1.091400. Iter: 228
+2019-08-31 19:21:12	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 228
+2019-08-31 19:21:12	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 228
+2019-08-31 19:21:33	Node 5 is sending current to ancestor 3. Measure: 1.086300. Iter: 229
+2019-08-31 19:21:33	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 229
+2019-08-31 19:21:33	Node 5 is sending reactive power to ancestor 3. Measure: 0.929940. Iter: 229
+2019-08-31 19:21:56	Node 5 is sending current to ancestor 3. Measure: 1.081200. Iter: 230
+2019-08-31 19:21:56	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 230
+2019-08-31 19:21:56	Node 5 is sending reactive power to ancestor 3. Measure: 0.929920. Iter: 230
+2019-08-31 19:22:17	Node 5 is sending current to ancestor 3. Measure: 1.076100. Iter: 231
+2019-08-31 19:22:17	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 231
+2019-08-31 19:22:17	Node 5 is sending reactive power to ancestor 3. Measure: 0.929900. Iter: 231
+2019-08-31 19:22:17	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 231
+2019-08-31 19:22:39	Node 5 is sending current to ancestor 3. Measure: 1.071000. Iter: 232
+2019-08-31 19:22:39	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 232
+2019-08-31 19:22:39	Node 5 is sending reactive power to ancestor 3. Measure: 0.929880. Iter: 232
+2019-08-31 19:22:39	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 232
+2019-08-31 19:23:01	Node 5 is sending current to ancestor 3. Measure: 1.066000. Iter: 233
+2019-08-31 19:23:01	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 233
+2019-08-31 19:23:01	Node 5 is sending reactive power to ancestor 3. Measure: 0.929850. Iter: 233
+2019-08-31 19:23:01	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 233
+2019-08-31 19:23:23	Node 5 is sending current to ancestor 3. Measure: 1.061000. Iter: 234
+2019-08-31 19:23:23	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 234
+2019-08-31 19:23:23	Node 5 is sending reactive power to ancestor 3. Measure: 0.929820. Iter: 234
+2019-08-31 19:23:44	Node 5 is sending current to ancestor 3. Measure: 1.056000. Iter: 235
+2019-08-31 19:23:44	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 235
+2019-08-31 19:23:44	Node 5 is sending reactive power to ancestor 3. Measure: 0.929780. Iter: 235
+2019-08-31 19:24:06	Node 5 is sending current to ancestor 3. Measure: 1.051000. Iter: 236
+2019-08-31 19:24:06	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 236
+2019-08-31 19:24:06	Node 5 is sending reactive power to ancestor 3. Measure: 0.929750. Iter: 236
+2019-08-31 19:24:06	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 236
+2019-08-31 19:24:28	Node 5 is sending current to ancestor 3. Measure: 1.046100. Iter: 237
+2019-08-31 19:24:28	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 237
+2019-08-31 19:24:28	Node 5 is sending reactive power to ancestor 3. Measure: 0.929710. Iter: 237
+2019-08-31 19:24:50	Node 5 is sending current to ancestor 3. Measure: 1.041200. Iter: 238
+2019-08-31 19:24:50	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 238
+2019-08-31 19:24:50	Node 5 is sending reactive power to ancestor 3. Measure: 0.929660. Iter: 238
+2019-08-31 19:25:12	Node 5 is sending current to ancestor 3. Measure: 1.036300. Iter: 239
+2019-08-31 19:25:12	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 239
+2019-08-31 19:25:12	Node 5 is sending reactive power to ancestor 3. Measure: 0.929610. Iter: 239
+2019-08-31 19:25:33	Node 5 is sending current to ancestor 3. Measure: 1.031500. Iter: 240
+2019-08-31 19:25:33	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 240
+2019-08-31 19:25:33	Node 5 is sending reactive power to ancestor 3. Measure: 0.929560. Iter: 240
+2019-08-31 19:25:55	Node 5 is sending current to ancestor 3. Measure: 1.026700. Iter: 241
+2019-08-31 19:25:55	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 241
+2019-08-31 19:25:55	Node 5 is sending reactive power to ancestor 3. Measure: 0.929510. Iter: 241
+2019-08-31 19:26:18	Node 5 is sending current to ancestor 3. Measure: 1.021900. Iter: 242
+2019-08-31 19:26:18	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 242
+2019-08-31 19:26:18	Node 5 is sending reactive power to ancestor 3. Measure: 0.929460. Iter: 242
+2019-08-31 19:26:18	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 242
+2019-08-31 19:26:39	Node 5 is sending current to ancestor 3. Measure: 1.017100. Iter: 243
+2019-08-31 19:26:39	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 243
+2019-08-31 19:26:39	Node 5 is sending reactive power to ancestor 3. Measure: 0.929410. Iter: 243
+2019-08-31 19:27:01	Node 5 is sending current to ancestor 3. Measure: 1.012300. Iter: 244
+2019-08-31 19:27:01	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 244
+2019-08-31 19:27:01	Node 5 is sending reactive power to ancestor 3. Measure: 0.929360. Iter: 244
+2019-08-31 19:27:24	Node 5 is sending current to ancestor 3. Measure: 1.007500. Iter: 245
+2019-08-31 19:27:24	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 245
+2019-08-31 19:27:24	Node 5 is sending reactive power to ancestor 3. Measure: 0.929360. Iter: 245
+2019-08-31 19:27:24	Node 5 is receiving voltage from ancestor 3. Measure: 1.052300. Iter: 245
+2019-08-31 19:27:45	Node 5 is sending current to ancestor 3. Measure: 1.002800. Iter: 246
+2019-08-31 19:27:45	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 246
+2019-08-31 19:27:45	Node 5 is sending reactive power to ancestor 3. Measure: 0.929360. Iter: 246
+2019-08-31 19:28:07	Node 5 is sending current to ancestor 3. Measure: 0.998080. Iter: 247
+2019-08-31 19:28:07	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 247
+2019-08-31 19:28:07	Node 5 is sending reactive power to ancestor 3. Measure: 0.929350. Iter: 247
+2019-08-31 19:28:29	Node 5 is sending current to ancestor 3. Measure: 0.993380. Iter: 248
+2019-08-31 19:28:29	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 248
+2019-08-31 19:28:29	Node 5 is sending reactive power to ancestor 3. Measure: 0.929340. Iter: 248
+2019-08-31 19:28:51	Node 5 is sending current to ancestor 3. Measure: 0.988700. Iter: 249
+2019-08-31 19:28:51	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 249
+2019-08-31 19:28:51	Node 5 is sending reactive power to ancestor 3. Measure: 0.929340. Iter: 249
+2019-08-31 19:28:51	Node 5 is receiving voltage from ancestor 3. Measure: 1.052400. Iter: 249
+2019-08-31 19:29:12	Node 5 is sending current to ancestor 3. Measure: 0.984040. Iter: 250
+2019-08-31 19:29:12	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 250
+2019-08-31 19:29:12	Node 5 is sending reactive power to ancestor 3. Measure: 0.929340. Iter: 250
+2019-08-31 19:29:34	Node 5 is sending current to ancestor 3. Measure: 0.979410. Iter: 251
+2019-08-31 19:29:34	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 251
+2019-08-31 19:29:34	Node 5 is sending reactive power to ancestor 3. Measure: 0.929340. Iter: 251
+2019-08-31 19:29:56	Node 5 is sending current to ancestor 3. Measure: 0.974790. Iter: 252
+2019-08-31 19:29:56	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 252
+2019-08-31 19:29:56	Node 5 is sending reactive power to ancestor 3. Measure: 0.929350. Iter: 252
+2019-08-31 19:30:19	Node 5 is sending current to ancestor 3. Measure: 0.970180. Iter: 253
+2019-08-31 19:30:19	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 253
+2019-08-31 19:30:19	Node 5 is sending reactive power to ancestor 3. Measure: 0.929370. Iter: 253
+2019-08-31 19:30:19	Node 5 is receiving voltage from ancestor 3. Measure: 1.052400. Iter: 253
+2019-08-31 19:30:40	Node 5 is sending current to ancestor 3. Measure: 0.965580. Iter: 254
+2019-08-31 19:30:40	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 254
+2019-08-31 19:30:40	Node 5 is sending reactive power to ancestor 3. Measure: 0.929400. Iter: 254
+2019-08-31 19:31:03	Node 5 is sending current to ancestor 3. Measure: 0.961000. Iter: 255
+2019-08-31 19:31:03	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 255
+2019-08-31 19:31:03	Node 5 is sending reactive power to ancestor 3. Measure: 0.929430. Iter: 255
+2019-08-31 19:31:03	Node 5 is receiving voltage from ancestor 3. Measure: 1.052400. Iter: 255
+2019-08-31 19:31:24	Node 5 is sending current to ancestor 3. Measure: 0.956440. Iter: 256
+2019-08-31 19:31:24	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 256
+2019-08-31 19:31:24	Node 5 is sending reactive power to ancestor 3. Measure: 0.929470. Iter: 256
+2019-08-31 19:31:46	Node 5 is sending current to ancestor 3. Measure: 0.951900. Iter: 257
+2019-08-31 19:31:46	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 257
+2019-08-31 19:31:46	Node 5 is sending reactive power to ancestor 3. Measure: 0.929510. Iter: 257
+2019-08-31 19:31:46	Node 5 is receiving voltage from ancestor 3. Measure: 1.052400. Iter: 257
+2019-08-31 19:32:08	Node 5 is sending current to ancestor 3. Measure: 0.947380. Iter: 258
+2019-08-31 19:32:08	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 258
+2019-08-31 19:32:08	Node 5 is sending reactive power to ancestor 3. Measure: 0.929550. Iter: 258
+2019-08-31 19:32:30	Node 5 is sending current to ancestor 3. Measure: 0.942890. Iter: 259
+2019-08-31 19:32:30	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 259
+2019-08-31 19:32:30	Node 5 is sending reactive power to ancestor 3. Measure: 0.929580. Iter: 259
+2019-08-31 19:32:30	Node 5 is receiving voltage from ancestor 3. Measure: 1.052500. Iter: 259
+2019-08-31 19:32:52	Node 5 is sending current to ancestor 3. Measure: 0.938430. Iter: 260
+2019-08-31 19:32:52	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 260
+2019-08-31 19:32:52	Node 5 is sending reactive power to ancestor 3. Measure: 0.929590. Iter: 260
+2019-08-31 19:33:14	Node 5 is sending current to ancestor 3. Measure: 0.934020. Iter: 261
+2019-08-31 19:33:14	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 261
+2019-08-31 19:33:14	Node 5 is sending reactive power to ancestor 3. Measure: 0.929580. Iter: 261
+2019-08-31 19:33:14	Node 5 is receiving voltage from ancestor 3. Measure: 1.052500. Iter: 261
+2019-08-31 19:33:35	Node 5 is sending current to ancestor 3. Measure: 0.929670. Iter: 262
+2019-08-31 19:33:35	Node 5 is sending active power to ancestor 3. Measure: -0.199980. Iter: 262
+2019-08-31 19:33:35	Node 5 is sending reactive power to ancestor 3. Measure: 0.929530. Iter: 262
+2019-08-31 19:33:57	Node 5 is sending current to ancestor 3. Measure: 0.925300. Iter: 263
+2019-08-31 19:33:57	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 263
+2019-08-31 19:33:57	Node 5 is sending reactive power to ancestor 3. Measure: 0.929520. Iter: 263
+2019-08-31 19:33:57	Node 5 is receiving voltage from ancestor 3. Measure: 1.052600. Iter: 263
+2019-08-31 19:34:19	Node 5 is sending current to ancestor 3. Measure: 0.920940. Iter: 264
+2019-08-31 19:34:19	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 264
+2019-08-31 19:34:19	Node 5 is sending reactive power to ancestor 3. Measure: 0.929520. Iter: 264
+2019-08-31 19:34:19	Node 5 is receiving voltage from ancestor 3. Measure: 1.052600. Iter: 264
+2019-08-31 19:34:41	Node 5 is sending current to ancestor 3. Measure: 0.916600. Iter: 265
+2019-08-31 19:34:41	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 265
+2019-08-31 19:34:41	Node 5 is sending reactive power to ancestor 3. Measure: 0.929520. Iter: 265
+2019-08-31 19:34:41	Node 5 is receiving voltage from ancestor 3. Measure: 1.052600. Iter: 265
+2019-08-31 19:35:03	Node 5 is sending current to ancestor 3. Measure: 0.912340. Iter: 266
+2019-08-31 19:35:03	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 266
+2019-08-31 19:35:03	Node 5 is sending reactive power to ancestor 3. Measure: 0.929460. Iter: 266
+2019-08-31 19:35:03	Node 5 is receiving voltage from ancestor 3. Measure: 1.052700. Iter: 266
+2019-08-31 19:35:25	Node 5 is sending current to ancestor 3. Measure: 0.908350. Iter: 267
+2019-08-31 19:35:25	Node 5 is sending active power to ancestor 3. Measure: -0.199950. Iter: 267
+2019-08-31 19:35:25	Node 5 is sending reactive power to ancestor 3. Measure: 0.929180. Iter: 267
+2019-08-31 19:35:47	Node 5 is sending current to ancestor 3. Measure: 0.906640. Iter: 268
+2019-08-31 19:35:47	Node 5 is sending active power to ancestor 3. Measure: -0.199910. Iter: 268
+2019-08-31 19:35:47	Node 5 is sending reactive power to ancestor 3. Measure: 0.928780. Iter: 268
+2019-08-31 19:36:08	Node 5 is sending current to ancestor 3. Measure: 0.905960. Iter: 269
+2019-08-31 19:36:08	Node 5 is sending active power to ancestor 3. Measure: -0.199910. Iter: 269
+2019-08-31 19:36:08	Node 5 is sending reactive power to ancestor 3. Measure: 0.928420. Iter: 269
+2019-08-31 19:36:30	Node 5 is sending current to ancestor 3. Measure: 0.905720. Iter: 270
+2019-08-31 19:36:30	Node 5 is sending active power to ancestor 3. Measure: -0.199940. Iter: 270
+2019-08-31 19:36:30	Node 5 is sending reactive power to ancestor 3. Measure: 0.928150. Iter: 270
+2019-08-31 19:36:52	Node 5 is sending current to ancestor 3. Measure: 0.905580. Iter: 271
+2019-08-31 19:36:52	Node 5 is sending active power to ancestor 3. Measure: -0.199980. Iter: 271
+2019-08-31 19:36:52	Node 5 is sending reactive power to ancestor 3. Measure: 0.928030. Iter: 271
+2019-08-31 19:37:14	Node 5 is sending current to ancestor 3. Measure: 0.905420. Iter: 272
+2019-08-31 19:37:14	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 272
+2019-08-31 19:37:14	Node 5 is sending reactive power to ancestor 3. Measure: 0.927940. Iter: 272
+2019-08-31 19:37:36	Node 5 is sending current to ancestor 3. Measure: 0.905240. Iter: 273
+2019-08-31 19:37:36	Node 5 is sending active power to ancestor 3. Measure: -0.200020. Iter: 273
+2019-08-31 19:37:36	Node 5 is sending reactive power to ancestor 3. Measure: 0.927860. Iter: 273
+2019-08-31 19:37:57	Node 5 is sending current to ancestor 3. Measure: 0.905050. Iter: 274
+2019-08-31 19:37:57	Node 5 is sending active power to ancestor 3. Measure: -0.200020. Iter: 274
+2019-08-31 19:37:57	Node 5 is sending reactive power to ancestor 3. Measure: 0.927780. Iter: 274
+2019-08-31 19:38:19	Node 5 is sending current to ancestor 3. Measure: 0.904870. Iter: 275
+2019-08-31 19:38:19	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 275
+2019-08-31 19:38:19	Node 5 is sending reactive power to ancestor 3. Measure: 0.927700. Iter: 275
+2019-08-31 19:38:41	Node 5 is sending current to ancestor 3. Measure: 0.904690. Iter: 276
+2019-08-31 19:38:41	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 276
+2019-08-31 19:38:41	Node 5 is sending reactive power to ancestor 3. Measure: 0.927620. Iter: 276
+2019-08-31 19:39:03	Node 5 is sending current to ancestor 3. Measure: 0.904510. Iter: 277
+2019-08-31 19:39:03	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 277
+2019-08-31 19:39:03	Node 5 is sending reactive power to ancestor 3. Measure: 0.927540. Iter: 277
+2019-08-31 19:39:03	Node 5 is receiving voltage from ancestor 3. Measure: 1.053400. Iter: 277
+2019-08-31 19:39:24	Node 5 is sending current to ancestor 3. Measure: 0.904330. Iter: 278
+2019-08-31 19:39:24	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 278
+2019-08-31 19:39:24	Node 5 is sending reactive power to ancestor 3. Measure: 0.927460. Iter: 278
+2019-08-31 19:39:46	Node 5 is sending current to ancestor 3. Measure: 0.904320. Iter: 279
+2019-08-31 19:39:46	Node 5 is sending active power to ancestor 3. Measure: -0.199960. Iter: 279
+2019-08-31 19:39:46	Node 5 is sending reactive power to ancestor 3. Measure: 0.927240. Iter: 279
+2019-08-31 19:40:08	Node 5 is sending current to ancestor 3. Measure: 0.904220. Iter: 280
+2019-08-31 19:40:08	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 280
+2019-08-31 19:40:08	Node 5 is sending reactive power to ancestor 3. Measure: 0.927200. Iter: 280
+2019-08-31 19:40:30	Node 5 is sending current to ancestor 3. Measure: 0.904180. Iter: 281
+2019-08-31 19:40:30	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 281
+2019-08-31 19:40:30	Node 5 is sending reactive power to ancestor 3. Measure: 0.927170. Iter: 281
+2019-08-31 19:40:52	Node 5 is sending current to ancestor 3. Measure: 0.904140. Iter: 282
+2019-08-31 19:40:52	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 282
+2019-08-31 19:40:52	Node 5 is sending reactive power to ancestor 3. Measure: 0.927140. Iter: 282
+2019-08-31 19:41:14	Node 5 is sending current to ancestor 3. Measure: 0.904100. Iter: 283
+2019-08-31 19:41:14	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 283
+2019-08-31 19:41:14	Node 5 is sending reactive power to ancestor 3. Measure: 0.927110. Iter: 283
+2019-08-31 19:41:35	Node 5 is sending current to ancestor 3. Measure: 0.904060. Iter: 284
+2019-08-31 19:41:35	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 284
+2019-08-31 19:41:35	Node 5 is sending reactive power to ancestor 3. Measure: 0.927090. Iter: 284
+2019-08-31 19:41:58	Node 5 is sending current to ancestor 3. Measure: 0.904020. Iter: 285
+2019-08-31 19:41:58	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 285
+2019-08-31 19:41:58	Node 5 is sending reactive power to ancestor 3. Measure: 0.927070. Iter: 285
+2019-08-31 19:41:58	Node 5 is receiving voltage from ancestor 3. Measure: 1.053100. Iter: 285
+2019-08-31 19:42:19	Node 5 is sending current to ancestor 3. Measure: 0.903980. Iter: 286
+2019-08-31 19:42:19	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 286
+2019-08-31 19:42:19	Node 5 is sending reactive power to ancestor 3. Measure: 0.927050. Iter: 286
+2019-08-31 19:42:41	Node 5 is sending current to ancestor 3. Measure: 0.904010. Iter: 287
+2019-08-31 19:42:41	Node 5 is sending active power to ancestor 3. Measure: -0.199980. Iter: 287
+2019-08-31 19:42:41	Node 5 is sending reactive power to ancestor 3. Measure: 0.926970. Iter: 287
+2019-08-31 19:43:03	Node 5 is sending current to ancestor 3. Measure: 0.903960. Iter: 288
+2019-08-31 19:43:03	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 288
+2019-08-31 19:43:03	Node 5 is sending reactive power to ancestor 3. Measure: 0.926950. Iter: 288
+2019-08-31 19:43:25	Node 5 is sending current to ancestor 3. Measure: 0.903950. Iter: 289
+2019-08-31 19:43:25	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 289
+2019-08-31 19:43:25	Node 5 is sending reactive power to ancestor 3. Measure: 0.926930. Iter: 289
+2019-08-31 19:43:47	Node 5 is sending current to ancestor 3. Measure: 0.903940. Iter: 290
+2019-08-31 19:43:47	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 290
+2019-08-31 19:43:47	Node 5 is sending reactive power to ancestor 3. Measure: 0.926910. Iter: 290
+2019-08-31 19:44:09	Node 5 is sending current to ancestor 3. Measure: 0.903920. Iter: 291
+2019-08-31 19:44:09	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 291
+2019-08-31 19:44:09	Node 5 is sending reactive power to ancestor 3. Measure: 0.926890. Iter: 291
+2019-08-31 19:44:09	Node 5 is receiving voltage from ancestor 3. Measure: 1.052900. Iter: 291
+2019-08-31 19:44:30	Node 5 is sending current to ancestor 3. Measure: 0.903900. Iter: 292
+2019-08-31 19:44:30	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 292
+2019-08-31 19:44:30	Node 5 is sending reactive power to ancestor 3. Measure: 0.926870. Iter: 292
+2019-08-31 19:44:52	Node 5 is sending current to ancestor 3. Measure: 0.903910. Iter: 293
+2019-08-31 19:44:52	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 293
+2019-08-31 19:44:52	Node 5 is sending reactive power to ancestor 3. Measure: 0.926830. Iter: 293
+2019-08-31 19:45:14	Node 5 is sending current to ancestor 3. Measure: 0.903890. Iter: 294
+2019-08-31 19:45:14	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 294
+2019-08-31 19:45:14	Node 5 is sending reactive power to ancestor 3. Measure: 0.926810. Iter: 294
+2019-08-31 19:45:14	Node 5 is receiving voltage from ancestor 3. Measure: 1.052700. Iter: 294
+2019-08-31 19:45:36	Node 5 is sending current to ancestor 3. Measure: 0.903890. Iter: 295
+2019-08-31 19:45:36	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 295
+2019-08-31 19:45:36	Node 5 is sending reactive power to ancestor 3. Measure: 0.926790. Iter: 295
+2019-08-31 19:45:36	Node 5 is receiving voltage from ancestor 3. Measure: 1.052700. Iter: 295
+2019-08-31 19:45:58	Node 5 is sending current to ancestor 3. Measure: 0.903910. Iter: 296
+2019-08-31 19:45:58	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 296
+2019-08-31 19:45:58	Node 5 is sending reactive power to ancestor 3. Measure: 0.926760. Iter: 296
+2019-08-31 19:46:19	Node 5 is sending current to ancestor 3. Measure: 0.903920. Iter: 297
+2019-08-31 19:46:19	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 297
+2019-08-31 19:46:19	Node 5 is sending reactive power to ancestor 3. Measure: 0.926750. Iter: 297
+2019-08-31 19:46:42	Node 5 is sending current to ancestor 3. Measure: 0.903920. Iter: 298
+2019-08-31 19:46:42	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 298
+2019-08-31 19:46:42	Node 5 is sending reactive power to ancestor 3. Measure: 0.926730. Iter: 298
+2019-08-31 19:46:42	Node 5 is receiving voltage from ancestor 3. Measure: 1.052500. Iter: 298
+2019-08-31 19:47:03	Node 5 is sending current to ancestor 3. Measure: 0.903930. Iter: 299
+2019-08-31 19:47:03	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 299
+2019-08-31 19:47:03	Node 5 is sending reactive power to ancestor 3. Measure: 0.926720. Iter: 299
+2019-08-31 19:47:25	Node 5 is sending current to ancestor 3. Measure: 0.903940. Iter: 300
+2019-08-31 19:47:25	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 300
+2019-08-31 19:47:25	Node 5 is sending reactive power to ancestor 3. Measure: 0.926700. Iter: 300
+2019-08-31 19:47:47	Node 5 is sending current to ancestor 3. Measure: 0.903940. Iter: 301
+2019-08-31 19:47:47	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 301
+2019-08-31 19:47:47	Node 5 is sending reactive power to ancestor 3. Measure: 0.926690. Iter: 301
+2019-08-31 19:47:47	Node 5 is receiving voltage from ancestor 3. Measure: 1.052400. Iter: 301
+2019-08-31 19:48:09	Node 5 is sending current to ancestor 3. Measure: 0.903940. Iter: 302
+2019-08-31 19:48:09	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 302
+2019-08-31 19:48:09	Node 5 is sending reactive power to ancestor 3. Measure: 0.926670. Iter: 302
+2019-08-31 19:48:31	Node 5 is sending current to ancestor 3. Measure: 0.903940. Iter: 303
+2019-08-31 19:48:31	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 303
+2019-08-31 19:48:31	Node 5 is sending reactive power to ancestor 3. Measure: 0.926660. Iter: 303
+2019-08-31 19:48:53	Node 5 is sending current to ancestor 3. Measure: 0.903940. Iter: 304
+2019-08-31 19:48:53	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 304
+2019-08-31 19:48:53	Node 5 is sending reactive power to ancestor 3. Measure: 0.926650. Iter: 304
+2019-08-31 19:49:15	Node 5 is sending current to ancestor 3. Measure: 0.903940. Iter: 305
+2019-08-31 19:49:15	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 305
+2019-08-31 19:49:15	Node 5 is sending reactive power to ancestor 3. Measure: 0.926640. Iter: 305
+2019-08-31 19:49:37	Node 5 is sending current to ancestor 3. Measure: 0.903940. Iter: 306
+2019-08-31 19:49:37	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 306
+2019-08-31 19:49:37	Node 5 is sending reactive power to ancestor 3. Measure: 0.926630. Iter: 306
+2019-08-31 19:49:58	Node 5 is sending current to ancestor 3. Measure: 0.903920. Iter: 307
+2019-08-31 19:49:58	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 307
+2019-08-31 19:49:58	Node 5 is sending reactive power to ancestor 3. Measure: 0.926620. Iter: 307
+2019-08-31 19:50:21	Node 5 is sending current to ancestor 3. Measure: 0.903900. Iter: 308
+2019-08-31 19:50:21	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 308
+2019-08-31 19:50:21	Node 5 is sending reactive power to ancestor 3. Measure: 0.926610. Iter: 308
+2019-08-31 19:50:21	Node 5 is receiving voltage from ancestor 3. Measure: 1.052400. Iter: 308
+2019-08-31 19:50:42	Node 5 is sending current to ancestor 3. Measure: 0.903880. Iter: 309
+2019-08-31 19:50:42	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 309
+2019-08-31 19:50:42	Node 5 is sending reactive power to ancestor 3. Measure: 0.926600. Iter: 309
+2019-08-31 19:51:04	Node 5 is sending current to ancestor 3. Measure: 0.903860. Iter: 310
+2019-08-31 19:51:04	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 310
+2019-08-31 19:51:04	Node 5 is sending reactive power to ancestor 3. Measure: 0.926590. Iter: 310
+2019-08-31 19:51:04	Node 5 is receiving voltage from ancestor 3. Measure: 1.052400. Iter: 310
+2019-08-31 19:51:26	Node 5 is sending current to ancestor 3. Measure: 0.903840. Iter: 311
+2019-08-31 19:51:26	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 311
+2019-08-31 19:51:26	Node 5 is sending reactive power to ancestor 3. Measure: 0.926580. Iter: 311
+2019-08-31 19:51:48	Node 5 is sending current to ancestor 3. Measure: 0.903820. Iter: 312
+2019-08-31 19:51:48	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 312
+2019-08-31 19:51:48	Node 5 is sending reactive power to ancestor 3. Measure: 0.926570. Iter: 312
+2019-08-31 19:52:10	Node 5 is sending current to ancestor 3. Measure: 0.903800. Iter: 313
+2019-08-31 19:52:10	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 313
+2019-08-31 19:52:10	Node 5 is sending reactive power to ancestor 3. Measure: 0.926560. Iter: 313
+2019-08-31 19:52:32	Node 5 is sending current to ancestor 3. Measure: 0.903780. Iter: 314
+2019-08-31 19:52:32	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 314
+2019-08-31 19:52:32	Node 5 is sending reactive power to ancestor 3. Measure: 0.926550. Iter: 314
+2019-08-31 19:52:54	Node 5 is sending current to ancestor 3. Measure: 0.903760. Iter: 315
+2019-08-31 19:52:54	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 315
+2019-08-31 19:52:54	Node 5 is sending reactive power to ancestor 3. Measure: 0.926530. Iter: 315
+2019-08-31 19:53:16	Node 5 is sending current to ancestor 3. Measure: 0.903740. Iter: 316
+2019-08-31 19:53:16	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 316
+2019-08-31 19:53:16	Node 5 is sending reactive power to ancestor 3. Measure: 0.926510. Iter: 316
+2019-08-31 19:53:16	Node 5 is receiving voltage from ancestor 3. Measure: 1.052400. Iter: 316
+2019-08-31 19:53:37	Node 5 is sending current to ancestor 3. Measure: 0.903720. Iter: 317
+2019-08-31 19:53:37	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 317
+2019-08-31 19:53:37	Node 5 is sending reactive power to ancestor 3. Measure: 0.926500. Iter: 317
+2019-08-31 19:53:37	Node 5 is receiving voltage from ancestor 3. Measure: 1.052400. Iter: 317
+2019-08-31 19:53:59	Node 5 is sending current to ancestor 3. Measure: 0.903700. Iter: 318
+2019-08-31 19:53:59	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 318
+2019-08-31 19:53:59	Node 5 is sending reactive power to ancestor 3. Measure: 0.926490. Iter: 318
+2019-08-31 19:54:22	Node 5 is sending current to ancestor 3. Measure: 0.903680. Iter: 319
+2019-08-31 19:54:22	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 319
+2019-08-31 19:54:22	Node 5 is sending reactive power to ancestor 3. Measure: 0.926470. Iter: 319
+2019-08-31 19:54:22	Node 5 is receiving voltage from ancestor 3. Measure: 1.052400. Iter: 319
+2019-08-31 19:54:43	Node 5 is sending current to ancestor 3. Measure: 0.903660. Iter: 320
+2019-08-31 19:54:43	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 320
+2019-08-31 19:54:43	Node 5 is sending reactive power to ancestor 3. Measure: 0.926460. Iter: 320
+2019-08-31 19:55:05	Node 5 is sending current to ancestor 3. Measure: 0.903640. Iter: 321
+2019-08-31 19:55:05	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 321
+2019-08-31 19:55:05	Node 5 is sending reactive power to ancestor 3. Measure: 0.926450. Iter: 321
+2019-08-31 19:55:27	Node 5 is sending current to ancestor 3. Measure: 0.903590. Iter: 322
+2019-08-31 19:55:27	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 322
+2019-08-31 19:55:27	Node 5 is sending reactive power to ancestor 3. Measure: 0.926430. Iter: 322
+2019-08-31 19:55:48	Node 5 is sending current to ancestor 3. Measure: 0.903540. Iter: 323
+2019-08-31 19:55:48	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 323
+2019-08-31 19:55:48	Node 5 is sending reactive power to ancestor 3. Measure: 0.926410. Iter: 323
+2019-08-31 19:56:10	Node 5 is sending current to ancestor 3. Measure: 0.903490. Iter: 324
+2019-08-31 19:56:10	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 324
+2019-08-31 19:56:10	Node 5 is sending reactive power to ancestor 3. Measure: 0.926390. Iter: 324
+2019-08-31 19:56:32	Node 5 is sending current to ancestor 3. Measure: 0.903440. Iter: 325
+2019-08-31 19:56:32	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 325
+2019-08-31 19:56:32	Node 5 is sending reactive power to ancestor 3. Measure: 0.926370. Iter: 325
+2019-08-31 19:56:55	Node 5 is sending current to ancestor 3. Measure: 0.903390. Iter: 326
+2019-08-31 19:56:55	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 326
+2019-08-31 19:56:55	Node 5 is sending reactive power to ancestor 3. Measure: 0.926350. Iter: 326
+2019-08-31 19:57:16	Node 5 is sending current to ancestor 3. Measure: 0.903340. Iter: 327
+2019-08-31 19:57:16	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 327
+2019-08-31 19:57:16	Node 5 is sending reactive power to ancestor 3. Measure: 0.926330. Iter: 327
+2019-08-31 19:57:38	Node 5 is sending current to ancestor 3. Measure: 0.903240. Iter: 328
+2019-08-31 19:57:38	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 328
+2019-08-31 19:57:38	Node 5 is sending reactive power to ancestor 3. Measure: 0.926300. Iter: 328
+2019-08-31 19:57:38	Node 5 is receiving voltage from ancestor 3. Measure: 1.052400. Iter: 328
+2019-08-31 19:58:00	Node 5 is sending current to ancestor 3. Measure: 0.903140. Iter: 329
+2019-08-31 19:58:00	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 329
+2019-08-31 19:58:00	Node 5 is sending reactive power to ancestor 3. Measure: 0.926270. Iter: 329
+2019-08-31 19:58:21	Node 5 is sending current to ancestor 3. Measure: 0.903040. Iter: 330
+2019-08-31 19:58:21	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 330
+2019-08-31 19:58:21	Node 5 is sending reactive power to ancestor 3. Measure: 0.926240. Iter: 330
+2019-08-31 19:58:21	Node 5 is receiving voltage from ancestor 3. Measure: 1.052500. Iter: 330
+2019-08-31 19:58:43	Node 5 is sending current to ancestor 3. Measure: 0.902950. Iter: 331
+2019-08-31 19:58:43	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 331
+2019-08-31 19:58:43	Node 5 is sending reactive power to ancestor 3. Measure: 0.926200. Iter: 331
+2019-08-31 19:59:06	Node 5 is sending current to ancestor 3. Measure: 0.902850. Iter: 332
+2019-08-31 19:59:06	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 332
+2019-08-31 19:59:06	Node 5 is sending reactive power to ancestor 3. Measure: 0.926170. Iter: 332
+2019-08-31 19:59:06	Node 5 is receiving voltage from ancestor 3. Measure: 1.052500. Iter: 332
+2019-08-31 19:59:27	Node 5 is sending current to ancestor 3. Measure: 0.902750. Iter: 333
+2019-08-31 19:59:27	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 333
+2019-08-31 19:59:27	Node 5 is sending reactive power to ancestor 3. Measure: 0.926140. Iter: 333
+2019-08-31 19:59:49	Node 5 is sending current to ancestor 3. Measure: 0.902660. Iter: 334
+2019-08-31 19:59:49	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 334
+2019-08-31 19:59:49	Node 5 is sending reactive power to ancestor 3. Measure: 0.926090. Iter: 334
+2019-08-31 19:59:49	Node 5 is receiving voltage from ancestor 3. Measure: 1.052500. Iter: 334
+2019-08-31 20:00:11	Node 5 is sending current to ancestor 3. Measure: 0.902570. Iter: 335
+2019-08-31 20:00:11	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 335
+2019-08-31 20:00:11	Node 5 is sending reactive power to ancestor 3. Measure: 0.926050. Iter: 335
+2019-08-31 20:00:33	Node 5 is sending current to ancestor 3. Measure: 0.902480. Iter: 336
+2019-08-31 20:00:33	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 336
+2019-08-31 20:00:33	Node 5 is sending reactive power to ancestor 3. Measure: 0.926010. Iter: 336
+2019-08-31 20:00:55	Node 5 is sending current to ancestor 3. Measure: 0.902400. Iter: 337
+2019-08-31 20:00:55	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 337
+2019-08-31 20:00:55	Node 5 is sending reactive power to ancestor 3. Measure: 0.925960. Iter: 337
+2019-08-31 20:01:16	Node 5 is sending current to ancestor 3. Measure: 0.902320. Iter: 338
+2019-08-31 20:01:16	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 338
+2019-08-31 20:01:16	Node 5 is sending reactive power to ancestor 3. Measure: 0.925910. Iter: 338
+2019-08-31 20:01:16	Node 5 is receiving voltage from ancestor 3. Measure: 1.052500. Iter: 338
+2019-08-31 20:01:38	Node 5 is sending current to ancestor 3. Measure: 0.902230. Iter: 339
+2019-08-31 20:01:38	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 339
+2019-08-31 20:01:38	Node 5 is sending reactive power to ancestor 3. Measure: 0.925860. Iter: 339
+2019-08-31 20:02:00	Node 5 is sending current to ancestor 3. Measure: 0.902140. Iter: 340
+2019-08-31 20:02:00	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 340
+2019-08-31 20:02:00	Node 5 is sending reactive power to ancestor 3. Measure: 0.925820. Iter: 340
+2019-08-31 20:02:22	Node 5 is sending current to ancestor 3. Measure: 0.902060. Iter: 341
+2019-08-31 20:02:22	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 341
+2019-08-31 20:02:22	Node 5 is sending reactive power to ancestor 3. Measure: 0.925770. Iter: 341
+2019-08-31 20:02:22	Node 5 is receiving voltage from ancestor 3. Measure: 1.052500. Iter: 341
+2019-08-31 20:02:44	Node 5 is sending current to ancestor 3. Measure: 0.901970. Iter: 342
+2019-08-31 20:02:44	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 342
+2019-08-31 20:02:44	Node 5 is sending reactive power to ancestor 3. Measure: 0.925720. Iter: 342
+2019-08-31 20:02:44	Node 5 is receiving voltage from ancestor 3. Measure: 1.052500. Iter: 342
+2019-08-31 20:03:05	Node 5 is sending current to ancestor 3. Measure: 0.901890. Iter: 343
+2019-08-31 20:03:05	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 343
+2019-08-31 20:03:05	Node 5 is sending reactive power to ancestor 3. Measure: 0.925680. Iter: 343
+2019-08-31 20:03:05	Node 5 is receiving voltage from ancestor 3. Measure: 1.052500. Iter: 343
+2019-08-31 20:03:28	Node 5 is sending current to ancestor 3. Measure: 0.901810. Iter: 344
+2019-08-31 20:03:28	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 344
+2019-08-31 20:03:28	Node 5 is sending reactive power to ancestor 3. Measure: 0.925640. Iter: 344
+2019-08-31 20:03:28	Node 5 is receiving voltage from ancestor 3. Measure: 1.052500. Iter: 344
+2019-08-31 20:03:50	Node 5 is sending current to ancestor 3. Measure: 0.901730. Iter: 345
+2019-08-31 20:03:50	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 345
+2019-08-31 20:03:50	Node 5 is sending reactive power to ancestor 3. Measure: 0.925590. Iter: 345
+2019-08-31 20:04:12	Node 5 is sending current to ancestor 3. Measure: 0.901650. Iter: 346
+2019-08-31 20:04:12	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 346
+2019-08-31 20:04:12	Node 5 is sending reactive power to ancestor 3. Measure: 0.925550. Iter: 346
+2019-08-31 20:04:33	Node 5 is sending current to ancestor 3. Measure: 0.901560. Iter: 347
+2019-08-31 20:04:33	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 347
+2019-08-31 20:04:33	Node 5 is sending reactive power to ancestor 3. Measure: 0.925510. Iter: 347
+2019-08-31 20:04:33	Node 5 is receiving voltage from ancestor 3. Measure: 1.052500. Iter: 347
+2019-08-31 20:04:55	Node 5 is sending current to ancestor 3. Measure: 0.901470. Iter: 348
+2019-08-31 20:04:55	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 348
+2019-08-31 20:04:55	Node 5 is sending reactive power to ancestor 3. Measure: 0.925470. Iter: 348
+2019-08-31 20:05:17	Node 5 is sending current to ancestor 3. Measure: 0.901400. Iter: 349
+2019-08-31 20:05:17	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 349
+2019-08-31 20:05:17	Node 5 is sending reactive power to ancestor 3. Measure: 0.925410. Iter: 349
+2019-08-31 20:05:39	Node 5 is sending current to ancestor 3. Measure: 0.901310. Iter: 350
+2019-08-31 20:05:39	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 350
+2019-08-31 20:05:39	Node 5 is sending reactive power to ancestor 3. Measure: 0.925360. Iter: 350
+2019-08-31 20:06:01	Node 5 is sending current to ancestor 3. Measure: 0.901230. Iter: 351
+2019-08-31 20:06:01	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 351
+2019-08-31 20:06:01	Node 5 is sending reactive power to ancestor 3. Measure: 0.925310. Iter: 351
+2019-08-31 20:06:24	Node 5 is sending current to ancestor 3. Measure: 0.901140. Iter: 352
+2019-08-31 20:06:24	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 352
+2019-08-31 20:06:24	Node 5 is sending reactive power to ancestor 3. Measure: 0.925270. Iter: 352
+2019-08-31 20:06:24	Node 5 is receiving voltage from ancestor 3. Measure: 1.052500. Iter: 352
+2019-08-31 20:06:45	Node 5 is sending current to ancestor 3. Measure: 0.901050. Iter: 353
+2019-08-31 20:06:45	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 353
+2019-08-31 20:06:45	Node 5 is sending reactive power to ancestor 3. Measure: 0.925230. Iter: 353
+2019-08-31 20:07:07	Node 5 is sending current to ancestor 3. Measure: 0.900980. Iter: 354
+2019-08-31 20:07:07	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 354
+2019-08-31 20:07:07	Node 5 is sending reactive power to ancestor 3. Measure: 0.925170. Iter: 354
+2019-08-31 20:07:29	Node 5 is sending current to ancestor 3. Measure: 0.900890. Iter: 355
+2019-08-31 20:07:29	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 355
+2019-08-31 20:07:29	Node 5 is sending reactive power to ancestor 3. Measure: 0.925130. Iter: 355
+2019-08-31 20:07:52	Node 5 is sending current to ancestor 3. Measure: 0.900800. Iter: 356
+2019-08-31 20:07:52	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 356
+2019-08-31 20:07:52	Node 5 is sending reactive power to ancestor 3. Measure: 0.925090. Iter: 356
+2019-08-31 20:07:52	Node 5 is receiving voltage from ancestor 3. Measure: 1.052500. Iter: 356
+2019-08-31 20:08:14	Node 5 is sending current to ancestor 3. Measure: 0.900710. Iter: 357
+2019-08-31 20:08:14	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 357
+2019-08-31 20:08:14	Node 5 is sending reactive power to ancestor 3. Measure: 0.925050. Iter: 357
+2019-08-31 20:08:14	Node 5 is receiving voltage from ancestor 3. Measure: 1.052500. Iter: 357
+2019-08-31 20:08:36	Node 5 is sending current to ancestor 3. Measure: 0.900650. Iter: 358
+2019-08-31 20:08:36	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 358
+2019-08-31 20:08:36	Node 5 is sending reactive power to ancestor 3. Measure: 0.924990. Iter: 358
+2019-08-31 20:08:58	Node 5 is sending current to ancestor 3. Measure: 0.900580. Iter: 359
+2019-08-31 20:08:58	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 359
+2019-08-31 20:08:58	Node 5 is sending reactive power to ancestor 3. Measure: 0.924930. Iter: 359
+2019-08-31 20:09:20	Node 5 is sending current to ancestor 3. Measure: 0.900490. Iter: 360
+2019-08-31 20:09:20	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 360
+2019-08-31 20:09:20	Node 5 is sending reactive power to ancestor 3. Measure: 0.924890. Iter: 360
+2019-08-31 20:09:20	Node 5 is receiving voltage from ancestor 3. Measure: 1.052300. Iter: 360
+2019-08-31 20:09:41	Node 5 is sending current to ancestor 3. Measure: 0.900460. Iter: 361
+2019-08-31 20:09:41	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 361
+2019-08-31 20:09:41	Node 5 is sending reactive power to ancestor 3. Measure: 0.924850. Iter: 361
+2019-08-31 20:10:03	Node 5 is sending current to ancestor 3. Measure: 0.900450. Iter: 362
+2019-08-31 20:10:03	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 362
+2019-08-31 20:10:03	Node 5 is sending reactive power to ancestor 3. Measure: 0.924800. Iter: 362
+2019-08-31 20:10:25	Node 5 is sending current to ancestor 3. Measure: 0.900420. Iter: 363
+2019-08-31 20:10:25	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 363
+2019-08-31 20:10:25	Node 5 is sending reactive power to ancestor 3. Measure: 0.924770. Iter: 363
+2019-08-31 20:10:47	Node 5 is sending current to ancestor 3. Measure: 0.900380. Iter: 364
+2019-08-31 20:10:47	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 364
+2019-08-31 20:10:47	Node 5 is sending reactive power to ancestor 3. Measure: 0.924740. Iter: 364
+2019-08-31 20:10:47	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 364
+2019-08-31 20:11:09	Node 5 is sending current to ancestor 3. Measure: 0.900350. Iter: 365
+2019-08-31 20:11:09	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 365
+2019-08-31 20:11:09	Node 5 is sending reactive power to ancestor 3. Measure: 0.924700. Iter: 365
+2019-08-31 20:11:09	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 365
+2019-08-31 20:11:31	Node 5 is sending current to ancestor 3. Measure: 0.900320. Iter: 366
+2019-08-31 20:11:31	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 366
+2019-08-31 20:11:31	Node 5 is sending reactive power to ancestor 3. Measure: 0.924670. Iter: 366
+2019-08-31 20:11:53	Node 5 is sending current to ancestor 3. Measure: 0.900280. Iter: 367
+2019-08-31 20:11:53	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 367
+2019-08-31 20:11:53	Node 5 is sending reactive power to ancestor 3. Measure: 0.924640. Iter: 367
+2019-08-31 20:11:53	Node 5 is receiving voltage from ancestor 3. Measure: 1.052100. Iter: 367
+2019-08-31 20:12:15	Node 5 is sending current to ancestor 3. Measure: 0.900240. Iter: 368
+2019-08-31 20:12:15	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 368
+2019-08-31 20:12:15	Node 5 is sending reactive power to ancestor 3. Measure: 0.924610. Iter: 368
+2019-08-31 20:12:37	Node 5 is sending current to ancestor 3. Measure: 0.900200. Iter: 369
+2019-08-31 20:12:37	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 369
+2019-08-31 20:12:37	Node 5 is sending reactive power to ancestor 3. Measure: 0.924580. Iter: 369
+2019-08-31 20:12:37	Node 5 is receiving voltage from ancestor 3. Measure: 1.052100. Iter: 369
+2019-08-31 20:12:59	Node 5 is sending current to ancestor 3. Measure: 0.900170. Iter: 370
+2019-08-31 20:12:59	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 370
+2019-08-31 20:12:59	Node 5 is sending reactive power to ancestor 3. Measure: 0.924550. Iter: 370
+2019-08-31 20:12:59	Node 5 is receiving voltage from ancestor 3. Measure: 1.052100. Iter: 370
+2019-08-31 20:13:21	Node 5 is sending current to ancestor 3. Measure: 0.900130. Iter: 371
+2019-08-31 20:13:21	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 371
+2019-08-31 20:13:21	Node 5 is sending reactive power to ancestor 3. Measure: 0.924520. Iter: 371
+2019-08-31 20:13:42	Node 5 is sending current to ancestor 3. Measure: 0.900090. Iter: 372
+2019-08-31 20:13:42	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 372
+2019-08-31 20:13:42	Node 5 is sending reactive power to ancestor 3. Measure: 0.924500. Iter: 372
+2019-08-31 20:14:05	Node 5 is sending current to ancestor 3. Measure: 0.900050. Iter: 373
+2019-08-31 20:14:05	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 373
+2019-08-31 20:14:05	Node 5 is sending reactive power to ancestor 3. Measure: 0.924480. Iter: 373
+2019-08-31 20:14:05	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 373
+2019-08-31 20:14:26	Node 5 is sending current to ancestor 3. Measure: 0.900010. Iter: 374
+2019-08-31 20:14:26	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 374
+2019-08-31 20:14:26	Node 5 is sending reactive power to ancestor 3. Measure: 0.924460. Iter: 374
+2019-08-31 20:14:26	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 374
+2019-08-31 20:14:48	Node 5 is sending current to ancestor 3. Measure: 0.899970. Iter: 375
+2019-08-31 20:14:48	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 375
+2019-08-31 20:14:48	Node 5 is sending reactive power to ancestor 3. Measure: 0.924440. Iter: 375
+2019-08-31 20:14:48	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 375
+2019-08-31 20:15:09	Node 5 is sending current to ancestor 3. Measure: 0.899870. Iter: 376
+2019-08-31 20:15:09	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 376
+2019-08-31 20:15:09	Node 5 is sending reactive power to ancestor 3. Measure: 0.924400. Iter: 376
+2019-08-31 20:15:09	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 376
+2019-08-31 20:15:32	Node 5 is sending current to ancestor 3. Measure: 0.899770. Iter: 377
+2019-08-31 20:15:32	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 377
+2019-08-31 20:15:32	Node 5 is sending reactive power to ancestor 3. Measure: 0.924360. Iter: 377
+2019-08-31 20:15:32	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 377
+2019-08-31 20:15:53	Node 5 is sending current to ancestor 3. Measure: 0.899680. Iter: 378
+2019-08-31 20:15:53	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 378
+2019-08-31 20:15:53	Node 5 is sending reactive power to ancestor 3. Measure: 0.924320. Iter: 378
+2019-08-31 20:15:53	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 378
+2019-08-31 20:16:15	Node 5 is sending current to ancestor 3. Measure: 0.899590. Iter: 379
+2019-08-31 20:16:15	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 379
+2019-08-31 20:16:15	Node 5 is sending reactive power to ancestor 3. Measure: 0.924280. Iter: 379
+2019-08-31 20:16:37	Node 5 is sending current to ancestor 3. Measure: 0.899500. Iter: 380
+2019-08-31 20:16:37	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 380
+2019-08-31 20:16:37	Node 5 is sending reactive power to ancestor 3. Measure: 0.924250. Iter: 380
+2019-08-31 20:16:58	Node 5 is sending current to ancestor 3. Measure: 0.899410. Iter: 381
+2019-08-31 20:16:58	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 381
+2019-08-31 20:16:58	Node 5 is sending reactive power to ancestor 3. Measure: 0.924210. Iter: 381
+2019-08-31 20:17:21	Node 5 is sending current to ancestor 3. Measure: 0.899320. Iter: 382
+2019-08-31 20:17:21	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 382
+2019-08-31 20:17:21	Node 5 is sending reactive power to ancestor 3. Measure: 0.924170. Iter: 382
+2019-08-31 20:17:21	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 382
+2019-08-31 20:17:43	Node 5 is sending current to ancestor 3. Measure: 0.899230. Iter: 383
+2019-08-31 20:17:43	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 383
+2019-08-31 20:17:43	Node 5 is sending reactive power to ancestor 3. Measure: 0.924120. Iter: 383
+2019-08-31 20:17:43	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 383
+2019-08-31 20:18:05	Node 5 is sending current to ancestor 3. Measure: 0.899150. Iter: 384
+2019-08-31 20:18:05	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 384
+2019-08-31 20:18:05	Node 5 is sending reactive power to ancestor 3. Measure: 0.924070. Iter: 384
+2019-08-31 20:18:05	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 384
+2019-08-31 20:18:27	Node 5 is sending current to ancestor 3. Measure: 0.899070. Iter: 385
+2019-08-31 20:18:27	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 385
+2019-08-31 20:18:27	Node 5 is sending reactive power to ancestor 3. Measure: 0.924030. Iter: 385
+2019-08-31 20:18:27	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 385
+2019-08-31 20:18:48	Node 5 is sending current to ancestor 3. Measure: 0.898990. Iter: 386
+2019-08-31 20:18:48	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 386
+2019-08-31 20:18:48	Node 5 is sending reactive power to ancestor 3. Measure: 0.923990. Iter: 386
+2019-08-31 20:18:48	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 386
+2019-08-31 20:19:10	Node 5 is sending current to ancestor 3. Measure: 0.898910. Iter: 387
+2019-08-31 20:19:10	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 387
+2019-08-31 20:19:10	Node 5 is sending reactive power to ancestor 3. Measure: 0.923950. Iter: 387
+2019-08-31 20:19:10	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 387
+2019-08-31 20:19:32	Node 5 is sending current to ancestor 3. Measure: 0.898830. Iter: 388
+2019-08-31 20:19:32	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 388
+2019-08-31 20:19:32	Node 5 is sending reactive power to ancestor 3. Measure: 0.923910. Iter: 388
+2019-08-31 20:19:32	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 388
+2019-08-31 20:19:53	Node 5 is sending current to ancestor 3. Measure: 0.898750. Iter: 389
+2019-08-31 20:19:53	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 389
+2019-08-31 20:19:53	Node 5 is sending reactive power to ancestor 3. Measure: 0.923870. Iter: 389
+2019-08-31 20:20:16	Node 5 is sending current to ancestor 3. Measure: 0.898670. Iter: 390
+2019-08-31 20:20:16	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 390
+2019-08-31 20:20:16	Node 5 is sending reactive power to ancestor 3. Measure: 0.923830. Iter: 390
+2019-08-31 20:20:37	Node 5 is sending current to ancestor 3. Measure: 0.898590. Iter: 391
+2019-08-31 20:20:37	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 391
+2019-08-31 20:20:37	Node 5 is sending reactive power to ancestor 3. Measure: 0.923780. Iter: 391
+2019-08-31 20:20:37	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 391
+2019-08-31 20:20:59	Node 5 is sending current to ancestor 3. Measure: 0.898500. Iter: 392
+2019-08-31 20:20:59	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 392
+2019-08-31 20:20:59	Node 5 is sending reactive power to ancestor 3. Measure: 0.923740. Iter: 392
+2019-08-31 20:20:59	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 392
+2019-08-31 20:21:21	Node 5 is sending current to ancestor 3. Measure: 0.898430. Iter: 393
+2019-08-31 20:21:21	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 393
+2019-08-31 20:21:21	Node 5 is sending reactive power to ancestor 3. Measure: 0.923690. Iter: 393
+2019-08-31 20:21:43	Node 5 is sending current to ancestor 3. Measure: 0.898350. Iter: 394
+2019-08-31 20:21:43	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 394
+2019-08-31 20:21:43	Node 5 is sending reactive power to ancestor 3. Measure: 0.923640. Iter: 394
+2019-08-31 20:22:04	Node 5 is sending current to ancestor 3. Measure: 0.898260. Iter: 395
+2019-08-31 20:22:04	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 395
+2019-08-31 20:22:04	Node 5 is sending reactive power to ancestor 3. Measure: 0.923600. Iter: 395
+2019-08-31 20:22:04	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 395
+2019-08-31 20:22:26	Node 5 is sending current to ancestor 3. Measure: 0.898170. Iter: 396
+2019-08-31 20:22:26	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 396
+2019-08-31 20:22:26	Node 5 is sending reactive power to ancestor 3. Measure: 0.923560. Iter: 396
+2019-08-31 20:22:26	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 396
+2019-08-31 20:22:48	Node 5 is sending current to ancestor 3. Measure: 0.898100. Iter: 397
+2019-08-31 20:22:48	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 397
+2019-08-31 20:22:48	Node 5 is sending reactive power to ancestor 3. Measure: 0.923510. Iter: 397
+2019-08-31 20:23:09	Node 5 is sending current to ancestor 3. Measure: 0.898020. Iter: 398
+2019-08-31 20:23:09	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 398
+2019-08-31 20:23:09	Node 5 is sending reactive power to ancestor 3. Measure: 0.923470. Iter: 398
+2019-08-31 20:23:31	Node 5 is sending current to ancestor 3. Measure: 0.897930. Iter: 399
+2019-08-31 20:23:31	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 399
+2019-08-31 20:23:31	Node 5 is sending reactive power to ancestor 3. Measure: 0.923430. Iter: 399
+2019-08-31 20:23:53	Node 5 is sending current to ancestor 3. Measure: 0.897840. Iter: 400
+2019-08-31 20:23:53	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 400
+2019-08-31 20:23:53	Node 5 is sending reactive power to ancestor 3. Measure: 0.923390. Iter: 400
+2019-08-31 20:24:15	Node 5 is sending current to ancestor 3. Measure: 0.897760. Iter: 401
+2019-08-31 20:24:15	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 401
+2019-08-31 20:24:15	Node 5 is sending reactive power to ancestor 3. Measure: 0.923340. Iter: 401
+2019-08-31 20:24:37	Node 5 is sending current to ancestor 3. Measure: 0.897680. Iter: 402
+2019-08-31 20:24:37	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 402
+2019-08-31 20:24:37	Node 5 is sending reactive power to ancestor 3. Measure: 0.923290. Iter: 402
+2019-08-31 20:24:59	Node 5 is sending current to ancestor 3. Measure: 0.897600. Iter: 403
+2019-08-31 20:24:59	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 403
+2019-08-31 20:24:59	Node 5 is sending reactive power to ancestor 3. Measure: 0.923240. Iter: 403
+2019-08-31 20:25:21	Node 5 is sending current to ancestor 3. Measure: 0.897510. Iter: 404
+2019-08-31 20:25:21	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 404
+2019-08-31 20:25:21	Node 5 is sending reactive power to ancestor 3. Measure: 0.923200. Iter: 404
+2019-08-31 20:25:21	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 404
+2019-08-31 20:25:43	Node 5 is sending current to ancestor 3. Measure: 0.897420. Iter: 405
+2019-08-31 20:25:43	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 405
+2019-08-31 20:25:43	Node 5 is sending reactive power to ancestor 3. Measure: 0.923150. Iter: 405
+2019-08-31 20:26:06	Node 5 is sending current to ancestor 3. Measure: 0.897340. Iter: 406
+2019-08-31 20:26:06	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 406
+2019-08-31 20:26:06	Node 5 is sending reactive power to ancestor 3. Measure: 0.923110. Iter: 406
+2019-08-31 20:26:06	Node 5 is receiving voltage from ancestor 3. Measure: 1.052300. Iter: 406
+2019-08-31 20:26:27	Node 5 is sending current to ancestor 3. Measure: 0.897250. Iter: 407
+2019-08-31 20:26:27	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 407
+2019-08-31 20:26:27	Node 5 is sending reactive power to ancestor 3. Measure: 0.923070. Iter: 407
+2019-08-31 20:26:49	Node 5 is sending current to ancestor 3. Measure: 0.897160. Iter: 408
+2019-08-31 20:26:49	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 408
+2019-08-31 20:26:49	Node 5 is sending reactive power to ancestor 3. Measure: 0.923030. Iter: 408
+2019-08-31 20:27:11	Node 5 is sending current to ancestor 3. Measure: 0.897070. Iter: 409
+2019-08-31 20:27:11	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 409
+2019-08-31 20:27:11	Node 5 is sending reactive power to ancestor 3. Measure: 0.922990. Iter: 409
+2019-08-31 20:27:11	Node 5 is receiving voltage from ancestor 3. Measure: 1.052300. Iter: 409
+2019-08-31 20:27:33	Node 5 is sending current to ancestor 3. Measure: 0.896980. Iter: 410
+2019-08-31 20:27:33	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 410
+2019-08-31 20:27:33	Node 5 is sending reactive power to ancestor 3. Measure: 0.922950. Iter: 410
+2019-08-31 20:27:55	Node 5 is sending current to ancestor 3. Measure: 0.896900. Iter: 411
+2019-08-31 20:27:55	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 411
+2019-08-31 20:27:55	Node 5 is sending reactive power to ancestor 3. Measure: 0.922900. Iter: 411
+2019-08-31 20:28:16	Node 5 is sending current to ancestor 3. Measure: 0.896810. Iter: 412
+2019-08-31 20:28:16	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 412
+2019-08-31 20:28:16	Node 5 is sending reactive power to ancestor 3. Measure: 0.922850. Iter: 412
+2019-08-31 20:28:38	Node 5 is sending current to ancestor 3. Measure: 0.896720. Iter: 413
+2019-08-31 20:28:38	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 413
+2019-08-31 20:28:38	Node 5 is sending reactive power to ancestor 3. Measure: 0.922810. Iter: 413
+2019-08-31 20:29:00	Node 5 is sending current to ancestor 3. Measure: 0.896630. Iter: 414
+2019-08-31 20:29:00	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 414
+2019-08-31 20:29:00	Node 5 is sending reactive power to ancestor 3. Measure: 0.922760. Iter: 414
+2019-08-31 20:29:00	Node 5 is receiving voltage from ancestor 3. Measure: 1.052300. Iter: 414
+2019-08-31 20:29:22	Node 5 is sending current to ancestor 3. Measure: 0.896540. Iter: 415
+2019-08-31 20:29:22	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 415
+2019-08-31 20:29:22	Node 5 is sending reactive power to ancestor 3. Measure: 0.922710. Iter: 415
+2019-08-31 20:29:44	Node 5 is sending current to ancestor 3. Measure: 0.896480. Iter: 416
+2019-08-31 20:29:44	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 416
+2019-08-31 20:29:44	Node 5 is sending reactive power to ancestor 3. Measure: 0.922650. Iter: 416
+2019-08-31 20:30:05	Node 5 is sending current to ancestor 3. Measure: 0.896390. Iter: 417
+2019-08-31 20:30:05	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 417
+2019-08-31 20:30:05	Node 5 is sending reactive power to ancestor 3. Measure: 0.922610. Iter: 417
+2019-08-31 20:30:27	Node 5 is sending current to ancestor 3. Measure: 0.896360. Iter: 418
+2019-08-31 20:30:27	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 418
+2019-08-31 20:30:27	Node 5 is sending reactive power to ancestor 3. Measure: 0.922580. Iter: 418
+2019-08-31 20:30:50	Node 5 is sending current to ancestor 3. Measure: 0.896330. Iter: 419
+2019-08-31 20:30:50	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 419
+2019-08-31 20:30:50	Node 5 is sending reactive power to ancestor 3. Measure: 0.922540. Iter: 419
+2019-08-31 20:30:50	Node 5 is receiving voltage from ancestor 3. Measure: 1.052200. Iter: 419
+2019-08-31 20:31:11	Node 5 is sending current to ancestor 3. Measure: 0.896290. Iter: 420
+2019-08-31 20:31:11	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 420
+2019-08-31 20:31:11	Node 5 is sending reactive power to ancestor 3. Measure: 0.922510. Iter: 420
+2019-08-31 20:31:33	Node 5 is sending current to ancestor 3. Measure: 0.896270. Iter: 421
+2019-08-31 20:31:33	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 421
+2019-08-31 20:31:33	Node 5 is sending reactive power to ancestor 3. Measure: 0.922470. Iter: 421
+2019-08-31 20:31:55	Node 5 is sending current to ancestor 3. Measure: 0.896230. Iter: 422
+2019-08-31 20:31:55	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 422
+2019-08-31 20:31:55	Node 5 is sending reactive power to ancestor 3. Measure: 0.922440. Iter: 422
+2019-08-31 20:32:17	Node 5 is sending current to ancestor 3. Measure: 0.896200. Iter: 423
+2019-08-31 20:32:17	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 423
+2019-08-31 20:32:17	Node 5 is sending reactive power to ancestor 3. Measure: 0.922410. Iter: 423
+2019-08-31 20:32:39	Node 5 is sending current to ancestor 3. Measure: 0.896160. Iter: 424
+2019-08-31 20:32:39	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 424
+2019-08-31 20:32:39	Node 5 is sending reactive power to ancestor 3. Measure: 0.922380. Iter: 424
+2019-08-31 20:33:01	Node 5 is sending current to ancestor 3. Measure: 0.896120. Iter: 425
+2019-08-31 20:33:01	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 425
+2019-08-31 20:33:01	Node 5 is sending reactive power to ancestor 3. Measure: 0.922350. Iter: 425
+2019-08-31 20:33:01	Node 5 is receiving voltage from ancestor 3. Measure: 1.052100. Iter: 425
+2019-08-31 20:33:22	Node 5 is sending current to ancestor 3. Measure: 0.896080. Iter: 426
+2019-08-31 20:33:22	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 426
+2019-08-31 20:33:22	Node 5 is sending reactive power to ancestor 3. Measure: 0.922330. Iter: 426
+2019-08-31 20:33:44	Node 5 is sending current to ancestor 3. Measure: 0.896040. Iter: 427
+2019-08-31 20:33:44	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 427
+2019-08-31 20:33:44	Node 5 is sending reactive power to ancestor 3. Measure: 0.922310. Iter: 427
+2019-08-31 20:34:06	Node 5 is sending current to ancestor 3. Measure: 0.896000. Iter: 428
+2019-08-31 20:34:06	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 428
+2019-08-31 20:34:06	Node 5 is sending reactive power to ancestor 3. Measure: 0.922290. Iter: 428
+2019-08-31 20:34:06	Node 5 is receiving voltage from ancestor 3. Measure: 1.052100. Iter: 428
+2019-08-31 20:34:28	Node 5 is sending current to ancestor 3. Measure: 0.895960. Iter: 429
+2019-08-31 20:34:28	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 429
+2019-08-31 20:34:28	Node 5 is sending reactive power to ancestor 3. Measure: 0.922270. Iter: 429
+2019-08-31 20:34:28	Node 5 is receiving voltage from ancestor 3. Measure: 1.052100. Iter: 429
+2019-08-31 20:34:50	Node 5 is sending current to ancestor 3. Measure: 0.895930. Iter: 430
+2019-08-31 20:34:50	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 430
+2019-08-31 20:34:50	Node 5 is sending reactive power to ancestor 3. Measure: 0.922240. Iter: 430
+2019-08-31 20:35:12	Node 5 is sending current to ancestor 3. Measure: 0.895890. Iter: 431
+2019-08-31 20:35:12	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 431
+2019-08-31 20:35:12	Node 5 is sending reactive power to ancestor 3. Measure: 0.922220. Iter: 431
+2019-08-31 20:35:33	Node 5 is sending current to ancestor 3. Measure: 0.895850. Iter: 432
+2019-08-31 20:35:33	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 432
+2019-08-31 20:35:33	Node 5 is sending reactive power to ancestor 3. Measure: 0.922200. Iter: 432
+2019-08-31 20:35:56	Node 5 is sending current to ancestor 3. Measure: 0.895810. Iter: 433
+2019-08-31 20:35:56	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 433
+2019-08-31 20:35:56	Node 5 is sending reactive power to ancestor 3. Measure: 0.922180. Iter: 433
+2019-08-31 20:35:56	Node 5 is receiving voltage from ancestor 3. Measure: 1.052100. Iter: 433
+2019-08-31 20:36:17	Node 5 is sending current to ancestor 3. Measure: 0.895770. Iter: 434
+2019-08-31 20:36:17	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 434
+2019-08-31 20:36:17	Node 5 is sending reactive power to ancestor 3. Measure: 0.922160. Iter: 434
+2019-08-31 20:36:39	Node 5 is sending current to ancestor 3. Measure: 0.895740. Iter: 435
+2019-08-31 20:36:39	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 435
+2019-08-31 20:36:39	Node 5 is sending reactive power to ancestor 3. Measure: 0.922130. Iter: 435
+2019-08-31 20:36:39	Node 5 is receiving voltage from ancestor 3. Measure: 1.052000. Iter: 435
+2019-08-31 20:37:01	Node 5 is sending current to ancestor 3. Measure: 0.895700. Iter: 436
+2019-08-31 20:37:01	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 436
+2019-08-31 20:37:01	Node 5 is sending reactive power to ancestor 3. Measure: 0.922110. Iter: 436
+2019-08-31 20:37:01	Node 5 is receiving voltage from ancestor 3. Measure: 1.052000. Iter: 436
+2019-08-31 20:37:22	Node 5 is sending current to ancestor 3. Measure: 0.895700. Iter: 437
+2019-08-31 20:37:22	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 437
+2019-08-31 20:37:22	Node 5 is sending reactive power to ancestor 3. Measure: 0.922080. Iter: 437
+2019-08-31 20:37:45	Node 5 is sending current to ancestor 3. Measure: 0.895690. Iter: 438
+2019-08-31 20:37:45	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 438
+2019-08-31 20:37:45	Node 5 is sending reactive power to ancestor 3. Measure: 0.922060. Iter: 438
+2019-08-31 20:38:07	Node 5 is sending current to ancestor 3. Measure: 0.895680. Iter: 439
+2019-08-31 20:38:07	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 439
+2019-08-31 20:38:07	Node 5 is sending reactive power to ancestor 3. Measure: 0.922040. Iter: 439
+2019-08-31 20:38:28	Node 5 is sending current to ancestor 3. Measure: 0.895670. Iter: 440
+2019-08-31 20:38:28	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 440
+2019-08-31 20:38:28	Node 5 is sending reactive power to ancestor 3. Measure: 0.922020. Iter: 440
+2019-08-31 20:38:50	Node 5 is sending current to ancestor 3. Measure: 0.895660. Iter: 441
+2019-08-31 20:38:50	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 441
+2019-08-31 20:38:50	Node 5 is sending reactive power to ancestor 3. Measure: 0.922000. Iter: 441
+2019-08-31 20:39:12	Node 5 is sending current to ancestor 3. Measure: 0.895650. Iter: 442
+2019-08-31 20:39:12	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 442
+2019-08-31 20:39:12	Node 5 is sending reactive power to ancestor 3. Measure: 0.921980. Iter: 442
+2019-08-31 20:39:12	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 442
+2019-08-31 20:39:34	Node 5 is sending current to ancestor 3. Measure: 0.895630. Iter: 443
+2019-08-31 20:39:34	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 443
+2019-08-31 20:39:34	Node 5 is sending reactive power to ancestor 3. Measure: 0.921970. Iter: 443
+2019-08-31 20:39:34	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 443
+2019-08-31 20:39:56	Node 5 is sending current to ancestor 3. Measure: 0.895610. Iter: 444
+2019-08-31 20:39:56	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 444
+2019-08-31 20:39:56	Node 5 is sending reactive power to ancestor 3. Measure: 0.921950. Iter: 444
+2019-08-31 20:40:18	Node 5 is sending current to ancestor 3. Measure: 0.895590. Iter: 445
+2019-08-31 20:40:18	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 445
+2019-08-31 20:40:18	Node 5 is sending reactive power to ancestor 3. Measure: 0.921930. Iter: 445
+2019-08-31 20:40:39	Node 5 is sending current to ancestor 3. Measure: 0.895570. Iter: 446
+2019-08-31 20:40:39	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 446
+2019-08-31 20:40:39	Node 5 is sending reactive power to ancestor 3. Measure: 0.921920. Iter: 446
+2019-08-31 20:41:02	Node 5 is sending current to ancestor 3. Measure: 0.895520. Iter: 447
+2019-08-31 20:41:02	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 447
+2019-08-31 20:41:02	Node 5 is sending reactive power to ancestor 3. Measure: 0.921900. Iter: 447
+2019-08-31 20:41:02	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 447
+2019-08-31 20:41:23	Node 5 is sending current to ancestor 3. Measure: 0.895470. Iter: 448
+2019-08-31 20:41:23	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 448
+2019-08-31 20:41:23	Node 5 is sending reactive power to ancestor 3. Measure: 0.921880. Iter: 448
+2019-08-31 20:41:45	Node 5 is sending current to ancestor 3. Measure: 0.895430. Iter: 449
+2019-08-31 20:41:45	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 449
+2019-08-31 20:41:45	Node 5 is sending reactive power to ancestor 3. Measure: 0.921860. Iter: 449
+2019-08-31 20:42:07	Node 5 is sending current to ancestor 3. Measure: 0.895390. Iter: 450
+2019-08-31 20:42:07	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 450
+2019-08-31 20:42:07	Node 5 is sending reactive power to ancestor 3. Measure: 0.921840. Iter: 450
+2019-08-31 20:42:07	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 450
+2019-08-31 20:42:29	Node 5 is sending current to ancestor 3. Measure: 0.895350. Iter: 451
+2019-08-31 20:42:29	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 451
+2019-08-31 20:42:29	Node 5 is sending reactive power to ancestor 3. Measure: 0.921820. Iter: 451
+2019-08-31 20:42:51	Node 5 is sending current to ancestor 3. Measure: 0.895310. Iter: 452
+2019-08-31 20:42:51	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 452
+2019-08-31 20:42:51	Node 5 is sending reactive power to ancestor 3. Measure: 0.921800. Iter: 452
+2019-08-31 20:42:51	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 452
+2019-08-31 20:43:13	Node 5 is sending current to ancestor 3. Measure: 0.895270. Iter: 453
+2019-08-31 20:43:13	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 453
+2019-08-31 20:43:13	Node 5 is sending reactive power to ancestor 3. Measure: 0.921780. Iter: 453
+2019-08-31 20:43:35	Node 5 is sending current to ancestor 3. Measure: 0.895230. Iter: 454
+2019-08-31 20:43:35	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 454
+2019-08-31 20:43:35	Node 5 is sending reactive power to ancestor 3. Measure: 0.921760. Iter: 454
+2019-08-31 20:43:35	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 454
+2019-08-31 20:43:57	Node 5 is sending current to ancestor 3. Measure: 0.895190. Iter: 455
+2019-08-31 20:43:57	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 455
+2019-08-31 20:43:57	Node 5 is sending reactive power to ancestor 3. Measure: 0.921740. Iter: 455
+2019-08-31 20:43:57	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 455
+2019-08-31 20:44:19	Node 5 is sending current to ancestor 3. Measure: 0.895140. Iter: 456
+2019-08-31 20:44:19	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 456
+2019-08-31 20:44:19	Node 5 is sending reactive power to ancestor 3. Measure: 0.921720. Iter: 456
+2019-08-31 20:44:41	Node 5 is sending current to ancestor 3. Measure: 0.895100. Iter: 457
+2019-08-31 20:44:41	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 457
+2019-08-31 20:44:41	Node 5 is sending reactive power to ancestor 3. Measure: 0.921700. Iter: 457
+2019-08-31 20:44:41	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 457
+2019-08-31 20:45:02	Node 5 is sending current to ancestor 3. Measure: 0.895060. Iter: 458
+2019-08-31 20:45:02	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 458
+2019-08-31 20:45:02	Node 5 is sending reactive power to ancestor 3. Measure: 0.921680. Iter: 458
+2019-08-31 20:45:24	Node 5 is sending current to ancestor 3. Measure: 0.895020. Iter: 459
+2019-08-31 20:45:24	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 459
+2019-08-31 20:45:24	Node 5 is sending reactive power to ancestor 3. Measure: 0.921660. Iter: 459
+2019-08-31 20:45:46	Node 5 is sending current to ancestor 3. Measure: 0.894980. Iter: 460
+2019-08-31 20:45:46	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 460
+2019-08-31 20:45:46	Node 5 is sending reactive power to ancestor 3. Measure: 0.921640. Iter: 460
+2019-08-31 20:45:46	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 460
+2019-08-31 20:46:08	Node 5 is sending current to ancestor 3. Measure: 0.894940. Iter: 461
+2019-08-31 20:46:08	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 461
+2019-08-31 20:46:08	Node 5 is sending reactive power to ancestor 3. Measure: 0.921620. Iter: 461
+2019-08-31 20:46:08	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 461
+2019-08-31 20:46:29	Node 5 is sending current to ancestor 3. Measure: 0.894900. Iter: 462
+2019-08-31 20:46:29	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 462
+2019-08-31 20:46:29	Node 5 is sending reactive power to ancestor 3. Measure: 0.921590. Iter: 462
+2019-08-31 20:46:51	Node 5 is sending current to ancestor 3. Measure: 0.894860. Iter: 463
+2019-08-31 20:46:51	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 463
+2019-08-31 20:46:51	Node 5 is sending reactive power to ancestor 3. Measure: 0.921560. Iter: 463
+2019-08-31 20:46:51	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 463
+2019-08-31 20:47:13	Node 5 is sending current to ancestor 3. Measure: 0.894820. Iter: 464
+2019-08-31 20:47:13	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 464
+2019-08-31 20:47:13	Node 5 is sending reactive power to ancestor 3. Measure: 0.921540. Iter: 464
+2019-08-31 20:47:35	Node 5 is sending current to ancestor 3. Measure: 0.894780. Iter: 465
+2019-08-31 20:47:35	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 465
+2019-08-31 20:47:35	Node 5 is sending reactive power to ancestor 3. Measure: 0.921520. Iter: 465
+2019-08-31 20:47:35	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 465
+2019-08-31 20:47:57	Node 5 is sending current to ancestor 3. Measure: 0.894740. Iter: 466
+2019-08-31 20:47:57	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 466
+2019-08-31 20:47:57	Node 5 is sending reactive power to ancestor 3. Measure: 0.921500. Iter: 466
+2019-08-31 20:47:57	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 466
+2019-08-31 20:48:19	Node 5 is sending current to ancestor 3. Measure: 0.894700. Iter: 467
+2019-08-31 20:48:19	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 467
+2019-08-31 20:48:19	Node 5 is sending reactive power to ancestor 3. Measure: 0.921470. Iter: 467
+2019-08-31 20:48:40	Node 5 is sending current to ancestor 3. Measure: 0.894660. Iter: 468
+2019-08-31 20:48:40	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 468
+2019-08-31 20:48:40	Node 5 is sending reactive power to ancestor 3. Measure: 0.921450. Iter: 468
+2019-08-31 20:49:03	Node 5 is sending current to ancestor 3. Measure: 0.894620. Iter: 469
+2019-08-31 20:49:03	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 469
+2019-08-31 20:49:03	Node 5 is sending reactive power to ancestor 3. Measure: 0.921430. Iter: 469
+2019-08-31 20:49:25	Node 5 is sending current to ancestor 3. Measure: 0.894570. Iter: 470
+2019-08-31 20:49:25	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 470
+2019-08-31 20:49:25	Node 5 is sending reactive power to ancestor 3. Measure: 0.921410. Iter: 470
+2019-08-31 20:49:47	Node 5 is sending current to ancestor 3. Measure: 0.894530. Iter: 471
+2019-08-31 20:49:47	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 471
+2019-08-31 20:49:47	Node 5 is sending reactive power to ancestor 3. Measure: 0.921390. Iter: 471
+2019-08-31 20:50:09	Node 5 is sending current to ancestor 3. Measure: 0.894490. Iter: 472
+2019-08-31 20:50:09	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 472
+2019-08-31 20:50:09	Node 5 is sending reactive power to ancestor 3. Measure: 0.921370. Iter: 472
+2019-08-31 20:50:09	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 472
+2019-08-31 20:50:31	Node 5 is sending current to ancestor 3. Measure: 0.894450. Iter: 473
+2019-08-31 20:50:31	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 473
+2019-08-31 20:50:31	Node 5 is sending reactive power to ancestor 3. Measure: 0.921350. Iter: 473
+2019-08-31 20:50:31	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 473
+2019-08-31 20:50:53	Node 5 is sending current to ancestor 3. Measure: 0.894410. Iter: 474
+2019-08-31 20:50:53	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 474
+2019-08-31 20:50:53	Node 5 is sending reactive power to ancestor 3. Measure: 0.921320. Iter: 474
+2019-08-31 20:50:53	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 474
+2019-08-31 20:51:15	Node 5 is sending current to ancestor 3. Measure: 0.894370. Iter: 475
+2019-08-31 20:51:15	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 475
+2019-08-31 20:51:15	Node 5 is sending reactive power to ancestor 3. Measure: 0.921300. Iter: 475
+2019-08-31 20:51:15	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 475
+2019-08-31 20:51:37	Node 5 is sending current to ancestor 3. Measure: 0.894330. Iter: 476
+2019-08-31 20:51:37	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 476
+2019-08-31 20:51:37	Node 5 is sending reactive power to ancestor 3. Measure: 0.921280. Iter: 476
+2019-08-31 20:51:37	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 476
+2019-08-31 20:51:59	Node 5 is sending current to ancestor 3. Measure: 0.894290. Iter: 477
+2019-08-31 20:51:59	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 477
+2019-08-31 20:51:59	Node 5 is sending reactive power to ancestor 3. Measure: 0.921260. Iter: 477
+2019-08-31 20:51:59	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 477
+2019-08-31 20:52:21	Node 5 is sending current to ancestor 3. Measure: 0.894250. Iter: 478
+2019-08-31 20:52:21	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 478
+2019-08-31 20:52:21	Node 5 is sending reactive power to ancestor 3. Measure: 0.921240. Iter: 478
+2019-08-31 20:52:21	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 478
+2019-08-31 20:52:42	Node 5 is sending current to ancestor 3. Measure: 0.894210. Iter: 479
+2019-08-31 20:52:42	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 479
+2019-08-31 20:52:42	Node 5 is sending reactive power to ancestor 3. Measure: 0.921220. Iter: 479
+2019-08-31 20:52:42	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 479
+2019-08-31 20:53:05	Node 5 is sending current to ancestor 3. Measure: 0.894110. Iter: 480
+2019-08-31 20:53:05	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 480
+2019-08-31 20:53:05	Node 5 is sending reactive power to ancestor 3. Measure: 0.921190. Iter: 480
+2019-08-31 20:53:05	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 480
+2019-08-31 20:53:26	Node 5 is sending current to ancestor 3. Measure: 0.894020. Iter: 481
+2019-08-31 20:53:26	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 481
+2019-08-31 20:53:26	Node 5 is sending reactive power to ancestor 3. Measure: 0.921150. Iter: 481
+2019-08-31 20:53:48	Node 5 is sending current to ancestor 3. Measure: 0.893930. Iter: 482
+2019-08-31 20:53:48	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 482
+2019-08-31 20:53:48	Node 5 is sending reactive power to ancestor 3. Measure: 0.921110. Iter: 482
+2019-08-31 20:54:10	Node 5 is sending current to ancestor 3. Measure: 0.893840. Iter: 483
+2019-08-31 20:54:10	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 483
+2019-08-31 20:54:10	Node 5 is sending reactive power to ancestor 3. Measure: 0.921070. Iter: 483
+2019-08-31 20:54:10	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 483
+2019-08-31 20:54:32	Node 5 is sending current to ancestor 3. Measure: 0.893750. Iter: 484
+2019-08-31 20:54:32	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 484
+2019-08-31 20:54:32	Node 5 is sending reactive power to ancestor 3. Measure: 0.921030. Iter: 484
+2019-08-31 20:54:54	Node 5 is sending current to ancestor 3. Measure: 0.893670. Iter: 485
+2019-08-31 20:54:54	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 485
+2019-08-31 20:54:54	Node 5 is sending reactive power to ancestor 3. Measure: 0.920980. Iter: 485
+2019-08-31 20:55:16	Node 5 is sending current to ancestor 3. Measure: 0.893590. Iter: 486
+2019-08-31 20:55:16	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 486
+2019-08-31 20:55:16	Node 5 is sending reactive power to ancestor 3. Measure: 0.920930. Iter: 486
+2019-08-31 20:55:16	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 486
+2019-08-31 20:55:38	Node 5 is sending current to ancestor 3. Measure: 0.893500. Iter: 487
+2019-08-31 20:55:38	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 487
+2019-08-31 20:55:38	Node 5 is sending reactive power to ancestor 3. Measure: 0.920890. Iter: 487
+2019-08-31 20:55:38	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 487
+2019-08-31 20:56:00	Node 5 is sending current to ancestor 3. Measure: 0.893420. Iter: 488
+2019-08-31 20:56:00	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 488
+2019-08-31 20:56:00	Node 5 is sending reactive power to ancestor 3. Measure: 0.920840. Iter: 488
+2019-08-31 20:56:22	Node 5 is sending current to ancestor 3. Measure: 0.893340. Iter: 489
+2019-08-31 20:56:22	Node 5 is sending active power to ancestor 3. Measure: -0.199990. Iter: 489
+2019-08-31 20:56:22	Node 5 is sending reactive power to ancestor 3. Measure: 0.920790. Iter: 489
+2019-08-31 20:56:22	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 489
+2019-08-31 20:56:44	Node 5 is sending current to ancestor 3. Measure: 0.893250. Iter: 490
+2019-08-31 20:56:44	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 490
+2019-08-31 20:56:44	Node 5 is sending reactive power to ancestor 3. Measure: 0.920750. Iter: 490
+2019-08-31 20:56:44	Node 5 is receiving voltage from ancestor 3. Measure: 1.051900. Iter: 490
+2019-08-31 20:57:06	Node 5 is sending current to ancestor 3. Measure: 0.893170. Iter: 491
+2019-08-31 20:57:06	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 491
+2019-08-31 20:57:06	Node 5 is sending reactive power to ancestor 3. Measure: 0.920710. Iter: 491
+2019-08-31 20:57:28	Node 5 is sending current to ancestor 3. Measure: 0.893090. Iter: 492
+2019-08-31 20:57:28	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 492
+2019-08-31 20:57:28	Node 5 is sending reactive power to ancestor 3. Measure: 0.920660. Iter: 492
+2019-08-31 20:57:28	Node 5 is receiving voltage from ancestor 3. Measure: 1.051800. Iter: 492
+2019-08-31 20:57:50	Node 5 is sending current to ancestor 3. Measure: 0.893010. Iter: 493
+2019-08-31 20:57:50	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 493
+2019-08-31 20:57:50	Node 5 is sending reactive power to ancestor 3. Measure: 0.920610. Iter: 493
+2019-08-31 20:57:50	Node 5 is receiving voltage from ancestor 3. Measure: 1.051800. Iter: 493
+2019-08-31 20:58:11	Node 5 is sending current to ancestor 3. Measure: 0.892940. Iter: 494
+2019-08-31 20:58:11	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 494
+2019-08-31 20:58:11	Node 5 is sending reactive power to ancestor 3. Measure: 0.920560. Iter: 494
+2019-08-31 20:58:33	Node 5 is sending current to ancestor 3. Measure: 0.892860. Iter: 495
+2019-08-31 20:58:33	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 495
+2019-08-31 20:58:33	Node 5 is sending reactive power to ancestor 3. Measure: 0.920510. Iter: 495
+2019-08-31 20:58:33	Node 5 is receiving voltage from ancestor 3. Measure: 1.051800. Iter: 495
+2019-08-31 20:58:55	Node 5 is sending current to ancestor 3. Measure: 0.892780. Iter: 496
+2019-08-31 20:58:55	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 496
+2019-08-31 20:58:55	Node 5 is sending reactive power to ancestor 3. Measure: 0.920470. Iter: 496
+2019-08-31 20:59:17	Node 5 is sending current to ancestor 3. Measure: 0.892710. Iter: 497
+2019-08-31 20:59:17	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 497
+2019-08-31 20:59:17	Node 5 is sending reactive power to ancestor 3. Measure: 0.920420. Iter: 497
+2019-08-31 20:59:39	Node 5 is sending current to ancestor 3. Measure: 0.892630. Iter: 498
+2019-08-31 20:59:39	Node 5 is sending active power to ancestor 3. Measure: -0.200000. Iter: 498
+2019-08-31 20:59:39	Node 5 is sending reactive power to ancestor 3. Measure: 0.920380. Iter: 498
+2019-08-31 21:00:01	Node 5 is sending current to ancestor 3. Measure: 0.892540. Iter: 499
+2019-08-31 21:00:01	Node 5 is sending active power to ancestor 3. Measure: -0.200010. Iter: 499
+2019-08-31 21:00:01	Node 5 is sending reactive power to ancestor 3. Measure: 0.920340. Iter: 499
