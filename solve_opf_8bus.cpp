@@ -699,9 +699,17 @@ int main(int argc,char *argv[]){
                 sprintf(buffer_logFile, "Node %d is sending active power to ancestor %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.ancestor_ID,active_power_obs, iters);
                 nodo.log_file(buffer_logFile); 
                 sprintf(buffer_logFile, "Node %d is sending reactive power to ancestor %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.ancestor_ID,reactive_power_obs, iters);
-                nodo.log_file(buffer_logFile);             
+                nodo.log_file(buffer_logFile);     
+
+
             }
         }
+
+        if (rank==0){
+            MPI_Waitall(SIZE, req_current, status_current);
+            MPI_Waitall(SIZE, req_power,status_power);
+            MPI_Waitall(SIZE, req_reactive,status_reactive);
+        }        
 
         //Receive voltage from ancestor
         float voltage_ancestor_obs;

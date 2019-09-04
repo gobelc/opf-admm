@@ -1,8 +1,8 @@
 clc
 close all
-index = 500;
+index = 100;
 
-path = '../data/31_08_19/';
+path = '../data/1_09_19_2/';
 
 R_line= [0.00304,0.00304,0.00304,0.00304,0.00304,0.00304,0.00304];
 X_line= [0.0304,0.0304,0.0304,0.0304,0.0304,0.0304,0.0304];
@@ -100,26 +100,9 @@ loss_line =  [0 R_line(1)*l1(index) R_line(2)*l2(index) R_line(3)*l3(index) R_li
 current_line = [l0(index) l1(index) l2(index) l3(index) l4(index) l5(index) l6(index) l7(index)]
 
 figure()
-plot(y1(:,2:7))
-legend('Voltaje','Piny','Qiny','Plinea','Qlinea','l')
-title('')
+plot(x3(:,2:7))
+legend('Voltaje','p_iny','q_iny','Plinea','Qlinea','I^2')
 
-
-potencia_total = S_base*((y0(:,3))+(y1(:,3))+(y2(:,3))+(y3(:,3))+(y4(:,3))+(y5(:,3))+(y6(:,3))+(y7(:,3)))
-
-figure()
-hold on
-plot(S_base*y0(:,3))
-plot(S_base*y1(:,3))
-plot(S_base*y2(:,3))
-plot(S_base*y3(:,3))
-plot(S_base*y4(:,3))
-plot(S_base*y5(:,3))
-plot(S_base*y6(:,3))
-plot(S_base*y7(:,3))
-plot(potencia_total)
-legend('Bus 0','Bus 1','Bus 2','Bus 3','Bus 4','Bus 5','Bus 6','Bus 7','Potencia total inyectada')
-title('Potencia inyectada')
 
 % Residuo global
 r_primal= [r0(1:index),r1(1:index),r2(1:index),r3(1:index),r4(1:index),r5(1:index),r6(1:index),r7(1:index)];
