@@ -46,14 +46,7 @@ char buffer_logFile [100];
 
 
 int neighbor_matrix[NUM_BUSES][MAX_NUMBER_NEIGHBORS];
-//float rho = RHO;
-// Create observation vectors containing floats
 
-/*struct observation22{
-    vector<int> y;
-    int bus_number;
-};
-*/
 
 void print(vector <int> const &a) {
    cout << "The vector elements are : ";
@@ -531,17 +524,7 @@ int main(int argc,char *argv[]){
     printf("Hello world from processor %s, rank %d out of %d processors\n",
            processor_name, rank, numtasks);
 
-    /* inicializacion 
-    observation22 observations[NUM_BUSES];
 
-
-    for(int i=0; i < NUM_BUSES;i++){
-        observations[i].y = {i};
-        observations[i].bus_number = i;
-        print(observations[i].y);
-    }
-    */
-    
     // Make neighbor matrix
     int c;
     neighbor_matrix[0][0] = -1; // tree root
@@ -629,17 +612,6 @@ int main(int argc,char *argv[]){
             float reactive_power_obs;
         };
 
-    /*
-        if (rank==3){
-            res = MPI_Barrier(MPI_COMM_WORLD);
-            if (res != MPI_SUCCESS){
-                fprintf (stderr, "MPI_Barrier failed\n");
-                exit (0);
-            } else {
-                cout << "Node " << nodo.node_ID << " attained the sync barrier.\n" << endl;
-            }
-        }
-    */
 
         // X-update //
         nodo.update_state();
@@ -711,12 +683,10 @@ int main(int argc,char *argv[]){
         if (rank>0){
             int request_complete = 0;
 
-            //cout << "Node " << nodo.node_ID << " is receiving voltage from ancestor " <<  nodo.ancestor_ID  << endl;
             if (SYNC){
                 MPI_Recv(&voltage_ancestor_obs, 1, MPI_FLOAT, nodo.ancestor_ID, nodo.ancestor_ID, MPI_COMM_WORLD,MPI_STATUS_IGNORE);
                 nodo.node_measures.voltage_ancestor = voltage_ancestor_obs;
                 nodo.node_observations.voltage_ancestor  = voltage_ancestor_obs;
-                //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " received voltage from ancestor " << nodo.ancestor_ID << ". Measure: " << voltage_ancestor_obs << endl;
                 sprintf(buffer_logFile, "Node %d is receiving voltage from ancestor %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.ancestor_ID,voltage_obs, iters);
                 nodo.log_file(buffer_logFile);                
             } else {
@@ -726,14 +696,12 @@ int main(int argc,char *argv[]){
                 if (request_complete){
                     nodo.node_measures.voltage_ancestor = voltage_ancestor_obs;
                     nodo.node_observations.voltage_ancestor  = voltage_ancestor_obs;
-                    //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " received voltage from ancestor " << nodo.ancestor_ID << ". Measure: " << voltage_ancestor_obs << endl;
                     sprintf(buffer_logFile, "Node %d is receiving voltage from ancestor %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.ancestor_ID,voltage_obs, iters);
                     nodo.log_file(buffer_logFile);                
                 } else {
                     MPI_Wait(&req_v_2,&status_v_2);
                     nodo.node_measures.voltage_ancestor = voltage_ancestor_obs;
                     nodo.node_observations.voltage_ancestor  = voltage_ancestor_obs;
-                    //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " received voltage from ancestor " << nodo.ancestor_ID << ". Measure: " << voltage_ancestor_obs << endl;
                     sprintf(buffer_logFile, "Node %d is receiving voltage from ancestor %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.ancestor_ID,voltage_obs, iters);
                     nodo.log_file(buffer_logFile);  
                 }
@@ -800,47 +768,37 @@ int main(int argc,char *argv[]){
                 MPI_Irecv(&reactive_power_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], nodo.childrens_ID[0]+300, MPI_COMM_WORLD,
                         &req_reactive_2[nodo.childrens_ID[0]]);
                 
-                //nodo.children_measures[0].current = .5*(nodo.children_measures[0].current + current_rec_1);
-                //nodo.children_measures[0].active_power = .5*(nodo.children_measures[0].active_power + active_power_rec_1);
-                //nodo.children_measures[0].reactive_power = .5*(nodo.children_measures[0].reactive_power + reactive_power_rec_1);
-            
                 MPI_Test(&req_current_2[nodo.childrens_ID[0]],&request_complete_current,&status_current_2[nodo.childrens_ID[0]]);
                 MPI_Test(&req_power_2[nodo.childrens_ID[0]],&request_complete_power,&status_power_2[nodo.childrens_ID[0]]);
                 MPI_Test(&req_reactive_2[nodo.childrens_ID[0]],&request_complete_reactive,&status_reactive_2[nodo.childrens_ID[0]]);
 
                 if (request_complete_current){
                     nodo.children_measures[0].current = current_rec_1;
-                    //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " received current from children " << nodo.childrens_ID[0] << ". Measure: " << current_rec_1 << endl;
                     sprintf(buffer_logFile, "Node %d received current from children %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.childrens_ID[0],current_rec_1, iters);
                     nodo.log_file(buffer_logFile);
                 } else {
                     MPI_Wait(&req_current_2[nodo.childrens_ID[0]],&status_current_2[nodo.childrens_ID[0]]);
                     nodo.children_measures[0].current = current_rec_1;
-                    //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " received current from children " << nodo.childrens_ID[0] << ". Measure: " << current_rec_1 << endl;
                     sprintf(buffer_logFile, "Node %d received current from children %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.childrens_ID[0],current_rec_1, iters);
                     nodo.log_file(buffer_logFile);
                 }
                 if (request_complete_power){
                     nodo.children_measures[0].active_power = active_power_rec_1;
-                    //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " received active power from children " << nodo.childrens_ID[0] << ". Measure: " << active_power_rec_1 << endl;
                     sprintf(buffer_logFile, "Node %d received active power from children %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.childrens_ID[0],active_power_rec_1, iters);
                     nodo.log_file(buffer_logFile);                
                 } else {
                     MPI_Wait(&req_power_2[nodo.childrens_ID[0]],&status_power_2[nodo.childrens_ID[0]]);
                     nodo.children_measures[0].active_power = active_power_rec_1;
-                    //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " received active power from children " << nodo.childrens_ID[0] << ". Measure: " << active_power_rec_1 << endl;
                     sprintf(buffer_logFile, "Node %d received active power from children %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.childrens_ID[0],active_power_rec_1, iters);
                     nodo.log_file(buffer_logFile);  
                 }
                 if (request_complete_reactive){
                     nodo.children_measures[0].reactive_power = reactive_power_rec_1;
-                    //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " received reactive power from children " << nodo.childrens_ID[0] << ". Measure: " << reactive_power_rec_1 << endl;
                     sprintf(buffer_logFile, "Node %d received reactive power from children %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.childrens_ID[0],reactive_power_rec_1, iters);
                     nodo.log_file(buffer_logFile);                
                 } else {
                     MPI_Wait(&req_reactive_2[nodo.childrens_ID[0]],&status_reactive_2[nodo.childrens_ID[0]]);
                     nodo.children_measures[0].reactive_power = reactive_power_rec_1;
-                    //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " received reactive power from children " << nodo.childrens_ID[0] << ". Measure: " << reactive_power_rec_1 << endl;
                     sprintf(buffer_logFile, "Node %d received reactive power from children %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.childrens_ID[0],reactive_power_rec_1, iters);
                     nodo.log_file(buffer_logFile);  
                 }
@@ -915,8 +873,5 @@ int main(int argc,char *argv[]){
     }
 
     MPI_Finalize();
-
     return 0;
-
-
 }
