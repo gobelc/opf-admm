@@ -1,6 +1,10 @@
 # opf-admm
 
-Distributed Optimal Power Flow with ADMM via message passing, based on Q. Peng and S. H. Low, "Distributed Optimal Power Flow Algorithm for Radial Networks, I: Balanced Single Phase Case," in IEEE Transactions on Smart Grid, vol. 9, no. 1, pp. 111-121, Jan. 2018.
+Distributed Optimal Power Flow with ADMM via Message Passing Interface (MPI) implemented in C++, based on Q. Peng and S. H. Low, "Distributed Optimal Power Flow Algorithm for Radial Networks, I: Balanced Single Phase Case," in IEEE Transactions on Smart Grid, vol. 9, no. 1, pp. 111-121, Jan. 2018.
+
+# Requirements
+- Matlab
+- mpich
 
 # Setup
 For the setup you need to:
@@ -9,12 +13,13 @@ For the setup you need to:
 
 The default program works with 8 buses and 8 MPI processors, this can be configured changing the file NetworkModel.hpp and adjusting the makefile.
 
-# Compiling
+## Compiling
 make
 
-# Run
+## Run
 make run
 
+## Clean
 You can delete previous data with:
 
 make clean
