@@ -12,15 +12,15 @@
 #include "NetworkModel.hpp"
 
 #define DEBUG 1
-
+#define SYNC 0
 
 /// ADMM Parameters
 #define RHO 1.
-#define MAX_ITER 2000
+#define MAX_ITER 50
 
 
 /// NETWORK (THIS MUST BE A COPY OF THE NETWORK MODEL PARAMATERS)
-#define SIZE 4
+#define SIZE 8
 #define NUM_BUSES SIZE
 #define NUM_LINES SIZE - 1
 #define MAX_NUMBER_CHILDREN 2
@@ -41,6 +41,9 @@ extern float S_base;
 float P_line[NUM_LINES];
 float Q_line[NUM_LINES];
 float l_line[NUM_LINES];
+
+char buffer_logFile [100];
+
 
 int neighbor_matrix[NUM_BUSES][MAX_NUMBER_NEIGHBORS];
 //float rho = RHO;
@@ -137,6 +140,7 @@ class Node: public Operation
     public:
         Node(int node_rank, int node_ID, int n_childs,int ancestor_ID,vector<int> childrens_ID, float R, float X, string type);
         string type;
+        string filePath;
         float rho;
         float R;
         float X;
@@ -161,17 +165,17 @@ class Node: public Operation
         void update_state(){
             
             std::ifstream ifs1 (to_string(this->node_ID)+"/rho.csv", std::ifstream::in);
-            char c_rho[10];
-            ifs1.getline(c_rho,10);
+            char c_rho[15];
+            ifs1.getline(c_rho,15);
             ifs1.close();
             rho = std::atof(c_rho);
             
             cout << fixed << setprecision(5) << rho <<endl;
             string str = "sh m/update_x.sh ";
-            system((str + to_string(this->node_ID) + " " + to_string(rho) + " " + path).c_str());
+            system((str + to_string(this->node_ID) + " " + to_string(RHO) + " " + path).c_str());
             std::ifstream ifs (to_string(this->node_ID)+"/x.csv", std::ifstream::in);
-            char c[10];
-            ifs.getline(c,10);
+            char c[15];
+            ifs.getline(c,15);
             int counter = 0;
             float measure;
             while (ifs.good()) {
@@ -190,7 +194,7 @@ class Node: public Operation
                 if (counter==10){ this->children_measures[1].active_power = measure;}
                 if (counter==11){ this->children_measures[1].reactive_power = measure;}
                 if (counter==12){ this->children_measures[1].current = measure;}
-                ifs.getline(c,10);
+                ifs.getline(c,15);
                 counter+=1;
             }
             ifs.close();
@@ -199,16 +203,16 @@ class Node: public Operation
         void update_observation(){
             
             std::ifstream ifs2 (to_string(this->node_ID)+"/rho.csv", std::ifstream::in);
-            char c_rho[10];
-            ifs2.getline(c_rho,10);
+            char c_rho[15];
+            ifs2.getline(c_rho,15);
             ifs2.close();
             rho = std::atof(c_rho);
             
             string str = "sh m/update_y.sh ";
-            system((str + to_string(this->node_ID) + " " + to_string(rho) + " " + path).c_str());
+            system((str + to_string(this->node_ID) + " " + to_string(RHO) + " " + path).c_str());
             std::ifstream ifs (to_string(this->node_ID)+"/y.csv", std::ifstream::in);
-            char c[10];
-            ifs.getline(c,10);
+            char c[15];
+            ifs.getline(c,15);
             int counter = 0;
             float measure;
             n_childs = this->n_childs;
@@ -229,7 +233,7 @@ class Node: public Operation
                 if (counter==11){ this->children_measures[1].reactive_power = measure;}
                 if (counter==12){ this->children_measures[1].current = measure;}
                 
-                ifs.getline(c,10);
+                ifs.getline(c,15);
                 counter+=1;
             }
             ifs.close();
@@ -278,13 +282,13 @@ class Node: public Operation
 
         void update_multipliers(){
             std::ifstream ifs (to_string(this-> node_ID)+"/mu.csv", std::ifstream::in);
-            char c[10];
-            ifs.getline(c,10);
+            char c[15];
+            ifs.getline(c,15);
             int counter = 0;
             while (ifs.good()) {
                 //cout << std::atof(c) << endl;
                 this->multipliers_vector[counter] = std::atof(c);
-                ifs.getline(c,10);
+                ifs.getline(c,15);
                 counter+=1;
             }
             ifs.close();
@@ -351,9 +355,28 @@ class Node: public Operation
         }
 
         void log_screen(std::string message){
-            std::cout << "\nNodo " << this-> node_rank << "> " << message <<  std::endl;
+            string now = getCurrentDateTime("now");
+            std::cout << now << '\t' << "| Nodo " << this-> node_rank << "> " << message <<  std::endl;
         }
 
+        inline void log_file(std::string logMsg){
+            string now = getCurrentDateTime("now");
+            ofstream ofs(this->filePath.c_str(), std::ios_base::out | std::ios_base::app );
+            ofs << now << '\t' << logMsg << '\n';
+            ofs.close();
+        }
+
+        inline string getCurrentDateTime( string s ){
+            time_t now = time(0);
+            struct tm  tstruct;
+            char  buf[80];
+            tstruct = *localtime(&now);
+            if(s=="now")
+                strftime(buf, sizeof(buf), "%Y-%m-%d %X", &tstruct);
+            else if(s=="date")
+                strftime(buf, sizeof(buf), "%Y-%m-%d", &tstruct);
+            return string(buf);
+        };
 
 };
 
@@ -375,11 +398,13 @@ Node::Node(int node_rank, int node_ID, int n_childs,int ancestor_ID,vector<int> 
     this-> node_measures.active_power = 100;
     this-> node_measures.active_power_gen = 100;
     this-> type = type;
+    this-> filePath = path + "/" + to_string(this->node_ID) + "/" +  getCurrentDateTime("date")+".txt";
     
     child_var child_var_init;
     child_var_init.current = 0.;
     child_var_init.active_power = 0.;
     child_var_init.reactive_power = 0.;
+
 
     int root = 0;
     for(int i=0;i<n_childs;i++){
@@ -588,6 +613,11 @@ int main(int argc,char *argv[]){
     printf("Linea %d | P = %f , Q = %f, l = %f \n", rank + 1, nodo.node_measures.active_power,nodo.node_measures.reactive_power,nodo.node_measures.current);
     
     int iters = 0;
+    float voltage_obs;
+    float current_obs;
+    float active_power_obs;
+    float reactive_power_obs;
+    int res;
 
     while(iters<MAX_ITER){
 
@@ -599,41 +629,144 @@ int main(int argc,char *argv[]){
             float reactive_power_obs;
         };
 
+    /*
+        if (rank==3){
+            res = MPI_Barrier(MPI_COMM_WORLD);
+            if (res != MPI_SUCCESS){
+                fprintf (stderr, "MPI_Barrier failed\n");
+                exit (0);
+            } else {
+                cout << "Node " << nodo.node_ID << " attained the sync barrier.\n" << endl;
+            }
+        }
+    */
 
-        float voltage_obs = nodo.node_observations.voltage;
-        float current_obs = nodo.node_observations.current;
-        float active_power_obs = nodo.node_observations.active_power;
-        float reactive_power_obs = nodo.node_observations.reactive_power;
-
+        // X-update //
         nodo.update_state();
+
+        // Y-update //
         nodo.update_observation();
+        nodo.observation_vector = nodo.generate_observation_vector();
 
-        //Send measures to children
-        for(int i=0; i<n_childs;i++){
-            cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending voltage to children " << nodo.childrens_ID[i]  << ". Measure: " << voltage_obs << endl;
-            MPI_Send(&voltage_obs, 1, MPI_FLOAT, nodo.childrens_ID[i], nodo.node_ID, MPI_COMM_WORLD);
 
-        }
+        // MESSAGE PASSING //
+        MPI_Request req_v;
+        MPI_Status status_v;
 
-        // Send measures to ancestor
-        if (rank>0){
-            cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending current to ancestor " <<  nodo.ancestor_ID  << ". Measure: " << current_obs << endl;
-            cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending active_power to ancestor " <<  nodo.ancestor_ID  << ". Measure: " << active_power_obs << endl;
-            cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending reactive_power to ancestor " <<  nodo.ancestor_ID  << ". Measure: " << reactive_power_obs << endl;
-            MPI_Send(&current_obs, 1, MPI_FLOAT, nodo.ancestor_ID, nodo.node_ID+100, MPI_COMM_WORLD);
-            MPI_Send(&active_power_obs, 1, MPI_FLOAT, nodo.ancestor_ID, nodo.node_ID+200, MPI_COMM_WORLD);
-            MPI_Send(&reactive_power_obs, 1, MPI_FLOAT, nodo.ancestor_ID, nodo.node_ID+300, MPI_COMM_WORLD);
-        }
+        MPI_Request req_v_2;
+        MPI_Status status_v_2;
+
+        MPI_Request req_current[SIZE];
+        MPI_Status status_current[SIZE];
         
-        //Receive voltage from ancestor
+        MPI_Request req_power[SIZE];
+        MPI_Status status_power[SIZE];
+        
+        MPI_Request req_reactive[SIZE];
+        MPI_Status status_reactive[SIZE];
+
+        MPI_Request req_current_2[SIZE];
+        MPI_Status status_current_2[SIZE];
+        
+        MPI_Request req_power_2[SIZE];
+        MPI_Status status_power_2[SIZE];
+        
+        MPI_Request req_reactive_2[SIZE];
+        MPI_Status status_reactive_2[SIZE];
+
+        MPI_Request req_current_3[SIZE];
+        MPI_Status status_current_3[SIZE];
+        
+        MPI_Request req_power_3[SIZE];
+        MPI_Status status_power_3[SIZE];
+        
+        MPI_Request req_reactive_3[SIZE];
+        MPI_Status status_reactive_3[SIZE];
+
+        //if (rank ==0){
+        res = MPI_Barrier(MPI_COMM_WORLD);
+            if (res != MPI_SUCCESS){
+                fprintf (stderr, "MPI_Barrier failed\n");
+            } 
+        //}
+
+        cout << "Node " << nodo.node_ID << " passed the sync barrier after update.\n" << endl;
+        
+        //Send voltage measure to children
+        voltage_obs = nodo.node_observations.voltage;
+        for(int i=0; i<n_childs;i++){
+            sprintf(buffer_logFile, "Node %d is sending voltage to children %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.childrens_ID[i],voltage_obs, iters);
+            nodo.log_file(buffer_logFile);
+            //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " is sending voltage to children " << nodo.childrens_ID[i]  << ". Measure: " << voltage_obs << endl;
+            if (SYNC){
+                MPI_Send(&voltage_obs, 1, MPI_FLOAT, nodo.childrens_ID[i], nodo.node_ID, MPI_COMM_WORLD);
+            } else {
+                MPI_Isend(&voltage_obs, 1, MPI_FLOAT, nodo.childrens_ID[i], nodo.node_ID, MPI_COMM_WORLD,&req_v);
+            }
+            
+        }
+
+        //Receive voltage measure from ancestor
         float voltage_ancestor_obs;
         if (rank>0){
-            cout << "Node " << nodo.node_ID << " is receiving voltage from ancestor " <<  nodo.ancestor_ID  << endl;
-            MPI_Recv(&voltage_ancestor_obs, 1, MPI_FLOAT, nodo.ancestor_ID, nodo.ancestor_ID, MPI_COMM_WORLD,
-                    MPI_STATUS_IGNORE);
-            nodo.node_measures.voltage_ancestor = voltage_ancestor_obs;
-            nodo.node_observations.voltage_ancestor  = voltage_ancestor_obs;
-            cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " received voltage from ancestor " << nodo.ancestor_ID << ". Measure: " << voltage_ancestor_obs << endl;
+            int request_complete = 0;
+
+            //cout << "Node " << nodo.node_ID << " is receiving voltage from ancestor " <<  nodo.ancestor_ID  << endl;
+            if (SYNC){
+                MPI_Recv(&voltage_ancestor_obs, 1, MPI_FLOAT, nodo.ancestor_ID, nodo.ancestor_ID, MPI_COMM_WORLD,MPI_STATUS_IGNORE);
+                nodo.node_measures.voltage_ancestor = voltage_ancestor_obs;
+                nodo.node_observations.voltage_ancestor  = voltage_ancestor_obs;
+                //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " received voltage from ancestor " << nodo.ancestor_ID << ". Measure: " << voltage_ancestor_obs << endl;
+                sprintf(buffer_logFile, "Node %d is receiving voltage from ancestor %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.ancestor_ID,voltage_obs, iters);
+                nodo.log_file(buffer_logFile);                
+            } else {
+                MPI_Irecv(&voltage_ancestor_obs, 1, MPI_FLOAT, nodo.ancestor_ID, nodo.ancestor_ID, MPI_COMM_WORLD,
+                        &req_v_2);
+                MPI_Test(&req_v_2,&request_complete,&status_v_2);
+                if (request_complete){
+                    nodo.node_measures.voltage_ancestor = voltage_ancestor_obs;
+                    nodo.node_observations.voltage_ancestor  = voltage_ancestor_obs;
+                    //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " received voltage from ancestor " << nodo.ancestor_ID << ". Measure: " << voltage_ancestor_obs << endl;
+                    sprintf(buffer_logFile, "Node %d is receiving voltage from ancestor %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.ancestor_ID,voltage_obs, iters);
+                    nodo.log_file(buffer_logFile);                
+                } else {
+                    MPI_Wait(&req_v_2,&status_v_2);
+                    nodo.node_measures.voltage_ancestor = voltage_ancestor_obs;
+                    nodo.node_observations.voltage_ancestor  = voltage_ancestor_obs;
+                    //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " received voltage from ancestor " << nodo.ancestor_ID << ". Measure: " << voltage_ancestor_obs << endl;
+                    sprintf(buffer_logFile, "Node %d is receiving voltage from ancestor %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.ancestor_ID,voltage_obs, iters);
+                    nodo.log_file(buffer_logFile);  
+                }
+            }
+
+        }
+
+        // Send current, active & reactive power measures to ancestor
+        current_obs = nodo.node_observations.current;
+        active_power_obs = nodo.node_observations.active_power;
+        reactive_power_obs = nodo.node_observations.reactive_power;
+        if (rank>0){
+            if (SYNC){
+                MPI_Send(&current_obs, 1, MPI_FLOAT, nodo.ancestor_ID, nodo.node_ID+100, MPI_COMM_WORLD);
+                MPI_Send(&active_power_obs, 1, MPI_FLOAT, nodo.ancestor_ID, nodo.node_ID+200, MPI_COMM_WORLD);
+                MPI_Send(&reactive_power_obs, 1, MPI_FLOAT, nodo.ancestor_ID, nodo.node_ID+300, MPI_COMM_WORLD);
+                sprintf(buffer_logFile, "Node %d is sending current to ancestor %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.ancestor_ID,current_obs, iters);
+                nodo.log_file(buffer_logFile);
+                sprintf(buffer_logFile, "Node %d is sending active power to ancestor %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.ancestor_ID,active_power_obs, iters);
+                nodo.log_file(buffer_logFile); 
+                sprintf(buffer_logFile, "Node %d is sending reactive power to ancestor %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.ancestor_ID,reactive_power_obs, iters);
+                nodo.log_file(buffer_logFile);             
+            } else {
+                MPI_Isend(&current_obs, 1, MPI_FLOAT, nodo.ancestor_ID, nodo.node_ID+100, MPI_COMM_WORLD,&req_current[nodo.node_ID]);
+                MPI_Isend(&active_power_obs, 1, MPI_FLOAT, nodo.ancestor_ID, nodo.node_ID+200, MPI_COMM_WORLD,&req_power[nodo.node_ID]);
+                MPI_Isend(&reactive_power_obs, 1, MPI_FLOAT, nodo.ancestor_ID, nodo.node_ID+300, MPI_COMM_WORLD,&req_reactive[nodo.node_ID]);
+                sprintf(buffer_logFile, "Node %d is sending current to ancestor %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.ancestor_ID,current_obs, iters);
+                nodo.log_file(buffer_logFile);
+                sprintf(buffer_logFile, "Node %d is sending active power to ancestor %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.ancestor_ID,active_power_obs, iters);
+                nodo.log_file(buffer_logFile); 
+                sprintf(buffer_logFile, "Node %d is sending reactive power to ancestor %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.ancestor_ID,reactive_power_obs, iters);
+                nodo.log_file(buffer_logFile);     
+            }
         }
 
         //Receive measures from children
@@ -642,43 +775,135 @@ int main(int argc,char *argv[]){
         float reactive_power_rec_1,reactive_power_rec_2;
 
         if (n_childs > 0){
-            MPI_Recv(&current_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], nodo.childrens_ID[0]+100, MPI_COMM_WORLD,
-                    MPI_STATUS_IGNORE);
-            MPI_Recv(&active_power_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], nodo.childrens_ID[0]+200, MPI_COMM_WORLD,
-                    MPI_STATUS_IGNORE);
-            MPI_Recv(&reactive_power_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], nodo.childrens_ID[0]+300, MPI_COMM_WORLD,
-                    MPI_STATUS_IGNORE);
+            int request_complete_current = 0;
+            int request_complete_power = 0;
+            int request_complete_reactive = 0;
+
+            if (SYNC){
+                MPI_Recv(&current_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], nodo.childrens_ID[0]+100, MPI_COMM_WORLD,MPI_STATUS_IGNORE);
+                MPI_Recv(&active_power_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], nodo.childrens_ID[0]+200, MPI_COMM_WORLD,MPI_STATUS_IGNORE);
+                MPI_Recv(&reactive_power_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], nodo.childrens_ID[0]+300, MPI_COMM_WORLD,MPI_STATUS_IGNORE);
+                sprintf(buffer_logFile, "Node %d received current from children %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.childrens_ID[0],current_rec_1, iters);
+                nodo.log_file(buffer_logFile);
+                sprintf(buffer_logFile, "Node %d received active power from children %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.childrens_ID[0],active_power_rec_1, iters);
+                nodo.log_file(buffer_logFile);
+                sprintf(buffer_logFile, "Node %d received reactive power from children %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.childrens_ID[0],reactive_power_rec_1, iters);
+                nodo.log_file(buffer_logFile);                
+                nodo.children_measures[0].current = current_rec_1;
+                nodo.children_measures[0].active_power = active_power_rec_1;
+                nodo.children_measures[0].reactive_power = reactive_power_rec_1;
+            } else {
+                MPI_Irecv(&current_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], nodo.childrens_ID[0]+100, MPI_COMM_WORLD,
+                        &req_current_2[nodo.childrens_ID[0]]);
+                MPI_Irecv(&active_power_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], nodo.childrens_ID[0]+200, MPI_COMM_WORLD,
+                        &req_power_2[nodo.childrens_ID[0]]);
+                MPI_Irecv(&reactive_power_rec_1, 1, MPI_FLOAT, nodo.childrens_ID[0], nodo.childrens_ID[0]+300, MPI_COMM_WORLD,
+                        &req_reactive_2[nodo.childrens_ID[0]]);
+                
+                //nodo.children_measures[0].current = .5*(nodo.children_measures[0].current + current_rec_1);
+                //nodo.children_measures[0].active_power = .5*(nodo.children_measures[0].active_power + active_power_rec_1);
+                //nodo.children_measures[0].reactive_power = .5*(nodo.children_measures[0].reactive_power + reactive_power_rec_1);
             
-            //nodo.children_measures[0].current = .5*(nodo.children_measures[0].current + current_rec_1);
-            //nodo.children_measures[0].active_power = .5*(nodo.children_measures[0].active_power + active_power_rec_1);
-            //nodo.children_measures[0].reactive_power = .5*(nodo.children_measures[0].reactive_power + reactive_power_rec_1);
-            nodo.children_measures[0].current = current_rec_1;
-            nodo.children_measures[0].active_power = active_power_rec_1;
-            nodo.children_measures[0].reactive_power = reactive_power_rec_1;
-        
-        
+                MPI_Test(&req_current_2[nodo.childrens_ID[0]],&request_complete_current,&status_current_2[nodo.childrens_ID[0]]);
+                MPI_Test(&req_power_2[nodo.childrens_ID[0]],&request_complete_power,&status_power_2[nodo.childrens_ID[0]]);
+                MPI_Test(&req_reactive_2[nodo.childrens_ID[0]],&request_complete_reactive,&status_reactive_2[nodo.childrens_ID[0]]);
+
+                if (request_complete_current){
+                    nodo.children_measures[0].current = current_rec_1;
+                    //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " received current from children " << nodo.childrens_ID[0] << ". Measure: " << current_rec_1 << endl;
+                    sprintf(buffer_logFile, "Node %d received current from children %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.childrens_ID[0],current_rec_1, iters);
+                    nodo.log_file(buffer_logFile);
+                } else {
+                    MPI_Wait(&req_current_2[nodo.childrens_ID[0]],&status_current_2[nodo.childrens_ID[0]]);
+                    nodo.children_measures[0].current = current_rec_1;
+                    //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " received current from children " << nodo.childrens_ID[0] << ". Measure: " << current_rec_1 << endl;
+                    sprintf(buffer_logFile, "Node %d received current from children %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.childrens_ID[0],current_rec_1, iters);
+                    nodo.log_file(buffer_logFile);
+                }
+                if (request_complete_power){
+                    nodo.children_measures[0].active_power = active_power_rec_1;
+                    //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " received active power from children " << nodo.childrens_ID[0] << ". Measure: " << active_power_rec_1 << endl;
+                    sprintf(buffer_logFile, "Node %d received active power from children %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.childrens_ID[0],active_power_rec_1, iters);
+                    nodo.log_file(buffer_logFile);                
+                } else {
+                    MPI_Wait(&req_power_2[nodo.childrens_ID[0]],&status_power_2[nodo.childrens_ID[0]]);
+                    nodo.children_measures[0].active_power = active_power_rec_1;
+                    //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " received active power from children " << nodo.childrens_ID[0] << ". Measure: " << active_power_rec_1 << endl;
+                    sprintf(buffer_logFile, "Node %d received active power from children %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.childrens_ID[0],active_power_rec_1, iters);
+                    nodo.log_file(buffer_logFile);  
+                }
+                if (request_complete_reactive){
+                    nodo.children_measures[0].reactive_power = reactive_power_rec_1;
+                    //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " received reactive power from children " << nodo.childrens_ID[0] << ". Measure: " << reactive_power_rec_1 << endl;
+                    sprintf(buffer_logFile, "Node %d received reactive power from children %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.childrens_ID[0],reactive_power_rec_1, iters);
+                    nodo.log_file(buffer_logFile);                
+                } else {
+                    MPI_Wait(&req_reactive_2[nodo.childrens_ID[0]],&status_reactive_2[nodo.childrens_ID[0]]);
+                    nodo.children_measures[0].reactive_power = reactive_power_rec_1;
+                    //cout << std::fixed << std::setprecision(3) << "Node " << nodo.node_ID << " received reactive power from children " << nodo.childrens_ID[0] << ". Measure: " << reactive_power_rec_1 << endl;
+                    sprintf(buffer_logFile, "Node %d received reactive power from children %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.childrens_ID[0],reactive_power_rec_1, iters);
+                    nodo.log_file(buffer_logFile);  
+                }
+            }
         }
 
         if (n_childs > 1){
-            MPI_Recv(&current_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], nodo.childrens_ID[1]+100, MPI_COMM_WORLD,
-                    MPI_STATUS_IGNORE);
-            MPI_Recv(&active_power_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], nodo.childrens_ID[1]+200, MPI_COMM_WORLD,
-                    MPI_STATUS_IGNORE);
-            MPI_Recv(&reactive_power_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], nodo.childrens_ID[1]+300, MPI_COMM_WORLD,
-                    MPI_STATUS_IGNORE);
+            int request_complete_current = 0;
+            int request_complete_power = 0;
+            int request_complete_reactive = 0;
+            if (SYNC){
+                MPI_Recv(&current_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], nodo.childrens_ID[1]+100, MPI_COMM_WORLD,MPI_STATUS_IGNORE);
+                MPI_Recv(&active_power_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], nodo.childrens_ID[1]+200, MPI_COMM_WORLD,MPI_STATUS_IGNORE);
+                MPI_Recv(&reactive_power_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], nodo.childrens_ID[1]+300, MPI_COMM_WORLD,MPI_STATUS_IGNORE);
+                nodo.children_measures[1].current = current_rec_2;
+                nodo.children_measures[1].active_power = active_power_rec_2;
+                nodo.children_measures[1].reactive_power = reactive_power_rec_2;
+            } else {
+                MPI_Irecv(&current_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], nodo.childrens_ID[1]+100, MPI_COMM_WORLD,
+                        &req_current_3[nodo.childrens_ID[1]]);
+                MPI_Irecv(&active_power_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], nodo.childrens_ID[1]+200, MPI_COMM_WORLD,
+                        &req_power_3[nodo.childrens_ID[1]]);
+                MPI_Irecv(&reactive_power_rec_2, 1, MPI_FLOAT, nodo.childrens_ID[1], nodo.childrens_ID[1]+300, MPI_COMM_WORLD,
+                        &req_reactive_3[nodo.childrens_ID[1]]);
 
-            //nodo.children_measures[1].current = .5*(nodo.children_measures[1].current + current_rec_2);
-            //nodo.children_measures[1].active_power = .5*(nodo.children_measures[1].active_power + active_power_rec_2);
-            //nodo.children_measures[1].reactive_power = .5*(nodo.children_measures[1].reactive_power + reactive_power_rec_2);
-            nodo.children_measures[1].current = current_rec_2;
-            nodo.children_measures[1].active_power = active_power_rec_2;
-            nodo.children_measures[1].reactive_power = reactive_power_rec_2;
-         
-        
+                MPI_Test(&req_current_3[nodo.childrens_ID[1]],&request_complete_current,&status_current_3[nodo.childrens_ID[1]]);
+                MPI_Test(&req_power_3[nodo.childrens_ID[1]],&request_complete_power,&status_power_3[nodo.childrens_ID[1]]);
+                MPI_Test(&req_reactive_3[nodo.childrens_ID[1]],&request_complete_reactive,&status_reactive_3[nodo.childrens_ID[1]]);
+
+                
+                if (request_complete_current){
+                    nodo.children_measures[1].current = current_rec_2;
+                    sprintf(buffer_logFile, "Node %d received current from children %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.childrens_ID[1],current_rec_2, iters);
+                    nodo.log_file(buffer_logFile);  
+                } else {
+                    MPI_Wait(&req_current_3[nodo.childrens_ID[1]],&status_current_3[nodo.childrens_ID[1]]);
+                    nodo.children_measures[1].current = current_rec_2;
+                    sprintf(buffer_logFile, "Node %d received current from children %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.childrens_ID[1],current_rec_2, iters);
+                    nodo.log_file(buffer_logFile); 
+                }
+                if (request_complete_power){
+                    nodo.children_measures[1].active_power = active_power_rec_2;
+                    sprintf(buffer_logFile, "Node %d received active power from children %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.childrens_ID[1],active_power_rec_2, iters);
+                    nodo.log_file(buffer_logFile); 
+                } else {
+                    MPI_Wait(&req_power_3[nodo.childrens_ID[1]],&status_power_3[nodo.childrens_ID[1]]);
+                    nodo.children_measures[1].active_power = active_power_rec_2;
+                    sprintf(buffer_logFile, "Node %d received active power from children %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.childrens_ID[1],active_power_rec_2, iters);
+                    nodo.log_file(buffer_logFile); 
+                }
+                if (request_complete_reactive){
+                    nodo.children_measures[1].reactive_power = reactive_power_rec_2;
+                    sprintf(buffer_logFile, "Node %d received reactive power from children %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.childrens_ID[1],reactive_power_rec_2, iters);
+                    nodo.log_file(buffer_logFile); 
+                } else {
+                    MPI_Wait(&req_reactive_3[nodo.childrens_ID[1]],&status_reactive_3[nodo.childrens_ID[1]]);     
+                    nodo.children_measures[1].reactive_power = reactive_power_rec_2;
+                    sprintf(buffer_logFile, "Node %d received reactive power from children %d. Measure: %f. Iter: %d",nodo.node_ID,nodo.childrens_ID[1],reactive_power_rec_2, iters);
+                    nodo.log_file(buffer_logFile); 
+                }
+            }
         }
-        
-        //nodo.state_vector = nodo.generate_state_vector();
-        //nodo.write_state_vector();
+
         nodo.observation_vector = nodo.generate_observation_vector();
         nodo.write_observation_vector();
 

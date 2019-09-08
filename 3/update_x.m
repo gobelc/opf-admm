@@ -14,8 +14,10 @@ c = zeros(n,1);
 %% COST FUNCTION 
 R = 0.00304;
 %c(7) = R; %Minimize power loss
-c(5) = 1; %Minimize power loss
-
+c1 = zeros(n,1);
+c2 = zeros(n,1);
+c1(3) = 1; %Minimize power loss
+c2(4) = 1; %Minimize power loss
 rho=arg2;
 
 n_childs = floor((n-7)/3);
@@ -44,7 +46,7 @@ Qmax=100;
 % Problem OPF: 
 cvx_begin quiet
     variable x(n,1)
-    minimize(norm(c'*x) + mu'*x + .5*rho*(x-y)'*(x-y));
+    minimize(norm(c1'*x)+norm(c2'*x) + mu'*x + .5*rho*(x-y)'*(x-y));
     x(1)<=1.1; %Vmax
     x(1)>=.9;  %Vmin  
     x(2)<=1.1; %Vmax
@@ -59,7 +61,8 @@ cvx_begin quiet
 cvx_end
 csvwrite(strcat(arg1,"x.csv"),x)
 residuo = norm(x-y,2);
+costo = norm(c1'*x)+norm(c2'*x);
 dlmwrite('estado.dat',x','-append');
 dlmwrite('residuo.dat',residuo,'-append');
-dlmwrite('costo.dat',c'*x,'-append');
+dlmwrite('costo.dat',costo,'-append');
 end

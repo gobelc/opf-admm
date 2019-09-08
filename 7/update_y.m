@@ -21,6 +21,8 @@ cvx_begin quiet
     A*y == 0;
 cvx_end
 
+y
+
 mu = mu + rho*(x - y);
 residuo = norm(x-y);
 residuo_dual = rho * norm(y-y_old,2);

@@ -1,8 +1,8 @@
 clc
 close all
-index = 500;
+index = 50;
 
-path = '../data/31_08_19/';
+path = '../data/6_09_19_2/';
 
 R_line= [0.00304,0.00304,0.00304,0.00304,0.00304,0.00304,0.00304];
 X_line= [0.0304,0.0304,0.0304,0.0304,0.0304,0.0304,0.0304];
@@ -24,6 +24,15 @@ x4 = csvread(strcat(path,'4/estado.dat'));
 x5 = csvread(strcat(path,'5/estado.dat'));
 x6 = csvread(strcat(path,'6/estado.dat'));
 x7 = csvread(strcat(path,'7/estado.dat'));
+
+costo0 = csvread(strcat(path,'0/costo.dat'));
+costo1 = csvread(strcat(path,'1/costo.dat'));
+costo2 = csvread(strcat(path,'2/costo.dat'));
+costo3 = csvread(strcat(path,'3/costo.dat'));
+costo4 = csvread(strcat(path,'4/costo.dat'));
+costo5 = csvread(strcat(path,'5/costo.dat'));
+costo6 = csvread(strcat(path,'6/costo.dat'));
+costo7 = csvread(strcat(path,'7/costo.dat'));
 
 A0 = csvread(strcat(path,'0/A.csv'));
 A1 = csvread(strcat(path,'1/A.csv'));
@@ -96,19 +105,21 @@ q_iny = S_base*[q0(index) q1(index) q2(index) q3(index) q4(index) q5(index) q6(i
 
 p_line = S_base* [P0(index) P1(index) P2(index) P3(index) P4(index) P5(index) P6(index) P7(index)]
 q_line = S_base* [Q0(index) Q1(index) Q2(index) Q3(index) Q4(index) Q5(index) Q6(index) Q7(index)]
-loss_line =  [0 R_line(1)*l1(index) R_line(2)*l2(index) R_line(3)*l3(index) R_line(4)*l4(index) R_line(5)*l5(index) R_line(6)*l6(index) R_line(7)*l7(index)]
+loss_line =  S_base * [0 R_line(1)*l1(index) R_line(2)*l2(index) R_line(3)*l3(index) R_line(4)*l4(index) R_line(5)*l5(index) R_line(6)*l6(index) R_line(7)*l7(index)]
 current_line = [l0(index) l1(index) l2(index) l3(index) l4(index) l5(index) l6(index) l7(index)]
 
 figure()
-plot(y1(:,2:7))
+plot(y0(:,2:7))
 legend('Voltaje','Piny','Qiny','Plinea','Qlinea','l')
 title('')
 
+costo_total = costo0+costo1+costo2+costo3+costo4+costo5+costo6+costo7;
 
-potencia_total = S_base*((y0(:,3))+(y1(:,3))+(y2(:,3))+(y3(:,3))+(y4(:,3))+(y5(:,3))+(y6(:,3))+(y7(:,3)))
+potencia_total = S_base*((y0(:,3))+(y1(:,3))+(y2(:,3))+(y3(:,3))+(y4(:,3))+(y5(:,3))+(y6(:,3))+(y7(:,3)));
 
 figure()
 hold on
+grid on
 plot(S_base*y0(:,3))
 plot(S_base*y1(:,3))
 plot(S_base*y2(:,3))
@@ -117,9 +128,10 @@ plot(S_base*y4(:,3))
 plot(S_base*y5(:,3))
 plot(S_base*y6(:,3))
 plot(S_base*y7(:,3))
-plot(potencia_total)
-legend('Bus 0','Bus 1','Bus 2','Bus 3','Bus 4','Bus 5','Bus 6','Bus 7','Potencia total inyectada')
-title('Potencia inyectada')
+legend('Bus 0','Bus 1','Bus 2','Bus 3','Bus 4','Bus 5','Bus 6','Bus 7')
+xlabel('Nro. Iteración')
+ylabel('MW')
+title('Potencia inyectada en la red')
 
 % Residuo global
 r_primal= [r0(1:index),r1(1:index),r2(1:index),r3(1:index),r4(1:index),r5(1:index),r6(1:index),r7(1:index)];
@@ -134,13 +146,18 @@ end
 
 
 figure()
-plot(norma_primal)
+semilogy(norma_primal)
 hold on;
-plot(norma_dual)
+semilogy(norma_dual)
 grid on
-legend('Primal','Dual')
-title('Norma de residuo del primal')
+legend('Problema primal','Problema dual')
+xlabel('Nro. Iteración')
+ylabel('Norma')
+title('Residuos del problema de optimización')
 
+figure()
+plot(costo_total)
+title('Costo')
 
 %%% Chequear consistencia
 
@@ -153,3 +170,17 @@ fprintf('Potencia inyectada: %f\n',S_base*y3(index,3));
 fprintf('Potencia activa linea: %f\n',S_base*y3(index,5));
 fprintf('Potencia activa hijos: %f\n',S_base*y3(index,8)+S_base*y3(index,11));
 fprintf('Perdidas linea: %f\n',S_base*(A_p(10)*y3(index,10) + A_p(13)*y3(index,13)));
+
+%nodo 2
+S_base=100;
+%Potencia activa
+A_p=[-2.95237e-38,0,1,0,-1,0,0,1,0,-0.00304,1,0,-0.00304];
+fprintf('Residuo potencia activa: %f\n',S_base*A_p*y3(index,:)');
+fprintf('Potencia inyectada: %f\n',S_base*y3(index,3));
+fprintf('Potencia activa linea: %f\n',S_base*y3(index,5));
+fprintf('Potencia activa hijos: %f\n',S_base*y3(index,8)+S_base*y3(index,11));
+fprintf('Perdidas linea: %f\n',S_base*(A_p(10)*y3(index,10) + A_p(13)*y3(index,13)));
+
+%%% Chequeo relajacion
+norm([2*y4(index,5),2*y4(index,6),y4(index,7) - y4(index,2)])
+y4(index,2)+y4(index,7)
