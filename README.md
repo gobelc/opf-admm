@@ -1,6 +1,6 @@
 # opf-admm
 
-Distributed Optimal Power Flow with ADMM via message passing
+Distributed Optimal Power Flow with ADMM via message passing, based on Q. Peng and S. H. Low, "Distributed Optimal Power Flow Algorithm for Radial Networks, I: Balanced Single Phase Case," in IEEE Transactions on Smart Grid, vol. 9, no. 1, pp. 111-121, Jan. 2018.
 
 # Setup
 For the setup you need to:
