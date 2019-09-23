@@ -25,3 +25,7 @@ make run
 You can delete previous data with:
 
 make clean
+
+## Example
+![alt text](https://github.com/gobelc/opf-admm/blob/master/grafo.png)
+![alt text](https://github.com/gobelc/opf-admm/blob/master/potencia_inyectada.png)
