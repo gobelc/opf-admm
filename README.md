@@ -25,3 +25,10 @@ make run
 You can delete previous data with:
 
 make clean
+
+## Example
+8-bus configuration example:
+![alt text](https://github.com/gobelc/opf-admm/blob/master/grafo.png)
+
+Active power injected:
+![alt text](https://github.com/gobelc/opf-admm/blob/master/potencia_inyectada.png)
