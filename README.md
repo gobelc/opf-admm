@@ -2,6 +2,8 @@
 
 Distributed Optimal Power Flow with ADMM via Message Passing Interface (MPI) implemented in C++.
 
+[Report (Spanish)](https://iie.fing.edu.uy/~gbelcredi/hpc/informe.pdf)
+
 ![alt text](https://github.com/gobelc/opf-admm/blob/master/residuo.png)
 
 Based on Q. Peng and S. H. Low, "Distributed Optimal Power Flow Algorithm for Radial Networks, I: Balanced Single Phase Case," in IEEE Transactions on Smart Grid, vol. 9, no. 1, pp. 111-121, Jan. 2018.
