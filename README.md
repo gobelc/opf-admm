@@ -1,4 +1,4 @@
-# opf-admm
+# opf-admm [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3956696.svg)](https://doi.org/10.5281/zenodo.3956696)
 
 Distributed Optimal Power Flow with ADMM via Message Passing Interface (MPI) implemented in C++.
 
